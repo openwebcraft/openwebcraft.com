@@ -530,12 +530,12 @@ a.pure-button-secondary {
     }
 }
 
-#latest-blog-posts li {
+#recent-writing li {
     margin-bottom: 1em;
     list-style: none;
 }
 
-ul#latest-blog-posts {
+ul#recent-writing {
     padding: 0 0 0 0;
 }
 

@@ -7,7 +7,7 @@ slug: /contact/
 
 <p></p>
 
-<div class="vcard">
+<address class="vcard">
   <div class="org"><strong>open</strong>webcraft</div>
   <br/><span class="fn">Matthias Geisler</span>
   <div class="adr">
@@ -16,6 +16,6 @@ slug: /contact/
   </div>
   <div>Phone: <span class="tel">+49 170 2370143</span></div>
   E-Mail: <a class="email" href="mailto:matthias@openwebcraft.com">matthias@openwebcraft.com</a>
-</div>
+</address>
 
 <p>Sales tax identification number pursuant to §27 a of the German Value Added Tax Act.: DE 278421824</p>
