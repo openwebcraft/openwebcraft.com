@@ -504,7 +504,7 @@ a.pure-button-secondary {
 
 @media (max-width: 767px) {
     .hero {
-        margin: 2em 0 auto;
+        margin: 4em 0 auto;
     }
     .hero-titles {
         padding: 0 1em;
