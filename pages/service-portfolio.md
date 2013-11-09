@@ -2,7 +2,7 @@
 title: openwebcraft Service Portfolio
 page_title: Services
 page_subtitle: My Service Portfolio
-slug: /service-portfolio.html
+slug: /service-portfolio/
 ---
 
 **E**-Commerce, PIM

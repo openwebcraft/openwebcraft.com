@@ -2,7 +2,7 @@
 title: openwebcraft Contact (Imprint)
 page_title: Get in Touch
 page_subtitle: Contact / Imprint
-slug: /contact.html
+slug: /contact/
 ---
 
 <p></p>

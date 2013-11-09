@@ -2,7 +2,7 @@
 title: About openwebcraft
 page_title: About
 page_subtitle: Hi, I’m Matthias, an open web craftsman.
-slug: /about.html
+slug: /about/
 ---
 
 <div id="hcard-Matthias-Geisler" class="vcard"><p>My name is <a rel="me" href="http://matthiasgeisler.net/" class="url"><span class="fn n"><span class="given-name">Matthias</span> <span class="family-name">Geisler</span></span></a>. I'm <span class="adr">living in/ working remote from <span class="locality"><a href="http://www.donauwoerth.de/">Donauwoerth</a></span>, <span class="country-name">Germany</span>.</span></p></div>
