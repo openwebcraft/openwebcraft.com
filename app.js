@@ -33,7 +33,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-var blogRssFeedUrl = 'http://openwebcraft.com/rss/';
+var blogRssFeedUrl = 'http://blog.openwebcraft.com/rss/';
 var latestBlogPosts = null;
 request(blogRssFeedUrl, function (error, response, body) {
     if (!error && response.statusCode == 200) {
