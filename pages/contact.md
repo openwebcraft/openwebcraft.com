@@ -15,7 +15,8 @@ slug: /contact/
     <span class="postal-code">86609</span> <span class="locality">Donauwoerth</span>
   </div>
   <div>Phone: <span class="tel">+49 170 2370143</span></div>
-  E-Mail: <a class="email" href="mailto:matthias@openwebcraft.com">matthias@openwebcraft.com</a>
+  E-Mail: <a class="email" href="mailto:matthias@openwebcraft.com">matthias@openwebcraft.com</a><br>
+  <i class="fa fa-xing-square"></i> <a href="https://www.xing.com/profiles/Matthias_Geisler">Xing</a>&nbsp;&nbsp;<i class="fa fa-linkedin-square"></i> <a href="http://de.linkedin.com/in/matthiasgeisler/">LinkedIn</a>
 </address>
 
 <p>Sales tax identification number pursuant to §27 a of the German Value Added Tax Act.: DE 278421824</p>
