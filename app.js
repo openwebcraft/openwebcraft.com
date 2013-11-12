@@ -39,7 +39,7 @@ request(blogRssFeedUrl, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         var parseString = xml2js.parseString;
         parseString(body, function (err, result) {
-            latestBlogPosts = result.rss.channel[0].item.splice(0,3);
+            latestBlogPosts = result.rss.channel[0].item.splice(0,4);
             _.invoke(latestBlogPosts, function(){
                 this.pubDateFromNow = moment(this.pubDate[0]).fromNow();
                 this.author = this['dc:creator'][0];

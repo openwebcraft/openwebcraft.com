@@ -19,39 +19,40 @@
 
 <div class="marketing-ribbon">
 
-<div class="content">
-    <div class="pure-u-1">
-        <div class="l-box">
-
-            <h3>
-                About <strong>open</strong>webcraft
-            </h3>
-            <p>My name is Matthias Geisler, an <b>open web craftsman</b>.</p>
-            <dl>
-                <dt>I provide <strong>Technology Consulting</strong> and <strong>Project Management</strong></dt>
-                <dd>... to <em>master foggy requirements</em></dd>
-
-                <dt>I <strong>build</strong> web applications</dt>
-                <dd>... <em>rock solid</em>, full stack and ubiquitous.</dd>
-
-                <dt>I'm <strong>dedicated</strong> to drive business value</dt>
-                <dd>... and to secure your investment by leveraging <em>cutting-edge open web standards</em>.</dd>
-            </dl>
-            <p><a class="pure-button pure-button-cta" href="/contact/">Get in Touch</a> <a class="pure-button pure-button-secondary" href="/about/">More About me</a> </p>
+    <div class="content">
+        <div class="pure-u-1">
+            <div class="l-box">
+    
+                <h3>
+                    About <strong>open</strong>webcraft
+                </h3>
+                <p>My name is Matthias Geisler, an <b>open web craftsman</b>.</p>
+                <dl>
+                    <dt>I provide <strong>Technology Consulting</strong> and <strong>Project Management</strong></dt>
+                    <dd>... to <em>master foggy requirements</em></dd>
+    
+                    <dt>I <strong>build</strong> web applications</dt>
+                    <dd>... <em>rock solid</em>, full stack and ubiquitous.</dd>
+    
+                    <dt>I'm <strong>dedicated</strong> to drive business value</dt>
+                    <dd>... and to secure your investment by leveraging <em>cutting-edge open web standards</em>.</dd>
+                </dl>
+                <p><a class="pure-button pure-button-cta" href="/contact/">Get in Touch</a> <a class="pure-button pure-button-secondary" href="/about/">More About me</a> </p>
+            </div>
+        </div>
+    
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h3>
+                    Recent Writing
+                </h3>
+                <ul id="recent-writing">
+                    {{#latestBlogPosts}}
+                    <li class="latest-blog-post"><a href="{{link}}">{{{title}}}</a><br/><span class="pubDate">{{pubDateFromNow}}</span>&nbsp;by&nbsp;<span class="author">{{author}}</span></li>
+                    {{/latestBlogPosts}}
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h3>
-                Recent Writing
-            </h3>
-            <ul id="recent-writing">
-                {{#latestBlogPosts}}
-                <li class="latest-blog-post"><a href="{{link}}">{{title}}</a><br/><span class="pubDate">{{pubDateFromNow}}</span>&nbsp;by&nbsp;<span class="author">{{author}}</span></li>
-                {{/latestBlogPosts}}
-            </ul>
-        </div>
-    </div>
 </div>
-    </div>
