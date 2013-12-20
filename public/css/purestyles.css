@@ -547,3 +547,7 @@ blockquote {
     line-height: 1.8em;
     padding-left: 1.5em;
 }
+
+.heart {
+    color: #8c3a2b;
+}
