@@ -35,20 +35,6 @@ if ('development' == app.get('env')) {
 
 var blogRssFeedUrl =  process.env.BLOGRSSFEEDURL || 'http://writing.openwebcraft.com/rss/';
 var latestBlogPosts = null;
-request(blogRssFeedUrl, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-        var parseString = xml2js.parseString;
-        parseString(body, function (err, result) {
-            latestBlogPosts = result.rss.channel[0].item.splice(0,4);
-            _.invoke(latestBlogPosts, function(){
-                this.pubDateFromNow = moment(this.pubDate[0]).fromNow();
-                this.author = this['dc:creator'][0];
-            });
-            //console.log(latestBlogPosts);
-        });
-    }
-})
-
 var pages = mm.parseDirectorySync(__dirname + "/pages");
 
 app.use(function(req,res) {
@@ -80,6 +66,25 @@ app.use(function(req,res) {
     }
     //console.log(tpl, page);
     res.render(tpl, page);
+
+    // let's ASYNC update latestBlogPosts -- AFTER the request has been processed (page rendered)
+    if (path === '/') {
+        req.on('end', function() {
+            request(blogRssFeedUrl, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var parseString = xml2js.parseString;
+                    parseString(body, function (err, result) {
+                        latestBlogPosts = result.rss.channel[0].item.splice(0,4);
+                        _.invoke(latestBlogPosts, function(){
+                            this.pubDateFromNow = moment(this.pubDate[0]).fromNow();
+                            this.author = this['dc:creator'][0];
+                        });
+                        //console.log("updated latestBlogPosts");
+                    });
+                }
+            });
+        });
+    }
 });
 
 http.createServer(app).listen(app.get('port'), function(){
