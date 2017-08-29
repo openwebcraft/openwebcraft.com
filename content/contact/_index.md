@@ -1,9 +1,18 @@
 ---
 title: "Contact"
-description: "Impressum (Imprint)"
+description: "Imprint, Impressum"
 featured_image: "/img/runde_1500x500.jpg"
 date: 2017-08-17T17:29:36+02:00
 ---
+
+
+Do you have questions, comments or feedback about this site? Please use the form below to send me a message…
+
+---
+
+{{< form-contact action="https://formspree.io/matthias@openwebcraft.com" >}}
+
+## Imprint
 
 Matthias Geisler<br>
 openwebcraft<br>
@@ -24,7 +33,7 @@ Responsible for the content: Matthias Geisler
 
 All text contents, images and illustrations are licensed under [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Impressum (Imprint)
+## Impressum
 
 Angaben gem. § 5 TMG
 
