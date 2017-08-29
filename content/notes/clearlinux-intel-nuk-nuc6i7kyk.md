@@ -32,6 +32,4 @@ While the *Clear Linux Project for Intel® Architecture* is actually built…
 
 …the emphasis on Power and Performance optimizations along w/ the (rather recent) [switch from Xfce to GNOME](http://www.phoronix.com/scan.php?page=article&item=clear-linux-gnome&num=1) makes for **a pretty nice desktop experience.**
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I really enjoy the continuous improvements and awesome stability of <a href="https://twitter.com/clearlinux">@clearlinux</a> desktop experience. Has become my main workhorse! <a href="https://twitter.com/hashtag/linux?src=hash">#linux</a></p>&mdash; matthiasgeisler (@matthiasgeisler) <a href="https://twitter.com/matthiasgeisler/status/896068584291540992">August 11, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+{{< tweet 896068584291540992 >}}
