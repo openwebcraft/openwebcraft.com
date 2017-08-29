@@ -1,7 +1,10 @@
 ---
 title: "Clear Linux on Intel NUC6i7KYK Skull Canyon"
 date: 2017-08-17T17:29:36+02:00
-tags: ["clearlinux", "linux", "nuc"]
+tags: 
+- clearlinux
+- linux
+- nuc
 draft: false
 ---
 
