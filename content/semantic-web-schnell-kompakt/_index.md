@@ -1,6 +1,6 @@
 ---
-title: "Semantic Web"
-description: "schnell + kompakt"
+title: "Book"
+description: "Semantic Web: schnell + kompakt"
 featured_image: "/img/owc_semweb_sk_cover.jpg"
 date: 2017-08-17T17:29:36+02:00
 ---
