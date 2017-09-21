@@ -2,7 +2,7 @@
 title: "Now"
 description: "What I’m doing?"
 featured_image: "/img/runde_1500x500.jpg"
-date: 2017-08-17T17:29:36+02:00
+date: 2017-09-21T13:32:36+02:00
 ---
 I’m home in Donauwoerth, Germany.
 
@@ -10,10 +10,11 @@ I’m home in Donauwoerth, Germany.
 
 How I spend my day (in order of time spent):
 
-- family (parenting my two children, housework duties)
+- family (ie. parenting my two children, housework duties)
+- remote technology consulting (limited hours, fixed commitments)
 - family…
+- side projects (#webdev, *nix, Docker, Node.js, Go, #perfmatters, #offlinefirst, IoT, Raspberry Pi, Arduino)
 - family…
-- side projects (#webdev, Node.js, Go, Elm, #perfmatters, #offlinefirst, IoT, Raspberry Pi, Arduino)
 
 Those are my priorities.
 
@@ -21,6 +22,6 @@ Those are my priorities.
 
 - ~~freelance work (REMOTE)~~ I say no to all project enquiries
 
-If my activities or priorities change, I’ll update this page. Last update February 2016.
+If my activities or priorities change, I’ll update this page. Last update September 2017.
 
 This page was inspired by [Derek Sivers](https://sivers.org/nowff).
