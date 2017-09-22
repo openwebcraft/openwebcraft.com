@@ -3,6 +3,7 @@ title: "Clear Linux on Intel NUC6i7KYK Skull Canyon"
 date: 2017-08-17T17:29:36+02:00
 tags: 
 - clearlinux
+- clr
 - linux
 - nuc
 draft: false
