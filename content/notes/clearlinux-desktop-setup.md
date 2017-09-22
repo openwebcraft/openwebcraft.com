@@ -1,5 +1,5 @@
 ---
-title: "Clearlinux Desktop Setup"
+title: "Clear Linux Desktop Setup"
 date: 2017-09-21T23:00:12+02:00
 tags: 
 - clearlinux
