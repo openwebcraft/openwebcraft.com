@@ -245,3 +245,5 @@ Simply follow the guide to [install and run the LibreOffice Flatpak image](https
 ## YubiKey
 
 To set up the Clear Linux system for Universal 2nd Factor (U2F) with YubiKey simply follow [this guide](https://www.yubico.com/support/knowledge-base/categories/articles/can-set-linux-system-use-u2f/) and install the Firefox Add-on [U2F Support Add-on](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/).
+
+{{< talk >}}
