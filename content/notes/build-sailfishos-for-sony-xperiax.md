@@ -1,5 +1,5 @@
 ---
-title: "Build SailfishOSfor Sony Xperiax"
+title: "Build Sailfish OS for Sony Xperia™ X"
 date: 2017-09-23T00:19:36+02:00
 tags:
 - sailfishos
@@ -10,6 +10,10 @@ tags:
 - mobile
 draft: false
 ---
+
+Notes taken while following along the official guide "Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X"…
+
+<!--more-->
 
 The long awaitet blog post is finally here: [Opening Sailfish OS HW Adaptation Source Code for Sony Xperia™ X](https://blog.jolla.com/xperiax-open-source-hw-adaptation/).
 
