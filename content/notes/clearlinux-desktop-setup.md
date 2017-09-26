@@ -1,5 +1,6 @@
 ---
 title: "Clear Linux Desktop Setup"
+featured_image: "/img/clearlinux_logo_wire.jpg"
 date: 2017-09-21T23:00:12+02:00
 tags: 
 - clearlinux

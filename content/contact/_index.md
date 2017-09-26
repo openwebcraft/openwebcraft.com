@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 description: "Imprint, Impressum"
-featured_image: "/img/runde_1500x500.jpg"
+featured_image: "/img/norway_runde.jpg"
 date: 2017-08-17T17:29:36+02:00
 ---
 

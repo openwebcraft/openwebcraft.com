@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I’m doing?"
-featured_image: "/img/runde_1500x500.jpg"
+featured_image: "/img/norway_runde.jpg"
 date: 2017-09-21T13:32:36+02:00
 ---
 I’m home in Donauwoerth, Germany.

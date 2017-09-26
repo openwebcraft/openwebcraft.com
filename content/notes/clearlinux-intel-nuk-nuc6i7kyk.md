@@ -1,5 +1,6 @@
 ---
 title: "Clear Linux on Intel NUC6i7KYK Skull Canyon"
+featured_image: "/img/clearlinux_logo_wire.jpg"
 date: 2017-08-17T17:29:36+02:00
 tags: 
 - clearlinux
