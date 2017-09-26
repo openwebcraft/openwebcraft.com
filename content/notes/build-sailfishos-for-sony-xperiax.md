@@ -1,5 +1,6 @@
 ---
 title: "Build Sailfish OS for Sony Xperia™ X"
+featured_image: "/img/sonyxperiax_sailfishos-2-1-1-26-f5121.jpg"
 date: 2017-09-23T00:19:36+02:00
 tags:
 - sailfishos
