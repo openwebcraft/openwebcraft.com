@@ -18,7 +18,7 @@ Notes taken while following along the official guide "Sailfish OS Hardware Adapt
 
 The long awaitet blog post is finally here: [Opening Sailfish OS HW Adaptation Source Code for Sony Xperia™ X](https://blog.jolla.com/xperiax-open-source-hw-adaptation/).
 
-And, guess what? Only one day prior to the announcement of the first publicly available *Hardware Adaptation sources and instructions for Sailfish X, aka Sailfish OS for Sony Xperia™ X* my [Sony Xperia X](https://www.sonymobile.com/global-en/products/phones/xperia-x/) had arrived.
+And, guess what? Only one day prior to the announcement of the first publicly available *Hardware Adaptation sources and instructions for Sailfish X, aka Sailfish OS for Sony Xperia™ X* my [Sony Xperia X](https://developer.sonymobile.com/products/phones/specification/xperiax/) had arrived.
 
 Soooo, no excuses anymore, right?
 
