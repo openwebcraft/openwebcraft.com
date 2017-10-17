@@ -27,12 +27,39 @@ Basic System Tweaking:
 
 ```bash
 mkdir ~/code
+mkdir ~/.bashrc.d 
+chmod 700 ~/.bashrc.d
+mkdir -p ~/.local/share/gnome-shell/extensions
 sudo mkdir -p /usr/local/bin
 sudo mkdir -p /usr/local/lib
 sudo mkdir -p /opt
 sudo systemctl start sshd
 sudo systemctl enable sshd
 ```
+
+In order to use `~/.bashrc.d` directory instead of bloated `.bashrc` one needs to add this to `.bashrc`:
+
+```bash
+for file in ~/.bashrc.d/*.bashrc;
+do
+	source "$file"
+done
+```
+Then, when creating individual files inside the `~/.bashrc.d`, e.g. `golang.bashrc`, one needs to remeber to give them execution rights:
+
+```bash
+chmod +x ~/.bashrc.d/*.bashrc
+```
+
+Increase limit for *inotify* watches:
+
+```bash
+cat /proc/sys/fs/inotify/max_user_watches
+echo fs.inotify.max_user_watches=32768 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
+For sanity w/ additional binaries it helps creating a file `/etc/system-release` w/ contents: `Clear Linux OS for Intel Architecture`.
 
 ## System settings and "Pimping the bash"
 
@@ -65,13 +92,33 @@ cd ~/.bash-git-prompt/
 19:36 $ 
 ```
 
+### Fonts
+
+Install [FIRA CODE](https://github.com/tonsky/FiraCode) font by download latest version and extracting/ copying contents of `ttf` folder to `~/.fonts` followed by `fc-cache -fv`.
+
+### gtop
+
+A awesome [system monitoring dashboard for terminal](https://github.com/aksakalli/gtop).
+
+equired bundles:
+
+- `nodejs-basic`
+
+```
+sudo npm install gtop -g
+```
+
+### current
+
+Install [current-cli](https://github.com/stve/current-cli/blob/master/README.md) to see what language versions are configured in your current environment (`npm i -g current-cli`)
+
 ## Software Installation
 
 For sanity (we always want `sudo swupd verify --fix` to succeed!) we're only using either software available in [Clear Linux bundles](https://github.com/clearlinux/clr-bundles/tree/master/bundles) or binaries distributed as `.tar.gz`w/ requirements that can be resolved from Clear Linux bundles.
 
 ### Software Development Essentials (ie. `*-basics`)
 
-`sudo swupd bundle-add nodejs-basic go-basic java-basic php-basic containers-basic `
+`sudo swupd bundle-add nodejs-basic go-basic java-basic php-basic containers-basic R-basic R-extras`
 
 ### Simplenote
 
@@ -183,7 +230,75 @@ Name=GitKraken
 Icon=gitkraken
 ```
 
-## PHP Composer
+### Install Robot 3T
+
+Download MongoDB (Binary Installation <https://www.mongodb.com/download-center> and extract to `/opt/mongodb`. Also make sure to add it to the path: `export PATH=$PATH:/opt/mongodb/bin`
+
+Download Robo 3T <https://robomongo.org/download> and extract into `/opt/robot3t. 
+
+To not interfer w/ other (locally build) Qt applications and in order to use *Robomongo* icon from theme, create a executable file `/opt/robot3t/bin/robomongo`:
+
+```bash
+#!/bin/bash
+LD_LIBRARY_PATH=/usr/local/lib
+LIBRARY_PATH=$LD_LIBRARY_PATH
+QT_PLUGIN_PATH=
+/opt/robo3t/bin/robo3t
+```
+
+Then add icon to GNOME like so: `gnome-desktop-item-edit ~/.local/share/applications/ --create-new`
+
+```bash
+Icon[en_US]=robomongo
+Exec=/opt/robo3t/bin/robomongo
+Name[en_US]=Robo 3T
+Name=Robo3T
+Icon=robomongo
+```
+
+### DBeaver
+
+Download latest `tar.gz` archiv of community edition for Linux 64bit from [dbeaver.com](https://dbeaver.jkiss.org/download/) and extract to `/opt/dbeaver`.
+
+Add icon to GNOME like so:q: `gnome-desktop-item-edit ~/.local/share/applications/ --create-new`:
+
+```bash
+[…]
+Icon[en_US]=dbeaver
+Exec=/opt/dbeaver/dbeaver
+Name[en_US]=DBeaver
+Name=DBeaver
+Icon=dbeaver
+```
+
+### CrossFTP
+
+Required bundles:
+
+- `java-basic`
+
+Download latest *Portable* version from here <http://www.crossftp.com/download.htm> and extract into `/opt/crossftp`.
+
+Edit `/opt/crossftp/run_client.sh` adding the following line:
+
+```
+#!/bin/sh
+cd /opt/crossftp
+[…]
+```
+
+Add icon to GNOME like so:q: `gnome-desktop-item-edit ~/.local/share/applications/ --create-new`:
+
+```bash
+[…]
+Icon[en_US]=/opt/crossftp/logo_big.png
+Name[en_US]=CrossFTP
+Exec=/opt/crossftp/run_client.sh
+Name=CrossFTP
+Icon=/opt/crossftp/logo_big.png
+```
+
+### PHP Composer
 
 Required bundles:
 
@@ -243,8 +358,31 @@ export PATH=$PATH:/opt/camlistore
 Simply follow the guide to [install and run the LibreOffice Flatpak image](https://clearlinux.org/documentation/clear-linux/tutorials/flatpak/flatpak.html#add-libreoffice-to-your-gnome-desktop)…
 
 
-## YubiKey
+### YubiKey
 
 To set up the Clear Linux system for Universal 2nd Factor (U2F) with YubiKey simply follow [this guide](https://www.yubico.com/support/knowledge-base/categories/articles/can-set-linux-system-use-u2f/) and install the Firefox Add-on [U2F Support Add-on](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/).
+
+## GNOME Shell Extensions
+
+Currently GNOME extensions can not be installed via <https://extensions.gnome.org/> because even w/ the *GNOME Shell integration extension* installed/ running, a native host connector is not detected.
+
+Offline-installtion to the rescue!
+
+One needs to download and unpack the extensions, and move it into extensions dir like so:
+
+```bash
+mv ~/Downloads/clipboard-indicator@tudmotu.com.v26.shell-extension ~/.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com
+```
+
+Even though the extension is practically installed it is yet disabled. In
+order to enable it, one need to use `gnome-tweak-tools`: find the extension (e.g. titled 'Clipboard Indicator'), in the *Extensions* screen and turn it **On**.
+One may need to restart the shell (*Alt+F2* and insert `r` in the prompt) for the extension to be listed there.
+
+### Mandatory
+
+- [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) —› `~/.local/share/gnome-shell/extensions/caffeine@patapon.info`
+- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/) —› `~/.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com`
+- [system-monitor](https://extensions.gnome.org/extension/120/system-monitor/) —› `~/.local/share/gnome-shell/extensions/system-monitor@paradoxxx.zero.gmail.com` (though charts in menu look weird)
+- [gtile](https://extensions.gnome.org/extension/28/gtile/) —› `~/.local/share/gnome-shell/extensions/gTile@vibou`
 
 {{< talk >}}
