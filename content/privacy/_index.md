@@ -17,9 +17,13 @@ Sofern Sie der Erhebung, Verarbeitung oder Nutzung Ihrer Daten gemäß den daten
 
 ## Erheben, Speichern und Verwenden personenbezogener Daten
 
-Bei dem Besuch unserer Website erheben, verwenden und speichern wir Ihre personenbezogenen Daten nur in Form der Nutzungsdaten in so genannten Server-Log-Files. Dies sind im wesentlichen Daten, die Ihr Browser (oder HTTP Client) automatisch an uns übermittelt (Angaben zum User Agent z.B. Name und Version des Browsers, das verwendete Betriebssystem, die Referrer URL, Hostname des zugreifenden Rechners, IP Adresse und Uhrzeit der Serveranfrage).
+Sie können unsere Webseiten besuchen, ohne Angaben zu Ihrer Person zu machen. Wir speichern in diesem Zusammenhang keinerlei persönliche Daten.
 
-Diese Webseite verwendet keine Cookies und keine Social Media Plugins.
+Um unser Angebot zu verbessern, werten wir lediglich statistische Daten aus (Nutzungsdaten in so genannten Server-Log-Files), die keinen Rückschluss auf Ihre Person erlauben.
+
+Dies sind im wesentlichen Daten, die Ihr Browser (oder HTTP Client) automatisch an uns übermittelt (Angaben zum User Agent z.B. Name und Version des Browsers, das verwendete Betriebssystem, die Referrer URL, Hostname des zugreifenden Rechners, IP Adresse und Uhrzeit der Serveranfrage).
+
+Diese Webseiten verwenden keine Cookies und keine Social Media Plugins.
 
 ## Datenerhebung unter strenger Beachtung der Gesetze
 
