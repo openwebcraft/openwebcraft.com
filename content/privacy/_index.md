@@ -28,7 +28,3 @@ Bei der Erhebung, dem Verwenden und Speichern von personenbezogenen Daten beacht
 ## Auskunft, Löschung, Sperrung
 
 Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten sowie das Recht auf Berichtigung, Löschung bzw. Sperrung. Wenden Sie sich hierzu bitte an die im [Impressum](/impressum/) angegebene Kontaktadresse. Wir stehen Ihnen jederzeit gern für weitergehende Fragen zu unseren Hinweisen zum Datenschutz und zur Verarbeitung Ihrer persönlichen Daten zur Verfügung.
-
-## Widerspruch Werbe-Mails
-
-Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Der Betreiber der Seite behält sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
