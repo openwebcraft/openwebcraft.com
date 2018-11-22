@@ -1,7 +1,7 @@
 ---
 title: "Install RStudio Desktop on Clear Linux"
 featured_image: "/img/clearlinux_logo_wire_rstudio.jpg"
-date: 2017-10-17T23:00:12+02:00
+date: 2018-11-22T19:45:00+02:00
 tags: 
 - clearlinux
 - clr
@@ -12,87 +12,43 @@ tags:
 draft: false
 ---
 
-How I've installed (a.k.a build from src) RStudio — for now only Desktop — on my Clear Linux desktop environment…
+How I've installed (a.k.a build from src) RStudio — for now only Desktop — on my Clear Linux desktop environment — **UPDATED 2018-11-22 on `clear-26430`**…
 
 <!--more-->
 
-Install RStudio Desktop on Clear Linux
+## 1. Install Clear Linux Dependencies
 
-## Desktop
+First things first. Let's install dependencies via clear bundles…
+
+```bash
+sudo swupd bundle-add qt-basic qt-basic-dev R-basic R-extras java-basic
+```
+
+## 2. Get the latest RStudio Desktop Source Code 
 
 The RStudio Desktop needs to be build/ installed from source. 
 
 Let's get started by cloning <https://github.com/rstudio/rstudio/>…
 
-### Install dependencies
-
-[It seems](https://bugreports.qt.io/browse/QTBUG-48353) that *Qt v5.4.x* requires *GStreamer v0.10.x*.
-
-So, download and extract latest v0.10.x *gstreamer* <https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-0.10.36.tar.bz2>…
-
-… and apply *patch*:
-
 ```bash
----
- gst/parse/grammar.y | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/gst/parse/grammar.y b/gst/parse/grammar.y
-index 24fc87b..24fe906 100644
---- a/gst/parse/grammar.y
-+++ b/gst/parse/grammar.y
-@@ -36,7 +36,7 @@
- 
- typedef void* yyscan_t;
- 
--int priv_gst_parse_yylex (void * yylval_param , yyscan_t yyscanner);
-+int priv_gst_parse_yylex (yyscan_t yyscanner);
- int priv_gst_parse_yylex_init (yyscan_t scanner);
- int priv_gst_parse_yylex_destroy (yyscan_t scanner);
- struct yy_buffer_state * priv_gst_parse_yy_scan_string (char* , yyscan_t);
--- 
+git clone https://github.com/rstudio/rstudio.git; cd rstudio
 ```
 
-Then build *gstreamer*.
+## 3. Install RStudio Desktop's Common Linux Dependencies
 
 ```bash
-export LD_LIBRARY_PATH=/usr/local/lib/
-./autogen.sh --disable-gtk-doc
-make
-sudo make install
+cd dependencies/common; ./install-common; cd -
 ```
 
-Next, download and extract <https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.36.tar.bz2>…
+## 4. Install RStudio Desktop's Qt 5.11.1 Dependecy into `$HOME/`
 
-… and build * gst-plugins-base*:
-
-```bash
-export LD_LIBRARY_PATH=/usr/local/lib/
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/Downloads/gstreamer-0.10.36/pkgconfig
-./autogen.sh --disable-gtk-doc
-make
-sudo make install
 ```
-
-Now, install additional, common depdencies for *rstudio* like so:
-
-```bash
-cd rstudio
-cd ./dependencies/common; ./install-common; cd -
 ./dependencies/linux/install-qt-sdk
-sudo swupd bundle-add R-basic R-extras java-basic
 ```
 
-### Make RStudio
+## 5. Build and Install RStudio Desktop
 
-One needs to set the runtime shared library search path using the `-rpath`linker option by adding the following to e.g. `rstudio/CMakeGlobals.txt`:
-
-```bash
-SET(CMAKE_EXE_LINKER_FLAGS 
-          "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath -Wl,/usr/local/lib")
-```
-
-Then follow along the instructions in `INSTALL`, essentially:
+Finally, let's build and install…
 
 ```bash
 mkdir build
@@ -101,23 +57,29 @@ cmake .. -DRSTUDIO_TARGET=Desktop -DCMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
-### GNOME Integration
+One thing to note though: the `sudo make install` step did not succeed on first run, instead failing with rather strange java errors.
 
-The execution of the binary requires the Qt plugins configured like so: `export QT_PLUGIN_PATH=~/Qt5.4.0/5.4/gcc_64/plugins`
+A simple clean build `sudo make clean` and then again `sudo make install` solved it for me — build succeeded. :-)
 
-You might want to move the build result dir to `/opt` and add icon to GNOME like so: `gnome-desktop-item-edit ~/.local/share/applications/ --create-new`:
+## 6. Start RStudio Desktop
+
+In order to start *RStudio Desktop*, you only have to specifiy the `LD_LIBRARY_PATH` like so:
+
+```bash
+LD_LIBRARY_PATH=~/Qt5.11.1/5.11.1/gcc_64/lib /usr/local/lib/rstudio/bin/rstudio
+```
+
+One could certainly tweak the build to get rid of `LD_LIBRARY_PATH`.
+
+For integration with GNOME desktop one might want to add an icon like so: `gnome-desktop-item-edit ~/.local/share/applications/ --create-new`:
 
 ```bash
 […]
 Icon[en_US]=rstudio
 Name[en_US]=RStudio
-Exec=/opt/rstudio/bin/rstudio
+Exec=env LD_LIBRARY_PATH=~/Qt5.11.1/5.11.1/gcc_64/lib /usr/local/lib/rstudio/bin/rstudio
 Name=RStudio
 Icon=rstudio
 ```
-
-## Server
-
-TODO
 
 {{< talk >}}
