@@ -1,6 +1,6 @@
 ---
 title: "Now"
-description: "What I’m doing?"
+description: "„What I’m doing?“"
 featured_image: "/img/norway_runde.jpg"
 date: 2017-09-21T13:32:36+02:00
 ---

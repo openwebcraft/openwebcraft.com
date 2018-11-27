@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+  <title>{{ block "title" . }}{{ with .Title }} {{ . }} — {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #eee;
+      max-width: 700px;
+      padding: 20px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    a {
+      color: #000;
+      border-bottom: 4px solid rgb(255, 238, 0);
+      text-decoration-color: rgb(0, 0, 0);
+    }
+
+    hr {
+      border: 0;
+      margin-bottom: 60px;
+    }
+
+    h1,
+    h2 {
+      margin-top: 60px;
+    }
+
+    .description {
+      line-height: 40px;
+      font-style: italic;
+    }
+
+    time::before {
+      content: "✍ "
+    }
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    header img {
+      padding-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      display: inline-block;
+    }
+
+    nav ul li.site {
+      font-weight: bolder;
+      font-size: 20px;
+    }
+
+    nav ul li.menu::before {
+      content: ". ";
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+
+    svg {
+      width: 1rem;
+    }
+
+    pre {
+      overflow-x: auto;
+    }
+  </style>
+  {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+
+  {{/* NOTE: These Hugo Internal Templates can be found starting at
+  https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
+  {{- template "_internal/opengraph.html" . -}}
+  {{- template "_internal/schema.html" . -}}
+  {{- template "_internal/twitter_cards.html" . -}}
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="site"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
+        {{ range .Site.Menus.main }}
+        <li class="menu"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ $featured_image := .Param "featured_image" }}
+    {{ if $featured_image }}
+    {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+    {{ $featured_image := (trim $featured_image "/") | absURL }}
+    <img src="{{ $featured_image }}" alt="Header Image">
+    {{ end }}
+    {{ with .Params.description }}
+    <div class="description">{{ . }}</div>
+    {{ end }}
+  </header>
+  <hr />
+  {{ block "main" . }}
+  {{ end }}
+  <hr />
+  <footer>
+    <nav>
+      <ul>
+        <li>&copy; {{ now.Format "2006" }} {{ .Site.Params.copyright }}</li>
+        {{ range .Site.Menus.footer }}
+        <li class="menu"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    <p>
+
+    </p>
+  </footer>
+</body>
+
+</html>
