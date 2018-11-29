@@ -9,7 +9,6 @@ SectionPagesMenu = "pages"
 Paginate = 10
 googleAnalytics = ""
 enableRobotsTXT = true
-pygmentsUseClassic = true
 pygmentsCodefences = true
 
 [sitemap]
