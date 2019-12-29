@@ -12,9 +12,16 @@ tags:
 draft: false
 ---
 
-How I've installed (a.k.a build from src) RStudio — for now only Desktop — on my Clear Linux desktop environment — **UPDATED 2018-11-22 on `clear-26430`**…
+How I've installed (a.k.a build from src) RStudio — for now only Desktop — on my Clear Linux desktop environment — **UPDATE 2019-12-29** Meanwhile there is an **official bundle**…
 
 <!--more-->
+
+**UPDATE 2019-12-29** Meanwhile there is an **official bundle** for RStudio on Clear Linux: [https://clearlinux.org/software/bundle/r-rstudio](https://clearlinux.org/software/bundle/r-rstudio).
+
+
+To add this bundle (a.k.a install RStudio), simply enter: 
+
+`sudo swupd bundle-add R-rstudioCopied`
 
 ## 1. Install Clear Linux Dependencies
 

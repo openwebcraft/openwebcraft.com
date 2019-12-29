@@ -7,13 +7,13 @@ aliases:
     - /contact/
 ---
 # Hej!
-Welcome to my website and occasional (tech) [notes](/notes/). Enjoy!
+Welcome to my website and occasional [writing](https://writing.openwebcraft.com/). Enjoy!
 
 ## About me
 
 I'm a web developer and Technical Architect — living in and working REMOTE from [Donauwoerth](http://www.donauwoerth.de/) in Bavaria, Germany.
 
-I’m dedicated to the [Open Web Platform](https://www.w3.org/standards/), web technology and open source software in general. I hold a Degree in Business Information Technology.
+I’m dedicated to the [Open Web Platform](https://www.w3.org/standards/), web technology and free and open source software in general. I hold a Degree in Business Information Technology.
 
 This website is hand-crafted with ❤ in Donauwoerth. Built by [Hugo](https://gohugo.io/).
 

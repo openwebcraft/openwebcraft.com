@@ -33,8 +33,8 @@ pygmentsCodefences = true
       url = "/semantic-web-schnell-kompakt/"
       weight = 1
   [[menu.main]]
-      name = "✍ Notes"
-      url = "/notes/"
+      name = "Writing"
+      url = "https://writing.openwebcraft.com/"
       weight = 2
   [[menu.main]]
       name = "Now"

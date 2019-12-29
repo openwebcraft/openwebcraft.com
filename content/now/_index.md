@@ -12,8 +12,9 @@ How I spend my day (in order of time spent):
 
 - family (ie. parenting my two children, housework duties)
 - remote technology consulting (limited hours, fixed commitments)
+- running
 - family…
-- side projects (#webdev, [Linux](/tags/linux), Docker, Node.js, Go, #perfmatters, #offlinefirst, IoT, Raspberry Pi, Arduino, [Sailfish OS](/tags/sailfishos))
+- side projects (#webdev, Linux (on Mobile), Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smalltech, IoT, Raspberry Pi, Arduino
 - family…
 
 Those are my priorities.
