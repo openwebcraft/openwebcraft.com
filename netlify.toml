@@ -3,7 +3,13 @@
   publish = "public"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.26"
+  HUGO_VERSION = "0.57"
 
 [context.production.environment]
-  HUGO_VERSION = "0.26"
+  HUGO_VERSION = "0.57"
+
+[[redirects]]
+  from = "https://openwebcraft-com.netlify.com/*"
+  to = "https://openwebcraft.com/:splat"
+  status = 301
+  force = true

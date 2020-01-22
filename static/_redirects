@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://openwebcraft-com.netlify.com/* https://openwebcraft.com/:splat 301!
