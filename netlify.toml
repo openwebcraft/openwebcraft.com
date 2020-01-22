@@ -1,5 +1,5 @@
 [build]
-  command = "git submodule update --init --recursive --depth=1 && hugo --cleanDestinationDir --baseURL https://openwebcraft.com/ --minify"
+  command = "git submodule update --init --recursive --depth=1 && env HUGO_ENV=production hugo --cleanDestinationDir --minify"
   publish = "public"
 
 [context.deploy-preview.environment]
