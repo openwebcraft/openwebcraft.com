@@ -3,10 +3,10 @@
   publish = "public"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.57.2/extended"
+  HUGO_VERSION = "0.57.2"
 
 [context.production.environment]
-  HUGO_VERSION = "0.57.2/extended"
+  HUGO_VERSION = "0.57.2"
 
 [[redirects]]
   from = "https://openwebcraft-com.netlify.com/*"
