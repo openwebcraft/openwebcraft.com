@@ -1,6 +1,7 @@
 [build]
-  command = "git submodule update --init --recursive --depth=1 && env HUGO_ENV=production hugo --cleanDestinationDir --minify"
+  command = "git submodule update --init --recursive --depth=1 && hugo --cleanDestinationDir --minify"
   publish = "public"
+  environment = { HUGO_ENV= "production" }
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.57.2"
