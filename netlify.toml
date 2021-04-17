@@ -9,6 +9,11 @@
 [context.production.environment]
   HUGO_VERSION = "0.57.2"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
+
 [[redirects]]
   from = "https://openwebcraft-com.netlify.com/*"
   to = "https://openwebcraft.com/:splat"
