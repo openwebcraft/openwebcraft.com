@@ -13,6 +13,12 @@
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+  for = "/*.html"
+    cache-control = '''
+    max-age=0,
+    no-cache,
+    no-store,
+    must-revalidate'''
 
 [[redirects]]
   from = "https://openwebcraft-com.netlify.com/*"
