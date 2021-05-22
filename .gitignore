@@ -15,3 +15,5 @@
 /site/sessions
 /site/plugins/*
 !/site/plugins/zendo
+
+LOCAL.md

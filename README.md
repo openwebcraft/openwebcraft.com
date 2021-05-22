@@ -11,6 +11,10 @@
 - composer
 - Kirby
 
+## Setup
+
+### Packages
+
 ```sh
 su -
 pkg_add curl
@@ -37,11 +41,30 @@ rcctl start php74_fpm
 pkg_add composer
 ```
 
-## Setup
+### Git Repo
+
+Prerequisite: create ssh key on server and ad as "Deploy key" to GitHub repo.
+
+```sh
+cd /var/www/htdocs
+doas mkdir openwebcraft.com
+cd openwebcraft.com
+doas chown -R www:www .
+doas chmod -R g+w .
+git clone --branch kirby git@github.com:openwebcraft/openwebcraft.com.git .
+composer install
+```
 
 ### httpd(8)/httpd(5).conf
 
 [/etc/httpd.conf](httpd.conf)
+
+```sh
+doas vi /etc/httpd.conf
+doas httpd -n
+doas rcctl reload httpd
+doas rcctl restart httpd
+```
 
 ### Certbot (Let's Encrypt)
 
