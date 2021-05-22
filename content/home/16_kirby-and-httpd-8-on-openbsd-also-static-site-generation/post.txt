@@ -311,7 +311,7 @@ Because there's always room to improve…
 
 ## Todo
 
-- ~~Apply patches from (link: https://github.com/mpfr/httpd-plus text: httpd-plus) for having proper `404` status code w/ *custom-error-documents*~~ [**Update:** (link: patching-httpd-8-openbsd-working-with-src text: Patching httpd(8)—OpenBSD working with src)]
+- ~~Apply patches from (link: https://github.com/mpfr/httpd-plus text: httpd-plus) for having proper `404` status code w/ *custom-error-documents*~~ [**Update:** (link: patching-httpd-8-working-with-openbsd-src text: Patching httpd(8)—working with OpenBSD src)]
 
 ----
 

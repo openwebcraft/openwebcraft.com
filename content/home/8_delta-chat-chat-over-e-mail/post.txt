@@ -6,7 +6,7 @@ Text:
 
 The team of the open source messenger application [Delta Chat](https://delta.chat/) just recently released their iOS client…
 
-![Delta Chat Screenshots of Android, Desktop and iOS](https://i.snap.as/qdYmQ3H.png)
+(image: delta-chat_intro.png)
 
 *Delta Chat* really is such a brilliant and well executed-upon idea: **instant messaging over email**—as in IMAP, SMTP—while still rocking end-to-end encryption (via [rPGP](https://github.com/rpgp/rpgp)) and most importantly: a great UX for non-tech users. 
 

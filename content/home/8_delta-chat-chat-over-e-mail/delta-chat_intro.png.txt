@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Delta Chat Screenshots of Android, Desktop and iOS, src: delta.chat
+
+----
+
+Title: Delta Chat Screenshots of Android, Desktop and iOS, src: delta.chat
+
+----
+
+Thewidth: 710
+
+----
+
+Theheight: 245
+
+----
+
+Thepadding: 34.507042253521
