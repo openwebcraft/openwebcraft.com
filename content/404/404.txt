@@ -1,0 +1,10 @@
+Title: Error 404: Not found
+
+----
+
+Text:
+
+This is a 4🤭4 page—and yes, the content you were looking for is gone.
+To be completely honest, this isn't really surprising at all: I change my site quite often and purposefully refuse to migrate older contents, which are most likely already outdated anyways.
+
+But here's a link to (link: / text: go back to the homepage)…

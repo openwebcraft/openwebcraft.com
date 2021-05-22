@@ -1,0 +1,35 @@
+# Site Homepage
+title: Page
+icon: page
+
+# Page Options
+options:
+    changeSlug: false
+    changeStatus: true
+    changeTemplate: false
+    changeTitle: true
+    delete: false
+    preview: true
+    read: true
+    update: true
+
+# Available Statuses for the page
+status:
+    unlisted: Unlisted
+    listed: Published
+
+# The two columns inside the homepage
+columns:
+    # Posts On the left
+    - width: 1/2
+      sections:
+          published:
+              extends: sections/posts
+              headline: Published
+              status: published
+
+      # Drafts
+    - width: 1/2
+      sections:
+          drafts:
+              extends: sections/posts

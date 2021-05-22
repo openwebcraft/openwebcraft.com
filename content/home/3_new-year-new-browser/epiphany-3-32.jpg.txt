@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot of GNOME Web, src: wiki.gnome.org
+
+----
+
+Title: Screenshot of GNOME Web, src: wiki.gnome.org
+
+----
+
+Thewidth: 1058
+
+----
+
+Theheight: 864
+
+----
+
+Thepadding: 81.663516068053

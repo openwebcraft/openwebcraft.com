@@ -1,0 +1,237 @@
+<!doctype html><html lang=en_us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Build Sailfish OS for Sony Xperia™ X &ndash; openwebcraft.com</title><style>*{box-sizing:border-box}body{font-family:sans-serif;background-color:#eee;max-width:700px;padding:20px;margin:0 auto;font-size:18px}a{color:#000;text-decoration-color:#000}hr{border:0;margin-bottom:60px}h1,h2{margin-top:60px}.description{line-height:40px;font-style:italic}time::before{content:"✍ "}header{margin-bottom:20px}header img{padding-top:20px;max-width:100%;height:auto}nav ul{margin:0;padding:0}nav ul li{list-style-type:none;display:inline-block}nav ul li.site{font-weight:bolder;font-size:20px}nav ul li.menu::before{content:". "}footer{margin-top:40px}footer .ilovefs{text-align:center}svg{width:1rem}pre{overflow-x:auto}</style><meta property="og:title" content="Build Sailfish OS for Sony Xperia™ X"><meta property="og:description" content="Notes taken while following along the official guide &ldquo;Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X&rdquo;…"><meta property="og:type" content="article"><meta property="og:url" content="https://openwebcraft.com/notes/build-sailfishos-for-sony-xperiax/"><meta property="article:published_time" content="2017-09-23T00:19:36+02:00"><meta property="article:modified_time" content="2017-09-23T00:19:36+02:00"><meta itemprop=name content="Build Sailfish OS for Sony Xperia™ X"><meta itemprop=description content="Notes taken while following along the official guide &ldquo;Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X&rdquo;…"><meta itemprop=datePublished content="2017-09-23T00:19:36+02:00"><meta itemprop=dateModified content="2017-09-23T00:19:36+02:00"><meta itemprop=wordCount content="1096"><meta itemprop=keywords content="sailfishos,jolla,linux,sony,xperiax,mobile,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Build Sailfish OS for Sony Xperia™ X"><meta name=twitter:description content="Notes taken while following along the official guide &ldquo;Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X&rdquo;…"><script async defer data-domain=openwebcraft.com src=https://stats.openwebcraft.com/js/index.js></script></head><body><header><nav><ul><li class=site><a href=https://openwebcraft.com/>openwebcraft.com</a></li><li class=menu><a href=/semantic-web-schnell-kompakt/>Book</a></li><li class=menu><a href=https://writing.openwebcraft.com/>Writing</a></li><li class=menu><a href=/now/>Now</a></li></ul></nav></header><hr><h1>Build Sailfish OS for Sony Xperia™ X</h1><time>2017-09-23</time><p>Notes taken while following along the official guide &ldquo;Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X&rdquo;…</p><p>The long awaitet blog post is finally here: <a href=https://blog.jolla.com/xperiax-open-source-hw-adaptation/>Opening Sailfish OS HW Adaptation Source Code for Sony Xperia™ X</a>.</p><p>And, guess what? Only one day prior to the announcement of the first publicly available <em>Hardware Adaptation sources and instructions for Sailfish X, aka Sailfish OS for Sony Xperia™ X</em> my <a href=https://developer.sonymobile.com/products/phones/specification/xperiax/>Sony Xperia X</a> had arrived.</p><p>Soooo, no excuses anymore, right?</p><p><strong>GO</strong> :-)</p><p><strong>DISCLAIMER</strong> The following are my personal notes, taken while following along the AWESOME(!) guide <a href=https://sailfishos.org/wiki/Sailfish_X_Build_and_Flash>Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X</a> and accompanying community documentation. It is totally not my intend to duplicate documentation — it&rsquo;s just a journal of the required steps when starting from scratch, compiled into a singe doc.</p><h2 id=my-host-setup>My host setup</h2><ul><li>hardware: <a href=https://slimbook.es/en/ultrabook-katana-en>Slimbook KATANA</a>, Intel Core i7-6500U, 16GB RAM, mSata SSD</li><li>OS: Debian 9.1 stretch (<em>x86_64 Linux 4.9.0-3-amd64</em>)</li></ul><h2 id=1-install-platform-sdk>1. Install Platform SDK</h2><p>Setting up required environment variables, partly mixed w/ build instructions from <a href=https://sailfishos.org/wiki/Sailfish_X_Build_and_Flash>Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cat <span style=color:#e6db74>&lt;&lt;&#39;EOF&#39; &gt; $HOME/.hadk.env
+</span><span style=color:#e6db74>export PLATFORM_SDK_ROOT=&#34;/srv/mer&#34;
+</span><span style=color:#e6db74>export ANDROID_ROOT=&#34;$HOME/hadk&#34;
+</span><span style=color:#e6db74>export VENDOR=&#34;sony&#34;
+</span><span style=color:#e6db74>export DEVICE=&#34;f5121&#34;
+</span><span style=color:#e6db74>export HABUILD_DEVICE=&#34;suzu&#34; 
+</span><span style=color:#e6db74># ARCH conflicts with kernel build
+</span><span style=color:#e6db74>export PORT_ARCH=&#34;armv7hl&#34;
+</span><span style=color:#e6db74>EOF</span>
+cat <span style=color:#e6db74>&lt;&lt;&#39;EOF&#39; &gt;&gt; $HOME/.mersdkubu.profile
+</span><span style=color:#e6db74>function hadk() { source $HOME/.hadk.env; echo &#34;Env setup for $DEVICE&#34;; }
+</span><span style=color:#e6db74>export PS1=&#34;HABUILD_SDK [\${DEVICE}] $PS1&#34;
+</span><span style=color:#e6db74>hadk
+</span><span style=color:#e6db74>EOF</span>
+cat <span style=color:#e6db74>&lt;&lt;&#39;EOF&#39; &gt;&gt; $HOME/.mersdk.profile
+</span><span style=color:#e6db74>function hadk() { source $HOME/.hadk.env; echo &#34;Env setup for $DEVICE&#34;; }
+</span><span style=color:#e6db74>hadk
+</span><span style=color:#e6db74>EOF</span>
+</code></pre></div><p>Slightly adopted from <a href=https://sailfishos.org/wiki/Platform_SDK_Installation>https://sailfishos.org/wiki/Platform_SDK_Installation</a>…</p><p>Add to <code>~/.bashrc</code>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>export SAILFISHOS_PLATFORM_SDK_ROOT<span style=color:#f92672>=</span>/srv/mer
+export PLATFORM_SDK_ROOT<span style=color:#f92672>=</span>$SAILFISHOS_PLATFORM_SDK_ROOT
+alias sfossdk<span style=color:#f92672>=</span>$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
+</code></pre></div><p>Then:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>source ~/.bashrc
+curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
+sudo mkdir -p $SAILFISHOS_PLATFORM_SDK_ROOT/sdks/sfossdk ;
+sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $SAILFISHOS_PLATFORM_SDK_ROOT/sdks/sfossdk  ;
+echo <span style=color:#e6db74>&#39;PS1=&#34;PlatformSDK $PS1&#34;&#39;</span> &gt; ~/.mersdk.profile ;
+echo <span style=color:#e6db74>&#39;[ -d /etc/bash_completion.d ] &amp;&amp; for i in /etc/bash_completion.d/*;do . $i;done&#39;</span>  &gt;&gt; ~/.mersdk.profile ;
+sfossdk
+
+PlatformSDK matthias@debbook:~$ 
+</code></pre></div><h2 id=2-preparing-the-platform-sdk>2. Preparing the Platform SDK</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~$ 
+
+sudo zypper in android-tools createrepo zip
+</code></pre></div><h2 id=3--setting-up-an-android-build-environment>3. Setting up an Android Build Environment</h2><p>Following the <a href=https://sailfishos.org/wp-content/uploads/2017/09/SailfishOS-HardwareAdaptationDevelopmentKit-2.0.0.pdf>Sailfish OS Hardware Adaptation Development Kit Documentation</a>…</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~$ 
+
+TARBALL<span style=color:#f92672>=</span>ubuntu-trusty-android-rootfs.tar.bz2
+curl -O http://img.merproject.org/images/mer-hybris/ubu/$TARBALL
+UBUNTU_CHROOT<span style=color:#f92672>=</span>$PLATFORM_SDK_ROOT/sdks/ubuntu
+sudo mkdir -p $UBUNTU_CHROOT
+sudo tar --numeric-owner -xjf $TARBALL -C $UBUNTU_CHROOT
+</code></pre></div><h2 id=4--entering-ubuntu-chroot>4. Entering Ubuntu Chroot</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~$ 
+
+ubu-chroot -r $PLATFORM_SDK_ROOT/sdks/ubuntu
+
+HABUILD_SDK <span style=color:#f92672>[</span>f5121<span style=color:#f92672>]</span> matthias@debbook:~$
+
+sudo apt-get update
+sudo apt-get install bsdmainutils
+sudo apt-get install openjdk-7-jdk
+sudo update-java-alternatives -s java-1.7.0-openjdk-amd64
+sudo apt-get install rsync vim unzip
+</code></pre></div><h2 id=5-checking-out-cyanogenmod-source-and-building>5. Checking out CyanogenMod Source and Building…</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~$ 
+
+git config --global user.name <span style=color:#e6db74>&#34;Matthias Geisler&#34;</span>
+git config --global user.email <span style=color:#e6db74>&#34;matthias&#34;</span>@openwebcraft.com<span style=color:#e6db74>&#34;
+</span></code></pre></div><p>Install <code>repo</code> command <a href=https://source.android.com/source/downloading#installing-repo>https://source.android.com/source/downloading#installing-repo</a>…</p><p>From here on we&rsquo;re going to use the build instructions from <a href=https://sailfishos.org/wiki/Sailfish_X_Build_and_Flash>Sailfish OS Hardware Adaptation Development Kit for Sony Xperia X</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>HABUILD_SDK <span style=color:#f92672>[</span>f5121<span style=color:#f92672>]</span> matthias@debbook:~$
+
+sudo mkdir -p $ANDROID_ROOT
+sudo chown -R $USER $ANDROID_ROOT
+cd $ANDROID_ROOT
+repo init -u git://github.com/mer-hybris/android.git -b hybris-sony-aosp-6.0.1_r80-20170902
+repo sync -j1000 --fetch-submodules
+source build/envsetup.sh
+<span style=color:#75715e># Please download Sony Xperia X Software binaries for AOSP Marshmallow (Android 6.0.1) from</span>
+<span style=color:#75715e># https://developer.sonymobile.com/downloads/tool/software-binaries-for-aosp-marshmallow-6-0-1-loire/</span>
+<span style=color:#75715e># and unzip its contents in this directory like this:</span>
+unzip ~/Downloads/SW_binaries_for_Xperia_AOSP_*.zip
+export USE_CCACHE<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+lunch aosp_$DEVICE-userdebug
+make -j10 hybris-hal
+
+<span style=color:#f92672>[</span>…<span style=color:#f92672>]</span>
+Install: out/target/product/suzu/hybris-boot.img
+Install: out/target/product/suzu/hybris-recovery.img
+
+<span style=color:#75715e>#### make completed successfully (10:25 (mm:ss)) ####</span>
+
+HABUILD_SDK <span style=color:#f92672>[</span>f5121<span style=color:#f92672>]</span> matthias@debbook:~$ 
+</code></pre></div><h2 id=6-se-up-scratchbox2-target>6. Se up Scratchbox2 Target</h2><p>Download the latest <code>"SailfishOS-armv7hl</code> from <a href=http://releases.sailfishos.org/sdk/latest/targets/targets.json>http://releases.sailfishos.org/sdk/latest/targets/targets.json</a>…</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+sudo zypper in -t pattern Mer-SB2-armv7hl
+
+sdk-assistant create $VENDOR-$DEVICE-$PORT_ARCH ~/Downloads/Jolla-2.1.0.10-Sailfish_SDK_Target-armv7hl.tar.bz2
+</code></pre></div><p>Create <code>~/main.c</code>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#include &lt;stdlib.h&gt;</span>
+<span style=color:#75715e>#include &lt;stdio.h&gt;</span>
+int main<span style=color:#f92672>(</span>void<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+printf<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Hello, world!\n&#34;</span><span style=color:#f92672>)</span>;
+<span style=color:#66d9ef>return</span> EXIT_SUCCESS;
+<span style=color:#f92672>}</span>
+</code></pre></div><p>Compile and test:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sb2 -t $VENDOR-$DEVICE-$PORT_ARCH gcc main.c -o test
+sb2 -t $VENDOR-$DEVICE-$PORT_ARCH ./test
+</code></pre></div><h2 id=7-packaging>7. Packaging</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+cd $ANDROID_ROOT
+rpm/dhd/helpers/build_packages.sh --droid-hal
+git clone --recursive https://github.com/mer-hybris/droid-config-$DEVICE hybris/droid-configs
+<span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -z <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>grep community_adaptation $ANDROID_ROOT/hybris/droid-configs/rpm/droid-config-$DEVICE.spec<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+  sed -i <span style=color:#e6db74>&#39;/%include droid-configs-device/i%define community_adaptation 1\n&#39;</span> $ANDROID_ROOT/hybris/droid-configs/rpm/droid-config-$DEVICE.spec
+<span style=color:#66d9ef>fi</span>
+<span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -z <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>grep patterns-sailfish-consumer-generic $ANDROID_ROOT/hybris/droid-configs/patterns/jolla-configuration-$DEVICE.yaml<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+  sed -i <span style=color:#e6db74>&#34;/Summary: Jolla Configuration </span>$DEVICE<span style=color:#e6db74>/i- patterns-sailfish-consumer-generic\n- patterns-sailfish-store-applications\n- pattern:sailfish-porter-tools\n&#34;</span> $ANDROID_ROOT/hybris/droid-configs/patterns/jolla-configuration-$DEVICE.yaml
+<span style=color:#66d9ef>fi</span>
+rpm/dhd/helpers/build_packages.sh --configs
+sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper in droid-hal-$DEVICE-kernel
+sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper in --force-resolution droid-hal-$DEVICE-kernel-modules
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/sailfishos/initrd-helpers
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/nemomobile/hw-ramdisk
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/sailfishos/yamui
+git clone --recursive https://github.com/mer-hybris/droid-hal-img-boot-$DEVICE hybris/mw/droid-hal-img-boot-$DEVICE
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/mer-hybris/droid-hal-img-boot-$DEVICE
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>HABUILD_SDK <span style=color:#f92672>[</span>f5121<span style=color:#f92672>]</span> matthias@debbook:~$
+
+sudo apt-get install rsync
+cd $ANDROID_ROOT/..
+mkdir syspart
+cd syspart
+repo init -u git://github.com/mer-hybris/android.git -b syspart-sony-aosp-6.0.1_r80-20170902
+repo sync -j1000 --fetch-submodules
+source build/envsetup.sh
+unzip ~/Downloads/SW_binaries_for_Xperia_AOSP_*.zip
+export USE_CCACHE<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+lunch aosp_$DEVICE-userdebug
+make -j10  libnfc-nci bluetooth.default_32 systemtarball
+
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+Target system fs tarball: out/target/product/suzu/system.tar.bz2
+build/tools/mktarball.sh out/host/linux-x86/bin/fs_get_stats out/target/product/suzu system out/target/product/suzu/system.tar out/target/product/suzu/system.tar.bz2 out/target/product/suzu/system
+
+<span style=color:#75715e>#### make completed successfully (02:16:23 (hh:mm:ss)) ####</span>
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+cd $ANDROID_ROOT/../syspart
+git clone https://github.com/mer-hybris/droid-system-$DEVICE
+mb2 -t $VENDOR-$DEVICE-$PORT_ARCH -s droid-system-$DEVICE/rpm/droid-system-$DEVICE.spec build
+rm -f $ANDROID_ROOT/droid-local-repo/$DEVICE/droid-system-*.rpm
+mv RPMS/droid-system-$DEVICE-0.1.1-1.armv7hl.rpm $ANDROID_ROOT/droid-local-repo/$DEVICE/
+createrepo <span style=color:#e6db74>&#34;</span>$ANDROID_ROOT<span style=color:#e6db74>/droid-local-repo/</span>$DEVICE<span style=color:#e6db74>&#34;</span>
+sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper ref
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>HABUILD_SDK <span style=color:#f92672>[</span>f5121<span style=color:#f92672>]</span> matthias@debbook:~$
+ 
+cd $ANDROID_ROOT
+git clone https://github.com/mer-hybris/audioflingerglue external/audioflingerglue
+git clone https://github.com/sailfishos/droidmedia external/droidmedia
+
+source build/envsetup.sh
+lunch aosp_$DEVICE-userdebug
+make -j10 libdroidmedia_32 minimediaservice minisfservice libaudioflingerglue_32 miniafservice
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+cd $ANDROID_ROOT
+DROIDMEDIA_VERSION<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>git --git-dir external/droidmedia/.git describe --tags | sed -r <span style=color:#e6db74>&#34;s/\-/\+/g&#34;</span><span style=color:#66d9ef>)</span>
+DEVICE<span style=color:#f92672>=</span>$HABUILD_DEVICE rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION
+mkdir -p hybris/mw/droidmedia-localbuild/rpm
+cp rpm/dhd/helpers/droidmedia-localbuild.spec hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+sed -ie <span style=color:#e6db74>&#34;s/0.0.0/</span>$DROIDMEDIA_VERSION<span style=color:#e6db74>/&#34;</span> hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+mv hybris/mw/droidmedia-$DROIDMEDIA_VERSION.tgz hybris/mw/droidmedia-localbuild
+rpm/dhd/helpers/build_packages.sh --build<span style=color:#f92672>=</span>hybris/mw/droidmedia-localbuild
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/sailfishos/gst-droid.git
+
+DEVICE<span style=color:#f92672>=</span>$HABUILD_DEVICE rpm/dhd/helpers/pack_source_audioflingerglue-localbuild.sh
+mkdir -p hybris/mw/audioflingerglue-localbuild/rpm
+cp rpm/dhd/helpers/audioflingerglue-localbuild.spec hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec
+mv hybris/mw/audioflingerglue-0.0.1.tgz hybris/mw/audioflingerglue-localbuild
+rpm/dhd/helpers/build_packages.sh --build<span style=color:#f92672>=</span>hybris/mw/audioflingerglue-localbuild
+rpm/dhd/helpers/build_packages.sh --mw<span style=color:#f92672>=</span>https://github.com/mer-hybris/pulseaudio-modules-droid-glue.git
+
+git clone --recursive https://github.com/mer-hybris/droid-hal-version-$DEVICE hybris/droid-hal-version-$DEVICE
+rpm/dhd/helpers/build_packages.sh --version
+
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+----------------------DONE! Now proceed on creating the rootfs------------------
+</code></pre></div><h2 id=8-create-the-sailfish-os-root-filesystem>8. Create the Sailfish OS root filesystem</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+cd $ANDROID_ROOT
+HA_REPO<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;repo --name=adaptation-community-common-</span>$DEVICE<span style=color:#e6db74>-@RELEASE@&#34;</span>
+HA_DEV<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;repo --name=adaptation-community-</span>$DEVICE<span style=color:#e6db74>-@RELEASE@&#34;</span>
+KS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Jolla-@RELEASE@-</span>$DEVICE<span style=color:#e6db74>-@ARCH@.ks&#34;</span>
+sed <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span><span style=color:#e6db74>&#34;/</span>$HA_REPO<span style=color:#e6db74>/i</span>$HA_DEV<span style=color:#e6db74> --baseurl=file:\/\/</span>$ANDROID_ROOT<span style=color:#e6db74>\/droid-local-repo\/</span>$DEVICE<span style=color:#e6db74>&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>$ANDROID_ROOT/hybris/droid-configs/installroot/usr/share/kickstarts/$KS <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>&gt; $KS
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+cd $ANDROID_ROOT
+rpm/dhd/helpers/build_packages.sh --configs
+</code></pre></div><p>Save the contents of <a href=https://sailfishos.org/wiki/Mic-loop.patch>Mic-loop.patch</a> as <code>~/Downloads/mic-loop.patch</code>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+RELEASE<span style=color:#f92672>=</span>2.1.1.26 <span style=color:#75715e># if your sb2 target is 2.1.0, do not worry about that</span>
+sudo zypper in lvm2 atruncate pigz
+sudo ssu ar unbreakmic http://repo.merproject.org/obs/home:/sledge:/branches:/mer-tools:/devel/latest_i486/
+sudo zypper ref unbreakmic
+sudo zypper in droid-tools
+sudo zypper in --force mic
+cd /usr/lib/python2.7/site-packages/mic/
+sudo patch -p1 --dry-run &lt; ~/Downloads/mic-loop.patch
+<span style=color:#75715e># ensure above worked, then</span>
+sudo patch -p1 &lt; ~/Downloads/mic-loop.patch
+cd $ANDROID_ROOT
+sudo mic create loop --arch<span style=color:#f92672>=</span>$PORT_ARCH <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --tokenmap<span style=color:#f92672>=</span>ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    --record-pkgs<span style=color:#f92672>=</span>name,url     --outdir<span style=color:#f92672>=</span>sfe-$DEVICE-$RELEASE$EXTRA_NAME <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>    $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
+
+<span style=color:#f92672>[</span>...<span style=color:#f92672>]</span>
+Info: The new image can be found here:
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/Jolla-2.1.1.26-f5121-armv7hl.ks
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/Jolla-2.1.1.26-f5121-armv7hl.ks
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/Jolla-2.1.1.26-f5121-armv7hl.packages
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/Jolla-2.1.1.26-f5121-armv7hl.urls
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/Jolla-2.1.1.26-f5121-armv7hl.xml
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/SailfishOS-2.1.1.26-f5121-0.0.1.1.tar.bz2
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/extracting-README.txt
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/hw-release
+  /home/matthias/hadk/sfe-f5121-2.1.1.26/sailfish-release
+
+Info: Finished.
+</code></pre></div><h2 id=9-flashing>9. Flashing</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PlatformSDK matthias@debbook:~
+
+mkdir flashing
+cd flashing
+tar -xvf $ANDROID_ROOT/sfe-$DEVICE-$RELEASE$EXTRA_NAME/SailfishOS-*.tar.bz2
+cd SailfishOS-*/
+</code></pre></div><p>Act upon instructions in the <code>flashing-README.txt</code>…</p><p>Unlock bootloader: <a href=https://developer.sonymobile.com/unlockbootloader/unlock-yourboot-loader/>https://developer.sonymobile.com/unlockbootloader/unlock-yourboot-loader/</a></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>fastboot -i 0x0fce oem unlock 0xUNLOCK_CODE
+...
+OKAY <span style=color:#f92672>[</span>  0.180s<span style=color:#f92672>]</span>
+finished. total time: 0.180s
+</code></pre></div><p>If the above fails w/ <code>FAILED (remote: Command not allowed)</code> make sure to enable <em>OEM unlock</em> in developer options.</p><p>…and flash the phone:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>matthias@debbook:~
+
+apt-get install android-tools-fastboot
+
+cd SailfishOS-*/
+bash ./flash.sh
+</code></pre></div><p>If <code>gcc [^se]*.c sha1.c sparse_crc32.c ext4_utils.c extent.c -o make_ext4fs -lz</code> gives error:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>output_file.c:30:18: fatal error: zlib.h: No such file or directory
+ <span style=color:#75715e>#include &lt;zlib.h&gt;</span>
+                  ^
+compilation terminated.
+</code></pre></div><p>Simply install the missing w/ <code>sudo apt-get install libz-dev</code>.</p><p>DONE :-)</p><div class="flex items-center justify-center pa4 bg-white"><a class="link hover-silver near-black dib mh3 tc" href=https://twitter.com/statuses/911351102905503744 title="View on Twitter.com"><svg class="dib h2 w2" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.375-1.337.648-2.085.795-.598-.638-1.45-1.036-2.396-1.036-1.812.0-3.282 1.468-3.282 3.28.0.258.03.51.085.75C5.152 5.39 2.733 4.084 1.114 2.1.83 2.583.67 3.147.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21.0-.416-.02-.617-.058.418 1.304 1.63 2.253 3.067 2.28-1.124.88-2.54 1.404-4.077 1.404-.265.0-.526-.015-.783-.045 1.453.93 3.178 1.474 5.032 1.474 6.038.0 9.34-5 9.34-9.338.0-.143-.004-.284-.01-.425.64-.463 1.198-1.04 1.638-1.7z" fill-rule="nonzero"/></svg><span class="f6 db">Related Tweet</span></a></div><p>UPDATE 2017-09-23 — The installable image generated by my build can be downloaded <a href="https://drive.google.com/open?id=0BwOvmHZd_nB6QlN5eFQ1YVNyelk">here</a>. <strong>DISCLAIMER: Flash it at YOUR OWN RISK (see above section 9.). I&rsquo;M NOT RESPONSIBLE for you or your phone.</strong></p><article class="mw7 center ph3 ph5-ns tc br2 pv5 mb5"><hr><p>I like comments — generally speaking. Sharing experiences, discussing ideas, correcting my mistakes ;-)…</p><div class="flex items-center justify-center pa4 bg-lightest-blue navy"><svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor"><title>info icon</title><path d="M16 0a16 16 0 010 32A16 16 0 0116 0m3 15H13V26h6zM16 6a3 3 0 000 6 3 3 0 000-6"/></svg><span class="lh-title ml3"><strong>…but</strong> — comments are currenly disabled, sorry!</span></div></article><hr><footer><nav><ul><li>&copy; 2021 Matthias Geisler/ openwebcraft</li><li class=menu><a href=/privacy/>Datenschutz</a></li><li class=menu><a href=/impressum/>Impressum</a></li></ul></nav><p class=ilovefs><a href=https://ilovefs.org><img src=/images/ilovefs-button-small-en.png style=border:0!important alt="I love Free Software!"></a></p></footer></body></html>

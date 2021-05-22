@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Semantic Web: schnell + kompakt Taschenbuchcover
+
+----
+
+Title: Semantic Web: schnell + kompakt Taschenbuchcover
+
+----
+
+Thewidth: 312
+
+----
+
+Theheight: 500
+
+----
+
+Thepadding: 160.25641025641

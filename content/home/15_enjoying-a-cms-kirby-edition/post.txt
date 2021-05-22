@@ -1,0 +1,29 @@
+Title: Enjoying a CMS—Kirby Edition
+
+----
+
+Text:
+
+I'm (link: website-tech text: now using Kirby) as the content management system for this website.
+Sure, this might come as a surprise to everyone who—for years in a row—heard me preaching:
+>"*Headless CMS & Static Site Generation FTW!*".  
+
+But after a closer look, the surprise isn't that big actually:
+
+1. on the tech side of things, also Kirby can be used "headless" (thanks to it's (link: https://getkirby.com/plugins/getkirby/kql text: Kirby Query Language API)) and it likewise can generate a static site;
+2. secondly, and this is where Kirby really stood out rather quickly to me (after I got introduced to it in the context of a customer project—that ironically picked Wordpress instead) is the **elegant approach** of the product, rooted in and aiming for **simplicity**—for it's (link: https://getkirby.com/docs/guide/blueprints/introduction text: customizability), the clean  (link: https://getkirby.com/features/creators text: user interface (admin panel)), the (link: https://github.com/getkirby/kirby text: code base), it's (link: https://getkirby.com/plugins text: extensibility), the (link: https://getkirby.com/docs/reference text: documentation);
+3. then, it's an open-source **Product**, one for which I happily bought a license—and  (link: https://getkirby.com/buy text: so should you). The fair pricing in combination with the dedication of it's (link: https://bastianallgeier.com/ text: creator) is an essential part of ensuring a sustainable future for the product and for me makes it a perfect fit in the context of  (link: https://small-web.org/ text: Small Web) and  (link: https://indieweb.org/ text: Indie Web);
+4. last not least, Kirby has had a strong development over the years, build up a vibrant (link: https://forum.getkirby.com/ text: community) and a rich and quality-wise "good-enough"  (link: https://getkirby.com/plugins text: plugin ecosystem).
+
+Especially the last point might come—again—as a surprise, given my to this day advising against most (PHP-based), open-source CMS products and projects. There you have it, it's possible.
+Small disclaimer though: I still feel not comfortable exposing any PHP endpoint to the public. Therefore I'm essentially keeping the Kirby installation behind a authentication gate.
+
+But, with all that said: yes, I'm (link: https://getkirby.com/ text: enjoying a CMS)—finally.
+
+----
+
+Published: 2021-05-11
+
+----
+
+Feedurl: https://openwebcraft.com/enjoying-a-cms-kirby-edition

@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Island Runde, Norway
+
+----
+
+Title: Island Runde, Norway
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 300
+
+----
+
+Thepadding: 37.5

@@ -1,0 +1,328 @@
+Title: My Clear Linux* Setup
+
+----
+
+Text:
+
+Also for my main machine (ThinkPad T25), I switched Linux distro from Pop!_OS (essentially Ubuntu/Debian) rocking [Regolith Linux](https://regolith-linux.org/)—a well curated and appealing styled desktop environment based on i3 tiling window manager and GNOME—to Intel's [Clear Linux*](https://clearlinux.org/).
+
+The reasoning behind this switch is rather simple: I felt the need to have some extra system performance provided by Intel's well-optimized Linux distro also on my main machine—which I'm already used to on my [NUC (Skull Canyon) desktop](https://openwebcraft.com/notes/clearlinux-desktop-setup/).
+
+Here's how I’ve installed and configured my Clear Linux* system and GNOME desktop environment.
+
+Install via the new GUI installer from USB stick w/ latest ISO (as of writing  [clear-33590-live-desktop.iso](https://cdn.download.clearlinux.org/releases/33590/clear/clear-33590-live-desktop.iso>).
+
+## Bundles
+
+```bash
+# disable automatic updates
+sudo swupd autoupdate --disable
+
+# install bundles
+sudo swupd bundle-add nodejs-basic
+
+# system maintenance
+sudo swupd update
+sudo swupd diagnose
+sudo swupd repair
+flatpak update
+```
+
+- desktop-apps-extras
+- libreoffice
+- libreoffice-extras-lang-de
+- nodejs-basic
+- go-basic
+- java-basic
+- php-basic
+- rust-basic
+- cloud-control
+- containers-basic
+- docker-compose
+- devpkg-ncurses
+- devpkg-pcre
+- package-utils
+- dev-utils
+- libglib
+- games-dev
+
+## Docker
+
+```bash
+# requires bundle containers-basic
+sudo usermod -aG docker matthias
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+## Native Applications
+
+For some application I prefer NOT to use Flatpaks:
+
+- VS Code
+- Tresorit (installer script)
+- Nitrokey (w/ custom udev rules
+- Signet (w/ custom udev rules)
+- CrossFTP (requires java)
+- MyTourBook (requires java)
+- JVerein (requires java)
+- Thunderbird (copy user profile from backup `cp Backup/.thunderbird ~/. `  and then choose profile `/opt/thunderbird/thunderbird -ProfileManager` )
+- ...
+
+For these I download the latest *.tar.gz (e.g. from https://code.visualstudio.com), extract and copy to ` /opt/vscode`.
+
+For integration w/ GNOME desktop I then create a file ` ~/.local/share/applications/code.desktop` w/ following contents:
+
+``` bash
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.48
+Type=Application
+Terminal=false
+Exec=/opt/vscode/code
+Name=Visual Studio Code
+Icon=/opt/vscode/resources/app/resources/linux/code.png
+```
+
+Increase limit for inotify watches:
+
+```bash
+sudo mkdir -p /etc/sysctl.d
+echo fs.inotify.max_user_watches=524288 | sudo tee -append /etc/sysctl.d/40-max-user-watches.conf
+sudo sysctl -p
+sudo sysctl --system
+```
+
+Enable udev rules:
+
+```bash
+sudo mkdir -p /etc/udev/rules.d/
+# move any*.rules file into the /etc/udev/rules.d folder
+# and manually reloaded udev rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+### Python Tools
+
+Installed via ` pip` :
+
+- wheel
+- csvdiff
+- csvkit
+- xmljson
+- ...
+
+Add ` ~/.local/bin`  to your ` PATH` :
+
+```bash
+# ~/.bashrc
+export PATH=$PATH:~/.local/bin
+```
+
+### Cli binaries
+
+- scaleway-cli
+- recode (https://github.com/rrthomas/recode)
+- tty-clock (https://github.com/xorg62/tty-clock; requires bundle devpkg-ncurses)
+- confget (https://devel.ringlet.net/textproc/confget/; requires bundle devpkg-pcre)
+- Tailscale (https://tailscale.com/)
+- rdesktop (https://www.rdesktop.org/)
+
+```bash
+sudo mkdir -p /opt/3rd-party/bin
+sudo curl -o /opt/3rd-party/bin/scw -L "https://github.com/scaleway/scaleway-cli/releases/download/v2.0.0/scw-2-0-0-linux-x86_64"
+sudo chmod +x /opt/3rd-party/bin/scw
+```
+
+### Flatpak Applications
+
+- GitKraken
+- Spotify
+
+### AppImages
+
+- Nitrokey
+- Simplenote
+- BalenaEtcher
+- Beaker Browser
+- Data-Forge Notebook Pro
+- Dat Desktop
+- Patchwork (SSB)
+- UHK Agent
+- ...
+
+After downloading  latest `appimagelauncher` release from https://github.com/TheAssassin/AppImageLauncher/releases and installing it...
+
+```bash
+./appimagelauncher-lite-2.1.4-travis987-7cb4d70-x86_64.AppImage install
+```
+
+....it's just a matter of downloading and double-clicking. They are being copied into the `~/Applications` directory and a `*.desktop` file is created in `~/.local/share/applications`—pretty convenient.
+
+### RPMs
+
+- Google Chrome
+
+How-to install RPMs:
+
+```bash
+# swupd bundle-add package-utils
+curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
+rpm -U --nodeps google-chrome*.rpm
+sed -i 's\/usr/bin/google-chrome-stable\env FONTCONFIG_PATH=/usr/share/defaults/fonts /usr/bin/google-chrome-stable\g' /usr/share/applications/google-chrome.desktop
+```
+
+Alternative approach leveraging `dnf`:
+
+```bash
+# swupd bundle-add dnf
+# rpm -ivh --nodeps https://github.com/VSCodium/vscodium/releases/download/1.48.2/codium-1.48.2-1598439338.el7.x86_64.rpm
+```
+
+
+### GNOME
+
+#### Display Server
+
+These days I actually prefer Wayland over GNOME. Also b/c of the [Known Issues](#known-issues) I'm facing w/ X11.
+
+#### Shell
+
+- ~~Pop shell~~
+- [Material Shell](https://material-shell.com/)
+
+#### Extensions
+
+- Clipboard Indicator
+- Caffeine
+- Tray Icons
+- Screenshot Tool
+- Sound Input & Output Device Chooser
+
+For browser integration—though Chrome(ium) only—follow the [Cmake installation guide](https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation#Cmake_installation):
+
+```bash
+cd ~/Code
+git clone https://gitlab.gnome.org/GNOME/chrome-gnome-shell.git
+cd chrome-gnome-shell
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_EXTENSION=OFF ../
+sudo make install
+```
+
+#### Customization Settings
+
+Via GNOME Terminal Preferences:
+
+- Disable "Sound / Terminal bell" for active profile
+
+Via GNOME Settings / Keyboard create/ update Keyboard Shortcuts:
+
+- Launch Terminal: ` Super+T` (command: `gnome-terminal`) 
+- Launch Settings: `Super+C` (command: `gnome-control-center` )
+- Lock screen: ` Super+Escape`
+- Suspend: ` Super+Shift+S`  (command: ` systemctl suspend`)
+- Toggle window fullscreen: `Super+Shift+F`  
+
+For custom Pop!_OS Shell bindings refer here:
+
+- <https://support.system76.com/articles/pop-keyboard-shortcuts/>
+- <https://github.com/pop-os/shell/blob/master_focal/rebuild.sh>
+
+In addition, via cli:
+
+```bash
+gsettings set org.gnome.mutter dynamic-workspaces false
+
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
+
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 '["<SUPER>1"]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 '["<SUPER>2"]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 '["<SUPER>3"]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 '["<SUPER>4"]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 '["<SUPER>5"]'
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 '["<SUPER><SHIFT>1"]'
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 '["<SUPER><SHIFT>2"]'
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 '["<SUPER><SHIFT>3"]'
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 '["<SUPER><SHIFT>4"]'
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 '["<SUPER><SHIFT>5"]'
+
+gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+
+# OPTIONAL enable factional scaling
+# X11
+# gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+# Wayland
+# gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
+
+Build and instal Pop!_OS' GTK+ theme+shell:
+
+```bash
+# sudo swupd bundle-add dev-utils libglib games-dev
+# gtk-theme
+cd ~/Code
+git clone https://github.com/pop-os/gtk-theme.git pop-os_gtk-theme
+cd pop-os_gtk-theme
+meson --prefix $HOME/.local build
+ninja -C "build" install
+# icon-theme
+cd ~/Code
+git clone https://github.com/pop-os/icon-theme.git pop-os_icon-theme
+cd pop-os_icon-theme
+meson --prefix $HOME/.local build
+ninja -C "build" install
+# shell
+# only got it working w/ Wayland, not X11 :-/
+cd ~/Code
+git clone https://github.com/pop-os/shell.git pop-os_shell
+cd pop-os_shell
+make && make install && make enable
+# logout, switch session from X11 to Wayland
+```
+
+## Known Issues
+
+### Zoom: Screen sharing not working on GNOME Wayland, only GNOME X11.
+
+Work-around: use Zoom's browser based web client—in either Firefox (or even Chrome)—along w/ the extension [Zoom Redirector](https://addons.mozilla.org/en-US/firefox/addon/zoom-redirector/?src=search) (which transparently redirects any meeting links to use Zoom's browser based web client).
+
+### GNOME Pop!_OS Sheel: Window tiling not working on GNOME X11, only GNOME Wayland.
+
+Work-around: unfort. none so far :-/
+
+### eGPU (Thunderbolt™ 3 over USB C): External display on Display Port of GPU not working on GNOME X11, only on GNOME Wayland.
+
+In my case a [ASUS XG Station Pro](https://www.asus.com/us/Graphics-Cards-Accessories/XG-STATION-PRO/).
+
+Work-around: unfort. none so far :-/
+
+### "Oh no! Something has gone wrong."
+
+Could happen after updating, e.g. in case of GNOME update from 3.36 to 3.38 in 33730.
+
+Work-around: revert to/ restore previous version.
+
+```bash
+# example to revert after updating to 33740 
+sudo swupd repair -V 33720 --force --picky
+```
+
+## Awesome Clear Linux* Resources
+
+Scripts, Tips & Tricks,…
+
+- [Tips & Tricks](https://github.com/lebensterben/awesome-clear-linux/tree/master/Tips%26Tricks)
+- [Bash Script to Add H.264 Support for Firefox](https://raw.githubusercontent.com/lebensterben/awesome-clear-linux/develop/h264-firefox/install.bash)
+- [**3rd-party** packages for Clear Linux (by gregor160300)](https://github.com/clearlinux-pkgs-3rd-party/documentation)
+
+----
+
+Published: 2020-08-29
+
+----
+
+Feedurl: https://openwebcraft.com/my-clear-linux-setup

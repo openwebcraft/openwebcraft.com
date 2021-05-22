@@ -1,0 +1,21 @@
+# Image Blueprint
+title  : Post Image
+fields :
+
+    # If unchecked it will use the raw image instead of the template with
+    # Background and shadow
+    withTemplate:
+        label   : Use the Template?
+        type    : toggle
+        text    : Use the fancy image style?
+        default : true
+
+    alt:
+        label : Alt Attribute
+        type  : text
+        width : 1/2
+
+    title:
+        label : Title Attribute
+        type  : text
+        width : 1/2

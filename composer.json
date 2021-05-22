@@ -1,0 +1,21 @@
+{
+    "name": "openwebcraft/openwebcraft.com",
+    "description": "Kirby 3 on OpenBSD",
+    "license": "MIT",
+    "authors": [{
+        "name": "Matthias Geisler",
+        "email": "matthias@openwebcraft.com"
+    }],
+    "require": {
+        "getkirby/cms": "^3.0",
+        "matthiasjg/kirby3-static-site-composer": "dev-main",
+        "johannschopplich/kirby-highlighter": "^1.4",
+        "k-community/markdown-field": "^1.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "kirby-cms-path": "kirby"
+    }
+}

@@ -1,0 +1,8 @@
+# Posts Sections
+type: pages
+headline: Extra Pages
+status: all
+create: default
+empty: If you need an extra page...
+limit: 10
+info: "Template: {{page.template}}"

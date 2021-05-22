@@ -1,0 +1,86 @@
+# Panel Home page
+title: Site
+
+options:
+    preview: /kirby/preview/home 
+
+# The Home Panel Settings
+columns:
+    # Left Column, used to display static site generator
+    - width: 1/3
+
+      # Extra Stuff
+      fields:
+          staticSiteComposer:
+             label: Compose Site
+
+      # Center Column, used to display the published posts
+    - width: 1/3
+      sections:
+          posts:
+              extends: sections/posts
+              headline: All the posts
+              status: all
+
+      # Left Column, used for the other pages
+    - width: 1/3
+      sections:
+          # Extra Pages
+          pages:
+              extends: sections/pages
+
+      # Extra informations
+    - width: 1/1
+
+      # Extra Stuff
+      fields:
+          # Site Tagline
+          subtitle:
+              label: Site Subtitle
+              type: text
+              required: true
+              help: "Used in the meta tags after the site's title"
+              width: 1/2
+
+          archiveTitle:
+              label: Archive Title
+              type: text
+              width: 1/2
+              help: "Title for the archive section"
+
+          archivePreviewTitle:
+              label: Archive Preview Title
+              type: text
+              width: 1/2
+              help: "Displayed before the short list of last published posts"
+
+          archiveButtonText:
+              label: Archive Button Text
+              type: text
+              width: 1/2
+              help: "Displayed inside the button used to show all the articles"
+
+          description:
+              label: Site Description
+              type: markdown
+              counter: false
+              size: medium
+              width: 1/2
+              help: "Used for the meta tags"
+              buttons:
+                  - link
+                  - email
+
+          archiveText:
+              label: Archive Text
+              type: markdown
+              counter: false
+              size: medium
+              width: 1/2
+              help: "Displayed just before the list of posts in the archive"
+              buttons:
+                  - bold
+                  - italic
+                  - link
+                  - email
+                  - pagelink

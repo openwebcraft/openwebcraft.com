@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: SwissQlip Packaging, accessories and sticker
+
+----
+
+Title: SwissQlip Packaging, accessories and sticker
+
+----
+
+Thewidth: 1280
+
+----
+
+Theheight: 1280
+
+----
+
+Thepadding: 100

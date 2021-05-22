@@ -1,0 +1,20 @@
+Title: Datacake LoRaWAN Integration
+
+----
+
+Text:
+
+Just today, I've stumbled on [Datacake](https://datacake.co/) (SaaS). I must admit: I was intrigued right away by them claiming:
+1. they offer a *low-code IoT platform*
+2. w/ *out of the box support for Devices, Gateways, and LoRaWAN® Networks*
+3. and all made in Germany. 🤔 
+
+1.-2-3 reasons to give it a try…
+
+----
+
+Published: 2021-01-11
+
+----
+
+Feedurl: https://openwebcraft.com/datacake-lorawan-integration

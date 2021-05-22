@@ -1,0 +1,35 @@
+Title: Open Web Craft
+
+----
+
+Subtitle: Matthias Geisler
+
+----
+
+Archivetitle: Want to read something else?
+
+----
+
+Archivepreviewtitle: Writing—Thoughts, Notes, Whatever…
+
+----
+
+Archivebuttontext: Show More
+
+----
+
+Description: 
+
+----
+
+Archivetext:
+
+Keep scrolling then…
+
+Otherwise—full disclosure—(link: https://openwebcraft.com/notes/ text: some outdated tech notes).
+
+I also wrote—which feels like almost decades ago—(link: semantic-web-schnell-kompakt text: a small book about the mechanics of the Semantic Web).
+
+----
+
+Text: A short description of the site

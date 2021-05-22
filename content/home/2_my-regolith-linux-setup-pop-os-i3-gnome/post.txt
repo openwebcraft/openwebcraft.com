@@ -1,0 +1,152 @@
+Title: My Regolith Linux Setup (Pop!_OS+i3+GNOME)
+
+----
+
+Text:
+
+I'm using [Regolith Linux](https://regolith-linux.org/)—a well curated and appealing styled desktop environment based on i3 tiling window manager and GNOME—on all my [Pop!_OS](https://system76.com/pop) Linux machines.
+
+(image: regolith-linux-intro.png)
+
+> Announcing release 1.3 of the Regolith desktop environment! This includes a new theme, new notification subsystem, a refined look, many features for beginners, and a completely new site: [regolith-linux.org](https://regolith-linux.org)
+> Release notes: [regolith-linux.org/docs/reference…](https://regolith-linux.org/docs/reference/releases/regolith-1.3-release-notes/)
+>
+> Src: [Twitter @RegolithL](https://twitter.com/RegolithL/status/1222919004739629056)
+
+The upgrade to the recent release 1.3 was as simple as:
+
+```bash
+sudo add-apt-repository --remove ppa:kgilmer/regolith-stable
+sudo add-apt-repository ppa:regolith-linux/release
+sudo apt dist-upgrade
+```
+
+## My Customizations
+
+I've slightly customized i3, date formating as well as blocks on `i3bar` by staging some configs…
+
+### i3
+
+```bash
+mkdir -p ~/.config/regolith/i3
+cp /etc/regolith/i3/config ~/.config/regolith/i3/config
+```
+
+My patch:
+
+```bash
+diff /etc/regolith/i3/config ~/.config/regolith/i3/config
+11c11
+< set $i3xrocks_config /etc/regolith/i3xrocks/config
+---
+> set $i3xrocks_config /home/matthias/.config/regolith/i3xrocks/config
+173a174,177
+> # move focused window between monitors
+> bindsym $mod+m move workspace to output right
+> bindsym $mod+Shift+m move workspace to output left
+>
+208a213,215
+> # clipmenu
+> bindsym $mod+Ctrl+h exec CM_LAUNCHER=rofi /usr/bin/clipmenu -theme $rofiTheme
+>
+297c304
+< focus_follows_mouse no
+---
+> focus_follows_mouse yes
+328c335
+<   tray_output none
+---
+>   tray_output primary
+
+```
+
+### i3bar (blocks)
+
+```bash
+mkdir -p ~/.config/regolith/i3xrocks
+cp /etc/regolith/i3xrocks/config ~/.config/regolith/i3xrocks/config
+```
+
+My patch:
+
+```bash
+diff /etc/regolith/i3xrocks/config ~/.config/regolith/i3xrocks/config
+32,34c32,34
+< [info]
+< full_text=xresource:i3xrocks.label.help
+< command=i3-msg -q exec /usr/bin/remontoire-toggle
+---
+> #[info]
+> #full_text=xresource:i3xrocks.label.help
+> #command=i3-msg -q exec /usr/bin/remontoire-toggle
+47c47
+< #[wifi2]
+---
+> [wifi2]
+49,50c49,50
+< #instance=wlp3s0
+< #interval=5
+---
+> instance=wlp3s0
+> interval=5
+55,56c55,56
+< [nettraffic]
+< interval=10
+---
+> #[nettraffic]
+> #interval=10
+84c84
+< interval=10
+---
+> interval=5
+88c88
+< interval=10
+---
+> interval=5
+
+```
+
+### Date format
+
+```bash
+cp /etc/regolith/styles/cahuella/root ~/.Xresources-regolith
+cp /etc/regolith/xresources/i3xrocks ~/.Xresources-i3xrocks
+```
+
+My patches: 
+
+```bash
+diff /etc/regolith/styles/cahuella/root ~/.Xresources-regolith
+14c14
+< #include "/etc/regolith/styles/i3xrocks"
+---
+> #include "/home/matthias/.Xresources-i3xrocks"
+16c16
+< #include "/etc/regolith/styles/gnome"
+\ No newline at end of file
+---
+> #include "/etc/regolith/styles/gnome"
+
+```
+
+```bash
+diff /etc/regolith/xresources/i3xrocks ~/.Xresources-i3xrocks
+8c8
+< i3xrocks.date.format:       + %m/%d %I:%M %p
+---
+> i3xrocks.date.format:       + %d.%m.%Y %H:%M %p
+47c47
+< i3xrocks.label.numlock: typeface_bar_glyph_numlock
+\ No newline at end of file
+---
+> i3xrocks.label.numlock: typeface_bar_glyph_numlock
+
+```
+
+----
+
+Published: 2020-02-01
+
+----
+
+Feedurl: https://openwebcraft.com/my-regolith-linux-setup-pop-os-i3-gnome

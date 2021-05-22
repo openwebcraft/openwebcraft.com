@@ -1,0 +1,21 @@
+Title: ZenJournal—simple and efficient journaling
+
+----
+
+Text:
+
+Finally, a fast, simple (a.k.a. zero-stress) journaling app w/ privacy in mind: [ZenJournal](https://thezenjournal.com)
+
+(image: zenjournal-intro.jpg)
+
+I REALLY dig the simple—even minimalistic—but yet efficient and aesthetically pleasant experience of the app (iOS and Android).
+
+For me, the app totally nails the core functionality of a journaling app that I'm FINALLY ~~liking~~ love to use.
+
+----
+
+Published: 2020-02-03
+
+----
+
+Feedurl: https://openwebcraft.com/zenjournal-simple-and-efficient-journaling

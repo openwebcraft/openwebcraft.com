@@ -1,0 +1,17 @@
+/kirby
+/vendor
+
+/static/*
+!/static/notes
+!/static/kassets
+!/static/kmedia
+/static/kmedia/panel
+!/static/favicon.ico
+!/static/.kirbystatic
+
+/site/config/.license
+/site/accounts
+/site/cache
+/site/sessions
+/site/plugins/*
+!/site/plugins/zendo

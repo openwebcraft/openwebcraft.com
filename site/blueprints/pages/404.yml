@@ -1,0 +1,28 @@
+# Page Settings
+title: 404 
+
+# Page Options
+options:
+    changeSlug: false
+    changeStatus: false
+    changeTitle: true
+    delete: false
+    preview: true
+    read: true
+    update: true
+    url: 404.html
+
+# The Columns on the page
+columns:
+    # Left column. Contains the content pf the page
+    - width: 2/3
+      sections:
+          main:
+              extends: sections/main
+
+    # Right Column. Contains the meta informations
+    - width: 1/3
+      sections:
+          # Pictures
+          pictures:
+              extends: sections/pictures

@@ -1,0 +1,73 @@
+Title: OpenBSD on Dell Latitude X1
+
+----
+
+Text:
+
+Even though I'm far from switching to *bsd as my daily driver I'm eager to have a OpenBSD laptop around. And as I feel the need to switch my Thinkpad X270 back from OpenBSD 6.8 to Linux—for reasons—I installed OpenBSD 6.8 on an rather old *i368* laptop: a Dell Latitude X1... 
+
+## Installation
+
+The overall installation, including the setup of full disk encryption, was pretty simple and straightforward—as usual. I really enjoy the OpenBSD install experience, very slick!
+
+Starting w/ downloading the latest `installXX.iso` for i368 from https://www.openbsd.org/faq/faq4.html#Download and flashing it onto a  USB drive.
+
+While in the past, for the actual installation, I was successfully and happily following [Roman's install](https://www.romanzolotarev.com/openbsd/install.html) ([git src repo](https://github.com/romanzolotarev/rgz/blob/master/openbsd/install.md)), this time around, I followed this recipe: [Installing OpenBSD 6.8 with disk encryption (+ FVWM ricing)](https://medium.com/@crhenr/installing-openbsd-6-7-with-disk-encryption-fvwm-ricing-b6fb7e2073e6) (but actually, w/ out configuring or ricing FVWM, as my window manager of choice is (still) i3wm)
+
+Post install:
+
+```bash
+su -
+# echo 'permit username' > /etc/doas.conf
+
+# sysptach
+
+# rcctl enable apmd
+# rcctl set apmd flags -A -z 7
+# rcctl start apmd
+
+# echo "keyboard.bell.volume=0" >> /etc/wsconsctl.conf
+```
+
+## The Hardware
+
+The hardware is quite outdated:
+
+- CPU: Intel Pentium M ~1 GHz
+- Ram: 1.2 GB
+
+Right away, I was tempted to replace the HDD w/ an SSD... but, unfortunately, it's a 1.8" HDD w/ a 50 pin connector (PATA?). And, as it turns out, one can't get hold of such an SSD anymore. At least, it seems impossible doing so at a decent price point.
+
+I even looked into a adapter option, using a Compact Flash Card instead... only to discover that the Dell Latitude X1 actually has a dedicated slot for a CF Card. But, as I do not have a decently sized CF around, I went w/ the HDD—for now.  
+
+## Software & Ricing—WORK-IN-PROGRESS
+
+```bash
+# Install i3-gaps
+doas pkg_add i3-gaps
+mkdir -p /.config/i3
+cp /usr/local/share/examples/i3status/i3status.conf ~/
+cp /usr/local/share/examples/i3/config ~/.config/i3/
+
+echo "setxkbmap -layout de -variant nodeadkeys -option caps:escape" > .xinitrc
+echo "exec i3" > ~/.xsession
+doas rcctl enable xenodm
+```
+
+Use `urxvt` as terminal emulator:
+
+```bash
+doas pkg_add rxvt-unicode
+# vi ~/.config/i3/config
+# bindsym Mod1+Return exec /usr/local/bin/urxvt
+```
+
+To be continued, eventually (though likely not 🙈)
+
+----
+
+Published: 2021-01-24
+
+----
+
+Feedurl: https://openwebcraft.com/openbsd-on-dell-latitude-x1

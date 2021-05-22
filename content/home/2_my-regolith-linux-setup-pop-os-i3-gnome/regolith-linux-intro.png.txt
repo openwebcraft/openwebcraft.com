@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot Regolith Linux—Src: regolith-linux.org
+
+----
+
+Title: Screenshot Regolith Linux—Src: regolith-linux.org
+
+----
+
+Thewidth: 636
+
+----
+
+Theheight: 358
+
+----
+
+Thepadding: 56.289308176101

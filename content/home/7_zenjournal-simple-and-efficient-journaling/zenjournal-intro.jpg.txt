@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: ZenJournal Intro annotated screenshot, src: zenjournal.com
+
+----
+
+Title: ZenJournal Intro annotated screenshot, src: zenjournal.com
+
+----
+
+Thewidth: 828
+
+----
+
+Theheight: 1357
+
+----
+
+Thepadding: 163.88888888889

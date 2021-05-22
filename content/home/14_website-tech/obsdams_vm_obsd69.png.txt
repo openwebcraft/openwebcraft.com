@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: OpenBSD 6.9 VMM Openbsd.amsterdam
+
+----
+
+Title: OpenBSD 6.9 VMM Openbsd.amsterdam
+
+----
+
+Thewidth: 833
+
+----
+
+Theheight: 428
+
+----
+
+Thepadding: 51.380552220888

@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot of Kirby 3 Static Site Composer Plugin's Panel Field
+
+----
+
+Title: Screenshot of Kirby 3 Static Site Composer Plugin's Panel Field
+
+----
+
+Thewidth: 525
+
+----
+
+Theheight: 47
+
+----
+
+Thepadding: 8.952380952381

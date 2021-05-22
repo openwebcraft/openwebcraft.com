@@ -1,0 +1,56 @@
+Title: New Year, New Browser?
+
+----
+
+Text:
+
+Evaluating *org.gnome.Epiphany* (a.k.a *GNOME Web*) on desktop Linux: "A simple, clean, beautiful view of the web"…
+
+(image: epiphany-3-32.jpg)
+
+Today I stumbled on Aral's blog post [Enabling Better Blocker in GNOME Web](https://ar.al/2018/07/17/enabling-better-blocker-in-gnome-web/), which dates back to July 2018. 
+
+Since I'm looking forward to receiving two Linux smartphones this year (2020)—the [Pinephone](https://www.pine64.org/pinephone/) and the [Librem 5](https://puri.sm/products/librem-5/)—I figured, I should give the then likely to-become mobile standard browser a try:
+
+```bash
+sudo apt install epiphany-browser
+```
+
+## Configure build-in Ad(Content)-Blocking to use Better Blocker's list
+
+While doing so, enabling [Better Blocker](https://better.fyi/) seems the right thing to do.
+
+Especially, as I'm still using the Better Blocker on my iPhone. Though, since my switch to Linux as my daily driver (end of 2017), I only make very occasional use of Better for macOS on my MacBook Pro.
+
+As it tuns out, the `gesettings` key `adblock-filters` changed:
+
+```bash
+gsettings set org.gnome.Epiphany adblock-filters "['https://better.fyi/blockerList.txt']"
+No such key “adblock-filters”
+```
+
+A quick `gsettings list-keys org.gnome.Epiphany` reveals the (new?) name of the settings key: `content-filters`.
+
+And with this key, let's enable the Better rules:
+
+```bash
+gsettings set org.gnome.Epiphany content-filters "['https://better.fyi/blockerList.txt']"
+```
+
+## Configure Sync (w/ Firefox 
+
+Well, enabling this feature in the Preferences tab **Sync** was very straight-forward.
+
+And as far as I can tell, syncing my Firefox bookmarks als well as passwords did work smoothly, w/ out any issue.
+
+Though, I recognized, that Epiphany's password manager does match the site's url much more accurate (i.e. `domain.tld/path`) than Firefox (only `domain.tld`)–causing many of my safed passwords NOT to be found. Not yet sure, which approach I prefer 🤔️…
+
+## Nice ~~Features~~ Utilities
+
+- Right-Click **Insert Emoji…** on `<input/>` and `<textarea/>` elements 
+
+To be continued…
+
+----
+
+Published: 2020-01-03

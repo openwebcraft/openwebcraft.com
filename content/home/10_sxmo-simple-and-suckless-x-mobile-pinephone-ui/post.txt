@@ -1,0 +1,33 @@
+Title: Sxmo—Simple and Suckless X Mobile Pinephone UI
+
+----
+
+Text:
+
+Just yesterday I stumbled on the [Hacker News post](https://news.ycombinator.com/item?id=23261839) about **Sxmo: Simple X Mobile – A Pinephone UI that is simple and suckless**. I needed to try this out, OF COURSE…
+
+Tiling window manager (Suckless' `dwm`) as a mobile Linux phone UI… tailor made Pinephone button actions… swipe gestures… context menu (Suckless' dmenu)… onscreen keyboard… scripts… 🤓️
+
+All this is especially interesting to me, as I'm using [suckless](http://suckless.org/) programs (`st`, `dmenu`; though not `dwm` but `i3-gaps`) on my daily driver (as of writing a ThinkPad T25  running [REGOLITH](https://regolith-linux.org/) on top of [Pop!_OS](https://pop.system76.com/)).
+
+Installation went smoothly, afterwards login screen is greeting:
+
+(image: owc_pinephone_sxmo_login.jpg)
+
+The overall experience is certainly interesting, to say the least. 
+
+(image: owc_pinephone_sxmo_neofetch_dmenu.jpg)
+
+While I clearly wouldn't want to use this as my main mobile phone interface, I will totally consider this as a preferred UI for ultra-mobile (a.k.a. "on the go") terminal usage (think: ssh'ing into servers).
+
+But then—unfortunaltely—I had to wipe the device in order to (yet again) switch OS. This time to Ubuntu Touch (UBports), as I'm looking fwd. to test the [OTA feature](https://forum.pine64.org/showthread.php?tid=9796)…
+
+Well, I guess one Pinephone is simply not enough for me 🤷
+
+----
+
+Published: 2020-05-24
+
+----
+
+Feedurl: https://openwebcraft.com/sxmo-simple-and-suckless-x-mobile-pinephone-ui

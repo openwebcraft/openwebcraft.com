@@ -1,0 +1,29 @@
+Title: Website Tech—2021 Edition
+
+----
+
+Text:
+
+I use  (link: https://getkirby.com/ text: Kirby), a file-based content management system written in PHP, to edit the content of the 2021 "edition" of my website.
+
+I  (link: https://www.buymeacoffee.com/l/Kirby3BlogI text: bought Manuel a coffee) for his (link: https://www.getkirby-themes.com/themes/blog-theme-i text: Blog Theme I), which is a copy, or rather snapshot, of (link: https://manuelmoreale.com/ text: Manuel's personal website). I really dig the simplicity of the theme: no options, no JavaScript, no custom webfonts, no social meta tags. It's all about content and a teeny tiny bit of thoughful and elegant styling. It does come with an (link: feed.rss text: RSS feed), even a (link: feed.json text: JSON feed) 🤓.
+
+I write my content mostly in (link: https://daringfireball.net/projects/markdown/syntax text: Markdown), though more and more sprinkled with  (link: https://getkirby.com/docs/reference/text/kirbytags text: Kirby Text).
+
+I then ~~generate~~ (link: https://github.com/matthiasjg/kirby3-static-site-composer text: compose) a static version of the site.
+
+Both, Kirby and the static site are served by the (link: https://man.openbsd.org/httpd.8 text: httpd(8))/(link: https://man.openbsd.org/httpd.conf.5 text: httpd.conf(5)) webserver from (link: https://www.openbsd.org/ text: OpenBSD). Here's a (link: kirby-and-httpd-8-on-openbsd-also-static-site-generation text: outline of my config) (with inline comments).
+
+I'm hosting the site on a VM—as of writing freshly *sysupgrade*'d to OpenBSD 6.9-stable—on (link: https://man.openbsd.org/vmm.4 text: vmm(4))/(link: https://man.openbsd.org/vmd.8 text: vmd(8)) at (link: https://openbsd.amsterdam text: OpenBSD Amsterdam).
+
+---
+
+Lastly, in case you wondered what the legacy site tech looked like: for years I was using (link: https://gohugo.io/ text: HUGO), an open-source static site generator. And I was using (link: https://www.netlify.com/ text: Netlify) for automated building and publishing the website, triggered by committing to Git.
+
+----
+
+Published: 2021-05-10
+
+----
+
+Feedurl: https://openwebcraft.com/website-tech

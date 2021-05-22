@@ -1,0 +1,46 @@
+Title: OpenSnitch application firewall for Linux
+
+----
+
+Text:
+
+I've installed [OpenSnitch](https://github.com/evilsocket/opensnitch), a GNU/ Linux port of the rather well known macOS application *Little Snitch*…
+
+(image: opensnitch-intro.png)
+
+Here's how-to build and install against an already properly configured `go1.10.4 linux/amd64`—slightly adopted from [github.com/evilsocket/opensnitch/README.md](https://github.com/evilsocket/opensnitch/blob/master/README.md):
+
+```bash
+# system dependencies
+sudo apt-get install git libnetfilter-queue-dev libpcap-dev protobuf-compiler python3-pip
+# src
+go get github.com/golang/protobuf/protoc-gen-go
+cd $GOPATH/src/github.com/golang/dep
+git checkout master
+go get -u github.com/golang/dep/cmd/dep
+./install.sh
+export PATH=$PATH:$GOPATH/bin
+python3 -m pip install --user grpcio-tools
+go get github.com/evilsocket/opensnitch
+cd $GOPATH/src/github.com/evilsocket/opensnitch
+# build and install daemon and ui
+make
+sudo make install
+sudo systemctl enable opensnitchd
+sudo service opensnitchd start
+# had to manual build and autostart ui
+cd ui
+sudo /home/matthias/.local/bin/pip3 install -r requirements.txt
+sudo /home/matthias/.local/bin/pip3 install .
+cp opensnitch_ui.desktop ~/.config/autostart/
+```
+
+Some pointers:
+
+```bash
+tail -f /var/log/opensnitchd.log
+```
+
+----
+
+Published: 2020-02-02

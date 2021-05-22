@@ -1,0 +1,29 @@
+Title: Now
+
+----
+
+Text:
+
+This is a (link: https://nownownow.com/about text: now) page that describes the things I’m focusing in at the moment.
+If my activities or priorities change, I’ll update this page.
+
+## What I’m doing now
+
+I’m home in Donauwoerth, Germany.
+How I spend my day (in order of time spent):
+- family (ie. parenting my two children, homeschooling, housework and gardening duties)
+- remote technology consulting (limited hours, fixed commitments)
+- running
+- family…
+- side projects (#webdev, Linux on Mobile, OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, Raspberry Pi
+- family…
+
+Those are my priorities.
+
+## What I’m currently not doing
+
+- ~~freelance work (REMOTE) I currently say no to all project inquiries~~
+
+----
+
+Menu: Now

@@ -1,0 +1,41 @@
+Title: Delta Chat—Chat over e-mail
+
+----
+
+Text:
+
+The team of the open source messenger application [Delta Chat](https://delta.chat/) just recently released their iOS client…
+
+![Delta Chat Screenshots of Android, Desktop and iOS](https://i.snap.as/qdYmQ3H.png)
+
+*Delta Chat* really is such a brilliant and well executed-upon idea: **instant messaging over email**—as in IMAP, SMTP—while still rocking end-to-end encryption (via [rPGP](https://github.com/rpgp/rpgp)) and most importantly: a great UX for non-tech users. 
+
+The team of *Delta Chat* has really done an amazing job in developing a suite of client application for nearly all*) major operating system, both desktop and mobile —› [get.delta.chat](https://get.delta.chat/):
+
+- Linux
+- macOS
+- Windows
+- iOS (App Store and Beta via Testflight)
+- Android (Play Store and `*.apk` download)
+
+*) the BSDs being the exception, for now
+
+If you're—like me—an email fan-boy and into federation and decentralization ☝️THIS is a MUST to try out, seriously!!
+
+So far the user experience—even on multiple devices–is really great. As an example: I've just successfully setup two (Autocrypt capable) devices to use the same account. 
+
+1. create backup of chats in client/ app on one device, store on shared (network/ cloud) storage
+2. install app on 2nd devices
+3. import chats from back
+4. on first devices [Advanced settings / Send Autocrypt Setup message](https://delta.chat/en/help#can-i-use-delta-chat-on-multiple-devices-at-the-same-time)…
+5. receive "Autocrypt Setup Message" *) on 2nd devices along w/ prompt for security number—once entered one is good to go for sending and receiving E2E-encrypted messages with your communication partners on both devices. 😎️
+
+*) Note: the "Autocrypt Setup Message" will appear in your INBOX folder
+
+----
+
+Published: 2020-02-03
+
+----
+
+Feedurl: https://openwebcraft.com/delta-chat-chat-over-e-mail

@@ -1,0 +1,25 @@
+Title: About
+
+----
+
+Text:
+
+This is the ~~professional~~ personal website of me, Matthias.
+
+(image: matthias_geisler_april2021.jpg)
+
+I like to refer to my professional self as an **Open Web Craftsman**—hence the domain name for this (link: website-tech text: hand-crafted) website. 🙃
+
+I’m a Freelance Developer, Technical Architect and Consultant, living in and working remotely from Donauwoerth in Bavaria, Germany. I have more than 20 years of hands-on software development experience, with a focus on the "web stack" in online commerce. For building and assembling solutions I ~~usually~~ exclusively lean towards leveraging open source technologies and cloud-native products and services. I've also done a fair amount of technical project management and strategy consulting amongst several industries. I initially started out with a Degree in Business Information Technology.
+
+I’m passionate about free software—*free* as in "freedom of speech" or libre—and open hardware, as well as the (link: https://ar.al/2020/08/07/what-is-the-small-web/ text: Small Web ), Linux/ Unix/ BSDs and open source software in general.
+
+Curious? Here's what (link: now text: what I'm doing now)
+
+## Wanna Get in touch?
+
+Mail me at (email: hey@openwebcraft.com text: hey@openwebcraft.com) or hit me up on the Interwebs, preferably on the Fediverse: (link: https://mastodon.social/@matthiasgeisler text: Mastodon (@matthiasgeisler@mastodon.social)) or (link: https://ctznry.com/matthiasg@ctzn.one text: CTZN (matthiasg@ctzn.one)); IF NEED BE on (link: https://twitter.com/matthiasgeisler text: Twitter) or (link: https://keybase.io/matthiasgeisler text: Keybase).
+
+----
+
+Menu: About

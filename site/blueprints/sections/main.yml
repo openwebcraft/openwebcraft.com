@@ -1,0 +1,13 @@
+# The section cntaining the main content of the page
+type: fields
+fields:
+    # Blog Post Content
+    text:
+        label: Post Content
+        counter: false
+        type: markdown
+        size: medium
+        font:
+            family: sans-serif
+            scaling: true
+            size: regular

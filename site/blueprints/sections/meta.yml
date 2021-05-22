@@ -1,0 +1,8 @@
+# The section containing the meta informations
+type: fields
+fields:
+    # Publishing Date
+    published:
+        label: Publishing Date
+        type: date
+        default: today

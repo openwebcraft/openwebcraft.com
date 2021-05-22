@@ -1,0 +1,35 @@
+Title: Tailscale—Mesh VPN
+
+----
+
+Text:
+
+I'm quite exited by the idea as well as the team behind [Tailscale](https://tailscale.com/): a mesh VPN—claiming and aiming for "Private networks made easy [finally]"…
+
+(image: tailscale-vpn-home-illustration-2080w.webp)
+
+> Tailscale is a mesh VPN that makes it easy to connect your devices, wherever they are. No more fighting configuration or firewall ports. 
+
+I learned about *Tailscale* this week from my Twitter timeline—actually by multiple, "high profile" signals.
+
+It's making use of [WireGuard](https://www.wireguard.com/), w/ services and glue code implemented in Go, supports multiple SSO provider (for now I'm using Google)… and will eventually open-sourced (at some point).  
+
+The [use cases/ solutions](https://tailscale.com/kb/Solutions) it can be applied to, really seem endless… 🤔️
+
+- simple VPN for remote offices—of course I'm thinking co-working spaces ;-) 
+- seamless connectivity to dev/ stage machine of yours or co-worker, especially in remote/ distributed teams 
+- create a mesh network of your ~~IoT~~ embedded device fleat—think Raspberry Pi et al.
+- create a mesh network of distributed—even multi-cloud—(micro) services and APIs
+- …
+
+Settings up Tailscale is simple and absolutely straight forward—for me so far only on Linux and iOS—but for your likely as simple on macOS, Windows (Android coming soon-ish) —› [Getting Started with Tailscale](https://tailscale.com/kb/1017/install)
+
+Next up: [Setting up Tailscale on Raspberry Pi](https://tailscale.com/kb/1025/install-rpi)…
+
+----
+
+Published: 2020-02-02
+
+----
+
+Feedurl: https://openwebcraft.com/tailscale-mesh-vpn

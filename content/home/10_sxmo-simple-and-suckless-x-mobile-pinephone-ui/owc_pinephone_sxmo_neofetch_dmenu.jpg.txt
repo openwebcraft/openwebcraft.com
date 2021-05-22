@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Pinephone running Sxmo, neofetch and dmenu apps
+
+----
+
+Title: Pinephone running Sxmo, neofetch and dmenu apps
+
+----
+
+Thewidth: 371
+
+----
+
+Theheight: 640
+
+----
+
+Thepadding: 172.50673854447

@@ -1,0 +1,322 @@
+Title: Kirby and httpd(8) on OpenBSD—also static site generation
+
+----
+
+Text:
+
+I've (link: website-tech text: briefly mentioned) the tech stack that I'm using for this website. In this post I'll go into more detail on the actual configuration that I'm using.
+
+Here's a list of the desired functionality (a.k.a "dreamcode"):
+- use Let's Encrypt for SSL Certificate (httpS)
+- use solely (link: https://man.openbsd.org/httpd.8 text: httpd(8))/ (link: https://man.openbsd.org/httpd.conf.5 text: httpd.conf(5)) as web server on (link: https://www.openbsd.org/ text: OpenBSD)
+- use (link: https://getkirby.com/ text: Kirby) with single-domain license
+- publishing by means of static site generation (SSG) for html, image/ media assets and feeds (both, RSS/ XML and JSON)
+- ability to preview new and changed (=draft) contents from Kirby panel, prior to publish 
+- clean, minimalistic, mobile-friendly design —› (link: https://www.getkirby-themes.com/themes/blog-theme-i text: Kirby 3 theme)
+- only expose generated static site to the public
+- do not expose Kirby's PHP handler (incl. API) to the public, i.e. require authentication
+
+## Package Installation
+
+```
+# Let's Encrypt Certbot
+pkg_add certbot
+
+# php-7.4.16
+pkg_add php
+# /etc/php-7.4.ini
+cat /usr/local/share/doc/pkg-readmes/php-7.4
+pkg_add php-curl
+ln -sf ../php-7.4.sample/curl.ini /etc/php-7.4/
+pkg_add php-gd
+ln -s /etc/php-7.4.sample/gd.ini /etc/php-7.4/
+# /etc/php-fpm.conf
+rcctl enable php74_fpm
+rcctl start php74_fpm
+
+# composer
+pkg_add composer
+```
+
+## httpd(8)
+
+The directory and file structure for the website is as follows:
+
+```shell
+# /var/www/htdocs/openwebcraft.com
+.
+|-- content
+|-- errdocs
+|   `-- 404.html -> ../static/404/index.html
+|-- kirby
+|   `-- […]
+|-- public
+|   `-- index.php
+|-- site
+|   |-- blueprints
+|   |-- collections
+|   |-- config
+|   |   |-- .license
+|   |   `-- config.php
+|   |-- controllers
+|   |-- plugins
+|   |   |-- static-site-composer
+        `-- […]
+|   |-- snippets
+|   |-- templates
+|   `-- […]
+`-- static
+    |-- error
+    |   `-- index.html
+    |-- favicon.ico
+    |-- feed.json
+    |-- feed.rss
+    |-- index.html
+    |-- kassets
+    |   `-- css
+    |-- kmedia
+    `-- […]
+```
+
+## httpd.conf(5)
+
+Let's get the commodity stuff out of the way: properly redirecting `http(s)://(www.)openwebcraft.com` to `https://openwebcraft.com`.
+
+```
+# /etc/rc.conf.local
+
+types {
+  include "/usr/share/misc/mime.types"
+}
+ext_addr = egress
+server www.openwebcraft.com {
+  listen on $ext_addr tls port 443
+  tls {
+    certificate	"/etc/letsencrypt/live/ \
+        	www.openwebcraft.com/fullchain.pem"
+    key			"/etc/letsencrypt/live/\
+        	www.openwebcraft.com/privkey.pem"
+  }
+  block return 301 "https://openwebcraft.com\
+  	$REQUEST_URI"
+}
+server www.openwebcraft.com {
+  listen on $ext_addr port 80
+  block return 301 "https://openwebcraft.com\
+  	$REQUEST_URI"
+}
+server openwebcraft.com {
+  listen on $ext_addr port 80
+  block return 301 "https://openwebcraft.com\
+  	$REQUEST_URI"
+}
+```
+ 
+The following `server` configuration holds rules for specific locations.
+ 
+```
+server openwebcraft.com {
+  listen on $ext_addr tls port 443
+  root "/htdocs/openwebcraft.com/static"
+  directory index "index.html"
+  tls {
+    certificate	"/etc/letsencrypt/live/\
+        	www.openwebcraft.com/fullchain.pem"
+    key			"/etc/letsencrypt/live/\
+        	www.openwebcraft.com/privkey.pem"
+  }
+  
+  # assure we're serving index.html for the root
+  # required work-around for known issue: 
+  # failing directory auto index of location in case 
+  # enclosing server specifies directory no index
+  # https://marc.info/?l=openbsd-tech&m=160293921708844
+  location "/" {
+    request rewrite "/index.html"
+  }
+  
+  # have httpd serve existing media files
+  location found "/kmedia*" { pass }
+  # …or rewrite to Kirby's PHP handler 
+  location not found "/kmedia*" {
+   root "/htdocs/openwebcraft.com/public"
+   directory index "index.php"
+   authenticate "Kirby" with \
+   	"/auth/openwebcraft.com/.htpasswd"
+   fastcgi {
+     socket "/run/php-fpm.sock"
+     param SCRIPT_FILENAME \
+     	"/htdocs/openwebcraft.com/public/index.php"
+     param SCRIPT_NAME "/index.php"
+    }
+  }
+  
+  # rewrite path segment to Kirby's PHP handler
+  location "/kirby/*" {
+   root "/htdocs/openwebcraft.com/public"
+   directory index "index.php"
+   authenticate "Kirby" with \
+   	"/auth/openwebcraft.com/.htpasswd"
+   fastcgi {
+     socket "/run/php-fpm.sock"
+     param SCRIPT_FILENAME \
+     	"/htdocs/openwebcraft.com/public/index.php"
+     param SCRIPT_NAME "index.php"
+    }
+  }
+  
+  # rewrite anything not found to custom page
+  # what is effectively a "Soft 404 error"
+  #location not found "/*" {
+  #  request rewrite "/error/index.html"
+  #}
+  errdocs from "/htdocs/openwebcraft.com/errdocs"
+}
+```
+
+More on (link: https://developers.google.com/search/docs/advanced/crawling/soft-404-errors text: Soft 404 errors).
+
+## Kirby
+
+The following utlines the core configuration for Kirby, file path relative to `/var/www/htdocs/openwebcraft.com`.
+
+### Plugins
+
+I felt the need to write a small plugin:
+
+(link: https://github.com/matthiasjg/kirby3-static-site-composer text: Kirby 3 Static Site Composer). A Kirby 3 plugin for  composing a static site. Essentially a wrapper to integrate and trigger suitable community plugins:
+- (link: https://getkirby.com/plugins/d4l-data4life/static-site-generator text: Static Site Generator)
+- (link: https://getkirby.com/plugins/bnomei/feed text: Feed)
+
+The plugin can be installed via composer like so—for now `dev-main`: 
+
+```
+composer require matthiasjg/kirby3-static-site-composer:dev-main`
+```
+
+### index.php
+
+```
+# public/index.php
+
+<?php
+include __DIR__ . '/../kirby/bootstrap.php';
+$kirby = new Kirby([
+  'roots' => [
+    'index'   => __DIR__,
+    'site'    => __DIR__ . '/../site',
+    'content' => __DIR__ . '/../content',
+    'media'   => __DIR__ . '/../static/kmedia'
+  ],
+  'urls' => [
+    'index'  => 'https://openwebcraft.com',
+    'media'  => 'https://openwebcraft.com/kmedia',
+    'assets' => 'https://openwebcraft.com/kassets'
+  ]
+]);
+echo $kirby->render();
+```
+
+### Site Configuration
+
+```
+# site/config/config.php
+
+<?php
+return [
+  'servers' => ['httpd'],   # OpenBSD httpd
+  'panel' => [
+    'slug' => 'kirby/panel' # kirby/* route
+  ],
+  'api' => [
+     'slug' => 'kirby/api'  # kirby/* route
+  ],
+  'debug' => false,
+  'home'  => 'home',
+  # […]
+  'matthiasjg' => [
+    'static_site_composer' => [
+    'endpoint' => 'compose-static-site',
+    'output_folder' => '../static',
+    'preserve' => ['notes','kassets','kmedia','favicon.ico'],
+    'base_url' => '/',
+    'skip_media' => true,
+    'skip_templates' => [],
+    'pages_parent_home_root' => true,
+    'preview_url_slug' => 'kirby/preview',
+    'feed_formats' => ['rss','json'],
+    'feed_description' => 'Latest writing',
+    'feedollection' => 'posts',
+    'feed_collection_limit' => 10,
+    'feed_collection_datefield' => 'published',
+    'feed_collection_textfield' => 'text'
+     ]
+  ]
+];
+```
+
+### Blueprints
+
+```
+# site/blueprints/site.yml
+
+title: Site
+options:
+  preview: /kirby/preview/home
+# […]
+columns:
+  - width: 1/1
+    fields:
+      staticSiteComposer:
+        label: Compose Site
+# […]
+```
+
+```
+# site/blueprints/pages/default.yml
+
+title: Page
+options:
+  preview: "/kirby/preview{{page.parent.url}}/{{page.slug}}"
+# […]
+columns:
+  - width: 1/1
+    fields:
+      staticSiteComposer:
+        label: Compose Site
+# […]
+```
+
+```
+# site/blueprints/pages/post.yml
+
+title: Post
+options:
+  preview: "/kirby/preview/{{page.parent.slug}}/{{page.slug}}"
+# […]
+columns:
+  - width: 1/1
+    fields:
+      staticSiteComposer:
+        label: Compose Site
+# […]
+```
+
+## Known Issues
+
+Because there's always room to improve…
+
+- ~~Only *Soft 404* for custom error page~~
+- Basic auth prompting occasionaly while saving contents in Kirby Panel
+
+## Todo
+
+- ~~Apply patches from (link: https://github.com/mpfr/httpd-plus text: httpd-plus) for having proper `404` status code w/ *custom-error-documents*~~ [**Update:** (link: patching-httpd-8-openbsd-working-with-src text: Patching httpd(8)—OpenBSD working with src)]
+
+----
+
+Published: 2021-05-17
+
+----
+
+Feedurl: https://openwebcraft.com/kirby-and-httpd-8-on-openbsd-also-static-site-generation

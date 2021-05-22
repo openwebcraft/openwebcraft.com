@@ -1,0 +1,8 @@
+# Files Section
+type: files
+headline: Images and files
+empty: Maybe words are all you need...
+sortBy: filename desc
+limit: 10
+image:
+    cover: true

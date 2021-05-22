@@ -1,0 +1,21 @@
+Title: OpenBSD working with ports
+
+----
+
+Text:
+
+Recommended reading, as usual, OpenBSD FAQ (link: https://www.openbsd.org/faq/ports/ports.html text: Working with Ports) 
+
+## Fetching the Ports Tree
+
+```shell
+cd /tmp
+ftp https://cdn.openbsd.org/pub/OpenBSD/$(uname -r)/{ports.tar.gz,SHA256.sig}
+signify -Cp /etc/signify/openbsd-$(uname -r | cut -c 1,3)-base.pub -x SHA256.sig ports.tar.gz
+cd /usr
+doas tar xzf /tmp/ports.tar.gz
+```
+
+----
+
+Published: 2021-05-20

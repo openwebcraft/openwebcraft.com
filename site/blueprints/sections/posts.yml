@@ -1,0 +1,12 @@
+# Posts Sections
+type     : pages
+headline : Drafts
+status   : draft
+create   : post
+empty    : Find the inspiration and write something awesome
+template : post
+width    : 1/2
+limit    : 12
+sortBy   : published desc
+parent   : site.homePage
+info     : "{{page.published.toDate('F Y')}}"

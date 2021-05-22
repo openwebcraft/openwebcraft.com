@@ -1,0 +1,68 @@
+Title: Patching httpd(8)—working with OpenBSD src
+
+----
+
+Text:
+
+Though clearly NOT recommended, I went w/ patching (link: https://man.openbsd.org/httpd.8 text: httpd(8)) on OpenBSD 6.9-stable (not *-current*) as recommended by (link: https://github.com/mpfr/httpd-plus text: httpd-plus). Lucky me, building and installing the *httpd-plus* binary along w/ manpage completed successfully. 🤞
+Here are the steps I took:
+
+## 1. Fetch the -stable src tree
+
+```shell
+cd /usr
+doas cvs \
+ -qd anoncvs@ftp.hostserver.de:/cvs \
+ checkout -rOPENBSD_6_9 -P src
+```
+
+## 2. Fetch httpd-plus src
+
+```shell
+cd ~
+ftp -Vo - \
+ https://codeload.github.com/mpfr/httpd-plus/tar.gz/current \
+ | tar xzvf -
+```
+
+## 3. Install httpd-plus
+
+…by applying patches and building `httpd` binary.
+
+```shell
+doas ksh httpd-plus-current/install 2>&1 \
+ | tee httpd-plus-install.log
+```
+
+## 4. Adapt `httpd.conf`
+
+```
+# /etc/httpd.conf
+
+#  location not found "/*" {
+#    request rewrite "/error/index.html"
+#  }
+errdocs from "/htdocs/openwebcraft.com/errdocs"
+```
+
+## 5. Validate httpd-conf and restart `httpd`
+
+```shell
+doas httpd -n
+doas rcctl restart httpd
+```
+
+## Resources
+
+Always recommended reading—PRIOR to doing anything (of course): the excellent (link: https://www.openbsd.org/ text: OpenBSD website) and (link: https://www.openbsd.org/faq/ text: FAQs).In particular:
+
+1. (link: https://www.openbsd.org/anoncvs.html text: Anonymous CVS )
+2. (link: https://www.openbsd.org/faq/faq5.html text: Building the System from Source)
+
+----
+
+Published: 2021-05-20
+
+----
+
+Feedurl: https://openwebcraft.com/patching-httpd-8-working-with-openbsd-src
