@@ -26,3 +26,8 @@ columns:
           # Pictures
           pictures:
               extends: sections/pictures
+
+          # Kirby Git 
+          changes:
+              type: git
+              headline: Git Status

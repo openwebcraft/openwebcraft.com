@@ -59,3 +59,8 @@ columns:
                       counter: false
                       help: >
                           Menu label used in the footer menu
+        
+          # Kirby Git 
+          changes:
+              type: git
+              headline: Git Status
