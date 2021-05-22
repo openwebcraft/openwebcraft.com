@@ -10,7 +10,8 @@
         "getkirby/cms": "^3.0",
         "matthiasjg/kirby3-static-site-composer": "dev-main",
         "johannschopplich/kirby-highlighter": "^1.4",
-        "k-community/markdown-field": "^1.0"
+        "k-community/markdown-field": "^1.0",
+        "oblik/kirby-git": "^1.2"
     },
     "config": {
         "optimize-autoloader": true
