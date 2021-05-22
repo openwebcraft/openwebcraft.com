@@ -2,16 +2,16 @@
 
 # Return an array with all the custom actions attached to the hooks
 return [
-    
+
     # Resize the image on upload
     'file.create:after' => function ($file) {
-        
+
         # if the file is not resizable abort
         if (!$file->isResizable())
             return true;
 
         # Exit if we're not working with a web image
-        if (!in_array($file->extension() , ['gif' , 'jpg' , 'jpeg' , 'png']))
+        if (!in_array($file->extension(), ['gif', 'jpg', 'jpeg', 'png']))
             return true;
 
         # If the file is smaller than the minimum file size abort
@@ -20,7 +20,7 @@ return [
 
         # Try resizing the image on upload
         try {
-            kirby()->thumb($file->root(), $file->root(), [ 'width' => option('manu.zendo.maxWidth') ]);
+            kirby()->thumb($file->root(), $file->root(), ['width' => option('manu.zendo.maxWidth')]);
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
@@ -30,7 +30,7 @@ return [
     'file.create:after' => function ($file) {
 
         # Exit if we're not working with a web image
-        if (!in_array($file->extension() , ['gif' , 'jpg' , 'jpeg' , 'png']))
+        if (!in_array($file->extension(), ['gif', 'jpg', 'jpeg', 'png']))
             return true;
 
         // Add the relevant meta info
@@ -39,12 +39,11 @@ return [
             'theHeight'  => $file->height(),
             'thePadding' => 100 / $file->width() * $file->height(),
         ]);
-
     },
 
     # Run the same code on resize
     'file.replace:after' => function ($newFile, $oldFile) {
-        kirby()->trigger('file.create:after', $newFile);
+        kirby()->trigger('file.create:after', ['newFile' => $newFile, 'oldFile' => $oldFile]);
     },
 
 
@@ -56,16 +55,16 @@ return [
 
         # KirbyTags have not been parsed at this point
         $text = preg_replace_callback($regex, function ($matches) {
-            
+
             # Loop through each tag and perform a replace
             foreach ($matches as $match) :
 
                 # First trim the () at the beginning and at the end of the tag,
                 # because we want to keep those
-                $match = substr($match , 1 , -1);
+                $match = substr($match, 1, -1);
 
                 # Then look for () inside the string and replace them with another character
-                $match = str_replace(['(',')'] , ['⎣','⎦'] , $match);
+                $match = str_replace(['(', ')'], ['⎣', '⎦'], $match);
 
                 # Add back the two () at the beginning and the end
                 $match = "({$match})";
@@ -77,7 +76,6 @@ return [
 
             # Return al the kirbytags
             return $matches;
-
         }, $text);
 
         return $text;
@@ -85,7 +83,7 @@ return [
 
     # Add back the () we swapped previously
     'kirbytags:after' => function ($text, array $data = [], array $options = []) {
-        $text = str_replace(['⎣','⎦'] , ['(',')'] , $text);
+        $text = str_replace(['⎣', '⎦'], ['(', ')'], $text);
         return $text;
     }
 ];
