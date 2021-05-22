@@ -23,7 +23,6 @@ return [
     'kirby-extended.highlighter.autodetect'  => true,
     'oblik.git.repo' => './..',
     'oblik.git.merge' => 'kirby',
-    'oblik.git.log' => '/var/www/logs/kirby-git.log',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
