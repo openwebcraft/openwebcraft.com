@@ -21,6 +21,8 @@ return [
     'community.markdown-field.invisibles'    => false,
     'community.markdown-field.strikethrough' => true,
     'kirby-extended.highlighter.autodetect'  => true,
+    'oblik.git.repo' => '/var/www/htdocs/openwebcraft.com',
+    'oblik.git.merge' => 'kirby',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
