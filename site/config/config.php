@@ -23,7 +23,7 @@ return [
     'kirby-extended.highlighter.autodetect'  => true,
     'oblik.git.repo' => '/var/www/htdocs/openwebcraft.com',
     'oblik.git.merge' => 'kirby',
-    'oblik.git.log' => '/var/www/htdocs/logs/kirby-git.log',
+    'oblik.git.log' => '/var/www/logs/kirby-git.log',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
