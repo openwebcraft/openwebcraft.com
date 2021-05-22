@@ -45,6 +45,8 @@ The directory and file structure for the website is as follows:
 ```shell
 # /var/www/htdocs/openwebcraft.com
 .
+|-- composer.json
+|-- composer.lock
 |-- content
 |-- errdocs
 |   `-- 404.html -> ../static/404/index.html
@@ -76,6 +78,7 @@ The directory and file structure for the website is as follows:
     |   `-- css
     |-- kmedia
     `-- […]
+`-- vendor
 ```
 
 ## httpd.conf(5)
@@ -126,15 +129,6 @@ server openwebcraft.com {
         	www.openwebcraft.com/privkey.pem"
   }
   
-  # assure we're serving index.html for the root
-  # required work-around for known issue: 
-  # failing directory auto index of location in case 
-  # enclosing server specifies directory no index
-  # https://marc.info/?l=openbsd-tech&m=160293921708844
-  location "/" {
-    request rewrite "/index.html"
-  }
-  
   # have httpd serve existing media files
   location found "/kmedia*" { pass }
   # …or rewrite to Kirby's PHP handler 
@@ -165,16 +159,9 @@ server openwebcraft.com {
     }
   }
   
-  # rewrite anything not found to custom page
-  # what is effectively a "Soft 404 error"
-  #location not found "/*" {
-  #  request rewrite "/error/index.html"
-  #}
   errdocs from "/htdocs/openwebcraft.com/errdocs"
 }
 ```
-
-More on (link: https://developers.google.com/search/docs/advanced/crawling/soft-404-errors text: Soft 404 errors).
 
 ## Kirby
 
@@ -306,12 +293,8 @@ columns:
 
 Because there's always room to improve…
 
-- ~~Only *Soft 404* for custom error page~~
-- Basic auth prompting occasionaly while saving contents in Kirby Panel
-
-## Todo
-
-- ~~Apply patches from (link: https://github.com/mpfr/httpd-plus text: httpd-plus) for having proper `404` status code w/ *custom-error-documents*~~ [**Update:** (link: patching-httpd-8-working-with-openbsd-src text: Patching httpd(8)—working with OpenBSD src)]
+- Basic auth prompting occasionaly while saving contents in Kirby Panel.
+- For newly created (or updated) contents with images the generated static page needs to be accessed once w/ valid basic auth—to allow for Kirby to generate meda asset.
 
 ----
 
