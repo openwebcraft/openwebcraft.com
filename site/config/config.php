@@ -3,6 +3,7 @@
 return [
     'servers' => ['httpd'],
     'panel' => [
+        'install' => true,
         'slug' => 'kirby/panel'
     ],
     'api' => [
