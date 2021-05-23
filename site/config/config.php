@@ -9,7 +9,7 @@ return [
     'api' => [
         'slug' => 'kirby/api'
     ],
-    'debug' => true,
+    'debug' => false,
     'home'  => 'home',
     'community.markdown-field.font' => [
         'family'  => 'sans-serif',
@@ -23,7 +23,7 @@ return [
     'kirby-extended.highlighter.autodetect'  => true,
     'oblik.git.repo' => './..',
     'oblik.git.merge' => 'kirby',
-    'oblik.git.bin' => '/usr/local/bin/git',
+    'oblik.git.bin' => '/usr/bin/git',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
