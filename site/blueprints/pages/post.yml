@@ -55,3 +55,8 @@ columns:
           # Meta Informations
           meta:
               extends: sections/meta
+
+          # Kirby Git 
+          changes:
+              type: git
+              headline: Git Status
