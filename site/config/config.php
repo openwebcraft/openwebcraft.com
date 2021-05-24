@@ -23,7 +23,7 @@ return [
     'kirby-extended.highlighter.autodetect'  => true,
     'oblik.git.repo' => '/htdocs/openwebcraft.com',
     'oblik.git.merge' => 'kirbyobsd',
-    'oblik.git.bin' => 'GIT_SSH_COMMAND=\'/bin/ssh -i /home/www/.ssh/id_rsa -o IdentitiesOnly=yes\' && /bin/git',
+    'oblik.git.bin' => '/bin/git',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
