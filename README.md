@@ -100,6 +100,6 @@ php --version
 ### Usage
 
 ```sh
-php composer.phar update
+php ~/bin/composer.phar update
 php -S localhost:8000 public/index.php
 ```
