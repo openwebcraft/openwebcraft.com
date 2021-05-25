@@ -4,7 +4,7 @@
 /static/*
 !/static/notes
 !/static/kassets
-!/static/kmedia
+/static/kmedia
 !/static/kmedia/.gitkeep
 !/static/favicon.ico
 !/static/.kirbystatic
