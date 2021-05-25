@@ -5,7 +5,7 @@
 !/static/notes
 !/static/kassets
 !/static/kmedia
-/static/kmedia/panel
+!/static/kmedia/.gitkeep
 !/static/favicon.ico
 !/static/.kirbystatic
 
