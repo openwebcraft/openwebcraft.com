@@ -2,7 +2,13 @@ Title: OpenBSD fun with chroot
 
 ----
 
-Text: 
+Text:
+
+Curious to unpack the true meaning of httpd(8)'s "secure" claim?
+
+> **Secure** Non-optional security by running chroot’ed and with privilege separation by default. —(link: https://www.openbsd.org/papers/httpd-asiabsdcon2015.pdf text: Introducing OpenBSD’s new httpd, Reyk Floeter, 2015 (PDF))
+
+Jepp, me too. Setting up the (link: https://getkirby.com/plugins/oblikstudio/git text: Kirby plugin Git), to push/ pull content from with in the Panel via Git turned out to be a nice ~~challenge~~ use case.
 
 ----
 

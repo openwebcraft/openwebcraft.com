@@ -1,0 +1,67 @@
+Title: MNT Reform open source laptop—DIY Edition
+
+----
+
+Text:
+
+I've losely followed (link: https://mntmn.com/reform/ text: the project) (link: https://mntmn.com/reform/reform-beta-1.html text: over the years) and ultimately backed the (link: https://www.crowdsupply.com/mnt/reform text: crowdfunding campaign on Crowd Supply) back in May 2020 and received my DIY Kit in March 2021. In between I've followed Luka's and team, mostly on twitter.
+
+I must say, I was very much looking forward to receiving my Reform—actually much more so, than any of "the other"™ handheld/terminal/laptop/… devices that I've backed over the years. 🙈
+
+BTW I'm already eagerly awaiting a likely/ maybe(?) crowdfunding campaign for the (link: https://twitter.com/mntmn/status/1395740702081011714?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1395740702081011714%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2Fmntmn2Fstatus2F1395740702081011714widget%3DTweet text: Pocket Reform) a handheld/ terminal type device that Lukas et al. are currently prototyping…
+
+## DIY Kit Assembly
+
+(image: owc_mnt_reform_assembly.jpg)
+
+The actuall assembly of the kit was pretty straight forward—not b/c I'm particularly talented (I'm not), rather thanks to Lukas' great and beautifully layouted (link: https://mntre.com/media/reform_md/mnt-reform2-diy-manual-r1.pdf text: assembly guide/ instructions) and (link:  https://mntre.com/reform2/handbook/ text: handbook). 
+
+## Alternative OS Support and Booting
+
+The OOTB experience of the default Debian GNU/Linux system image for Reform ((link: https://source.mnt.re/reform/reform-system-image text: src)) is really great: there are two desktop environments (Sway and GNOME) and additional scripts nicely pre-configured. Though, I'm actually even more curious about putting an alternative OS—be it another Linux Distro or maybe even OpenBSD 🤔—onto my Reform: 
+
+> You should be able to use any distro if you use the supplied kernel and DTS (Image and .dtb files in the root (/) directory of the SD card).
+> Plus, copy /sbin/reform-init to the new system as well.
+> You might want the other stuff from reform-tools as well: (link: https://source.mnt.re/reform/reform-system-image/-/tree/main/reform2-imx8mq/reform-tools_1.0-6 text: reform2-imx8mq/reform-tools_1.0-6) 
+> Some more details on system boot are here: (link: https://mntre.com/reform2/handbook/advanced.html#system-boot text: Advanced Topics — MNT Reform Operator Handbook documentation) 
+>The reform-init script mentioned at the end lets you dynamically change the rootfs after the kernel is up, based on the text file /reform-boot-medium. It is something that is traditionally done in initramfs, but MNT Reform does not use an initramfs by default. After re-mounting the filesystem root (also supports LUKS), reform-init passes control to the real init of your distro.
+> —src: (link: https://community.mnt.re/t/os-support-and-booting/103 text: MNT Community)
+
+### Serial Console
+
+> Wire up a generic USB-to-UART adapter to the following pins of connector J18
+>—src: (link: https://mntre.com/reform2/handbook/advanced.html#serial-console text: MNT Reform Handbook)
+
+1. UART1_TXD, connect to RX of your adapter —› White
+2. UART1_RXD, connect to TX of your adapter —› Green
+3. GND, connect to GND of your adapter —› Black
+
+USB-to-UART Specification:
+
+- Red: +5V.
+- Green: Tx.
+- White : Rx.
+- Black: GND.
+
+```bash
+screen /dev/ttyUSB0 115200
+```
+
+To be continued…
+
+## Resources
+
+- (link: https://source.mnt.re/reform/mnt-reform-press-materials text: CC-BY-SA photos of MNT Reform and its accessories)
+- (link: https://photos.mntre.com/s/3rxfu2qu3t/aqtnzge3l1zz410l text: MNT Behind the Scenes Photos)
+- (link: https://shop.mntmn.com/t/hardware/reform text: MNT Shop)
+- (link: Community —› https://community.mnt.re/ text: MNT Community)
+- (link: https://source.mnt.re/reform text: MNT Reform Source Code)
+- (link: https://wiki.gentoo.org/wiki/MNT_Reform text: Gentoo Wiki)
+
+----
+
+Published: 2021-05-26
+
+----
+
+Feedurl: https://openwebcraft.com/mnt-reform-open-source-laptop-diy-edition
