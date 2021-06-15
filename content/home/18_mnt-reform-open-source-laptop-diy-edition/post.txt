@@ -18,13 +18,13 @@ The actuall assembly of the kit was pretty straight forward—not b/c I'm partic
 
 ## Alternative OS Support and Booting
 
-The OOTB experience of the default Debian GNU/Linux system image for Reform ((link: https://source.mnt.re/reform/reform-system-image text: src)) is really great: there are two desktop environments (Sway and GNOME) and additional scripts nicely pre-configured. Though, I'm actually even more curious about putting an alternative OS—be it another Linux Distro or maybe even OpenBSD 🤔—onto my Reform: 
+The OOTB experience of the default Debian GNU/Linux system image for Reform ((link: https://source.mnt.re/reform/reform-system-image text: src)) is really great: there are two desktop environments (Sway and GNOME) and additional scripts nicely pre-configured. Though, I'm actually even more curious about putting an alternative OS onto my Reform, be it another Linux Distro or maybe even OpenBSD? Also what's (link: https://twitter.com/mntmn/status/1397692293835018241?s=20 text: RISC OS)  🤔…
 
-> You should be able to use any distro if you use the supplied kernel and DTS (Image and .dtb files in the root (/) directory of the SD card).
-> Plus, copy /sbin/reform-init to the new system as well.
-> You might want the other stuff from reform-tools as well: (link: https://source.mnt.re/reform/reform-system-image/-/tree/main/reform2-imx8mq/reform-tools_1.0-6 text: reform2-imx8mq/reform-tools_1.0-6) 
+> You should be able to use any distro if you use the supplied kernel and DTS (Image and `.dtb`files in the root (`/`) directory of the SD card).
+> Plus, copy `/sbin/reform-init` to the new system as well.
+> You might want the other stuff from *reform-tools* as well: (link: https://source.mnt.re/reform/reform-system-image/-/tree/main/reform2-imx8mq/reform-tools_1.0-6 text: reform2-imx8mq/reform-tools_1.0-6) 
 > Some more details on system boot are here: (link: https://mntre.com/reform2/handbook/advanced.html#system-boot text: Advanced Topics — MNT Reform Operator Handbook documentation) 
->The reform-init script mentioned at the end lets you dynamically change the rootfs after the kernel is up, based on the text file /reform-boot-medium. It is something that is traditionally done in initramfs, but MNT Reform does not use an initramfs by default. After re-mounting the filesystem root (also supports LUKS), reform-init passes control to the real init of your distro.
+>The reform-init script mentioned at the end lets you dynamically change the rootfs after the kernel is up, based on the text file `/reform-boot-medium`. It is something that is traditionally done in *initramfs*, but MNT Reform does not use an initramfs by default. After re-mounting the filesystem root (also supports LUKS), reform-init passes control to the real init of your distro.
 > —src: (link: https://community.mnt.re/t/os-support-and-booting/103 text: MNT Community)
 
 ### Serial Console
@@ -43,8 +43,21 @@ USB-to-UART Specification:
 - White : Rx.
 - Black: GND.
 
-```bash
+```sh
 screen /dev/ttyUSB0 115200
+
+# Detach the screen session
+# Ctrl-a d, Ctrl-a Ctrl-d
+```
+
+### SD Card
+
+```sh
+# backup mntreform sd to *.img file
+sudo dd if=/dev/mmcblk0 of=/home/matthias/Downloads/mntreform_bkp.img
+
+# restore mntreform from backup *.img file
+sudo dd bs=4M if=/home/matthias/Downloads/mntreform_bkp.img of=/dev/mmcblk0
 ```
 
 To be continued…
@@ -54,9 +67,10 @@ To be continued…
 - (link: https://source.mnt.re/reform/mnt-reform-press-materials text: CC-BY-SA photos of MNT Reform and its accessories)
 - (link: https://photos.mntre.com/s/3rxfu2qu3t/aqtnzge3l1zz410l text: MNT Behind the Scenes Photos)
 - (link: https://shop.mntmn.com/t/hardware/reform text: MNT Shop)
-- (link: Community —› https://community.mnt.re/ text: MNT Community)
+- (link: https://community.mnt.re/ text: MNT Community)
 - (link: https://source.mnt.re/reform text: MNT Reform Source Code)
 - (link: https://wiki.gentoo.org/wiki/MNT_Reform text: Gentoo Wiki)
+- (link: https://genodians.org/skalk/2021-06-03-mnt-reform text: Sculpt OS on MNT Reform 2)
 
 ----
 

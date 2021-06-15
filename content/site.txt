@@ -26,9 +26,9 @@ Archivetext:
 
 Keep scrolling then…
 
-Otherwise—full disclosure—(link: https://openwebcraft.com/notes/ text: some outdated tech notes).
+Otherwise some ~~outdated~~ (link: https://openwebcraft.com/notes/ text: archived tech notes).
 
-I also wrote—which feels like almost decades ago—(link: semantic-web-schnell-kompakt text: a small book about the mechanics of the Semantic Web).
+I also wrote (link: semantic-web-schnell-kompakt text: a small book about the mechanics of the Semantic Web)—feels ~~dated~~ like decades ago.
 
 ----
 
