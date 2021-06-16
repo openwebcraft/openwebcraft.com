@@ -1,0 +1,42 @@
+Title: TIL rmw—Remove to Waste
+
+----
+
+Text:
+
+I've learned about a nice litle cli utitliy: (link: https://remove-to-waste.info/ text: rmw)
+
+> *rmw* (ReMove to Waste) is a safe-remove utility for the command line.
+> It can move and restore files to and from directories specified in a configuration file, and can also be integrated with your regular desktop trash folder (if your desktop environment uses the FreeDesktop.org Trash specification). 
+> —src: remove-to-waste.info
+
+The utitliy is written in C, open source, and has a GNU GPLv3 License.
+
+And.It.Just.Works.
+
+---
+
+On first usage it creats a default configuration file at `~/.config/rmwrc`  along w/ a default waste directory structure at `~/.local/share/Waste`.
+
+To make it work w/ my GNOME desktop (on Debian Buster) I only hat to adjust the path to the waste directory like so:
+
+```yaml
+# ~/.config/rmwrc
+WASTE = $HOME/.local/share/Trash
+```
+
+I can now ~~delete~~ remove a file to ~~trash~~ waste like so: 
+
+```shell
+rmw some-file-to-be-deleted.txt
+```
+
+To ultimately purge the file, I just need to *Empty Trash* from GNOME Files app, which I do anyway 🤞.
+
+----
+
+Published: 2021-06-16
+
+----
+
+Feedurl: https://openwebcraft.com/til-rmw-remove-to-waste
