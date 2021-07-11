@@ -11,6 +11,7 @@ Here are some curated lists of web resources that I frequently enjoy visiting, a
 - (link: https://ar.al/ text: Aral's Website)—Blog and "S'updates" videos
 - (link: https://small-tech.org/events/ text: Small Technology Foundation's "Small is Beautiful")—montly conversation videos
 - (link: https://n-o-d-e.net/ text: N-O-D-E)—Blog, Videos, Zines
+- (link: https://www.corecursive.com/ text: CoRecursive)—The Stories Behind The Code
 
 ## EDC, Gear, Knives
 
