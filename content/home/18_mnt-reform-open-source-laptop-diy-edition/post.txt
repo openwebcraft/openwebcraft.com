@@ -69,6 +69,7 @@ To be continued…
 - (link: https://shop.mntmn.com/t/hardware/reform text: MNT Shop)
 - (link: https://community.mnt.re/ text: MNT Community)
 - (link: https://source.mnt.re/reform text: MNT Reform Source Code)
+- (link: https://source.mnt.re/reform/reform/-/blob/master/ASSEMBLY.md text: MNT Reform Parts Reference & Assembly Instructions)
 - (link: https://wiki.gentoo.org/wiki/MNT_Reform text: Gentoo Wiki)
 - (link: https://genodians.org/skalk/2021-06-03-mnt-reform text: Sculpt OS on MNT Reform 2)
 - MNT Reform sleeves (Piñatex): (link: https://cdn.shopify.com/s/files/1/0017/0396/8870/files/ANANAS_ANAM_ImpactReport.pdf?v=1623425235 text: impact report of supplier for the material)
