@@ -1,0 +1,41 @@
+Title: elementary OS 6 "Odin" on 12" MacBook8,1
+
+----
+
+Text:
+
+I first tried various early access builds as well as the Betas (1 and 2) in demo mode (a.k.a live).
+
+With the release candidate (RC) `elementaryos-6.0-stable.20210805-rc.iso` built and made available to GitHub Sponsors on Thu, Aug 5, 2021 I decided that it was finally time to install *to disk*—though the official release has already been announced for next Tuesday, only three days as of writing.
+
+I failed to install using the default "Erase Disk and Install" option b/c of a `libdistinst` error:
+
+```bash
+ERROR: libdistinst: pointer in EFI is null
+ERROR: errored while installing system: paritition valdiation: the ESP paritition must be at least 256 MiB in size
+```
+I tracked down the error message to (link: https://github.com/pop-os/distinst/blob/bcd9742c30235afd27b6f10f4bb3250550785195/crates/disks/src/config/disks.rs#L995 text: libdistinst) .
+
+I even found a somewhat (link: https://github.com/pop-os/distinst/issues/239 text: related issue) and a (link: https://github.com/elementary/installer/pull/449 text: pull request) for the elementary installer—both findings didn't help 🤷.
+
+Packet w/ this additional knowledge I figured that creating my own partition layout should be a feasible way to go. In order to verify this approach, I first installed (link: https://pop.system76.com/ text: Pop! OS by System76)—which worked like a charm (as usually).
+
+I then re-used the paritition created by the Pop! OS installer for installing elementary OS 6 via the "Custom Install (Advanced)" option.
+
+Unfortunately—again—this didn't work out right away. While the installer seemed to successfully complete the installation, the boot loader (Grub) wasn't able to boot b/c it couldn't find the kernel. 🤔
+
+As I did choose a encrypted (LUKS) partition I figured the installer might not have properly configured Grub. 
+
+To verify this assumption I removed the encryption… and the installation and 1th boot succeeded!
+
+Welcome elementary OS 6 on my MacBook.
+
+I guess, I now prepreated for the official release... this coming Tuesday 😎
+
+----
+
+Published: 2021-08-07
+
+----
+
+Feedurl: https://openwebcraft.com/elementary-os-6-odin-on-12-macbook8-1
