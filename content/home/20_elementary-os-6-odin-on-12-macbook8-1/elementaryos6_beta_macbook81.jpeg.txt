@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: elementary OS 6 Beta on 12" MacBook8,1
+
+----
+
+Title: elementary OS 6 Beta on 12" MacBook8,1
+
+----
+
+Thewidth: 2048
+
+----
+
+Theheight: 2048
+
+----
+
+Thepadding: 100

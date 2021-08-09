@@ -4,7 +4,9 @@ Title: elementary OS 6 "Odin" on 12" MacBook8,1
 
 Text:
 
-I first tried various early access builds as well as the Betas (1 and 2) in demo mode (a.k.a live).
+(image: elementaryos6_beta_macbook81.jpeg)
+
+I first tried various early access builds as well as the Betas (1 and 2) in demo mode (a.k.a live)—see screenshot above.
 
 With the release candidate (RC) `elementaryos-6.0-stable.20210805-rc.iso` built and made available to GitHub Sponsors on Thu, Aug 5, 2021 I decided that it was finally time to install *to disk*—though the official release has already been announced for next Tuesday, only three days as of writing.
 
