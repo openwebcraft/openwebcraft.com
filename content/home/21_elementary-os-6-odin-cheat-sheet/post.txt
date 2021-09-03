@@ -1,0 +1,54 @@
+Title: elementary OS 6 Odin Cheat Sheet
+
+----
+
+Text:
+
+Some useful commands that I cannot or do not want to remember or that I use regularly:
+
+## Maintenance
+
+```bash
+sudo apt update \
+   && sudo apt upgrade \
+   && sudo apt dist-upgrade \
+   && sudo apt autoremove \
+   && sudo apt autoclean \
+   ; flatpak update \
+   ; sudo fwupdmgr update
+```
+
+## Fingerprint Reader
+
+On ThinkPad T25 (T470) one needs to patch, build and install `libfprint` driver for `0097 Validity Sensors, Inc` :
+
+1. Install and test (link: https://github.com/3v1n0/python-validity text: python-validity fork) (instead of snap)
+2. Clone (link: https://github.com/3v1n0/libfprint/ text: `libfprint` driver repo)
+3. Apply (link: https://gitter.im/Validity90/Lobby?at=5ef3033fb8152d34845e5356 text: patch for  sensor 0097) as referenced in (link: https://github.com/3v1n0/libfprint/issues/12 text: this issue)
+4. Build and install `libfprint` (requires `meson`, `ninja`)
+
+```bash
+# setup
+sudo apt install libpam-fprintd
+sudo systemctl start fprintd
+
+# enroll
+fprintd-enroll
+sudo pam-auth-update --enable fprintd
+# sudo pam-auth-update --enable sudo
+# sudo pam-auth-update --enable ssh
+```
+
+## UI Customization
+
+E.g. Gala Plugins, etc
+
+- Aral's uber awesome (link: https://github.com/small-tech/catts text: "Calmer Alt-Tab Task Switcher").
+
+----
+
+Published: 2021-08-31
+
+----
+
+Feedurl: https://openwebcraft.com/elementary-os-6-odin-cheat-sheet
