@@ -68,10 +68,12 @@ git clone git@source.mnt.re:reform/reform.git
 cd reform/reform2-keyboard-fw
 make
 # remove keyboard frame
-# DIP switch SW84 ON
+# toggle DIP switch SW84 ON
 # reset button SW83
 sudo apt install dfu-programmer
 sudo ./flash
+# toggle DIP switch SW84 OFF
+# add keyboard frame
 ```
 
 To be continued…
