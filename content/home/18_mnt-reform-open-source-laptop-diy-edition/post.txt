@@ -60,6 +60,20 @@ sudo dd if=/dev/mmcblk0 of=/home/matthias/Downloads/mntreform_bkp.img
 sudo dd bs=4M if=/home/matthias/Downloads/mntreform_bkp.img of=/dev/mmcblk0
 ```
 
+## Flash Firmware of internal keyboard
+
+```bash
+sudo apt install avr-libc gcc-avr
+git clone git@source.mnt.re:reform/reform.git
+cd reform/reform2-keyboard-fw
+make
+# remove keyboard frame
+# DIP switch SW84 ON
+# reset button SW83
+sudo apt install dfu-programmer
+./flash
+```
+
 To be continued…
 
 ## Resources
