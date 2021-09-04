@@ -71,7 +71,7 @@ make
 # DIP switch SW84 ON
 # reset button SW83
 sudo apt install dfu-programmer
-./flash
+sudo ./flash
 ```
 
 To be continued…
