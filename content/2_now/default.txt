@@ -11,9 +11,9 @@ If my activities or priorities change, I’ll update this page.
 
 I’m home in Donauwoerth, Germany.
 How I spend my day (in order of time spent):
-- family (ie. parenting my two children, homeschooling, housework and gardening duties)
+- family (ie. parenting my two children, ~~homeschooling~~, house & gardening duties)
 - remote technology consulting (limited hours, fixed commitments)
-- running
+- 🏃️ running & crossfit
 - family…
 - side projects (#webdev, Linux on Mobile, OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, Raspberry Pi
 - family…
