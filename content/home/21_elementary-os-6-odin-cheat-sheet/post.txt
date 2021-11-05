@@ -60,7 +60,7 @@ sudo pam-auth-update --enable fprintd
 
 E.g. Gala Plugins, etc
 
-- Aral's uber awesome (link: https://github.com/small-tech/catts text: "Calmer Alt-Tab Task Switcher").
+- Aral's uber awesome (link: https://github.com/small-tech/catts text: Catts (Calmer Alt-Tab Task Switcher)).
 
 ----
 

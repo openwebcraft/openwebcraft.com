@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot Trimir Journal Log List with Chart  (Dark Mode)
+
+----
+
+Title: Screenshot Trimir Journal Log List with Chart  (Dark Mode)
+
+----
+
+Thewidth: 1000
+
+----
+
+Theheight: 800
+
+----
+
+Thepadding: 80

@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot Trimir Journal in App Center for elementary OS 6 Odin (Dark Mode)
+
+----
+
+Title: Screenshot Trimir Journal in App Center for elementary OS 6 Odin (Dark Mode)
+
+----
+
+Thewidth: 947
+
+----
+
+Theheight: 1534
+
+----
+
+Thepadding: 161.98521647307

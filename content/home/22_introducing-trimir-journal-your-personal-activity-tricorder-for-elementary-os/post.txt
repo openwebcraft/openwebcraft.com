@@ -1,0 +1,43 @@
+Title: Introducing Trimir Journal—Your personal activity "Tricorder" for elementary OS
+
+----
+
+Text:
+
+(image: elementary_appcenter_dark_small_trimir_screenshot_2021-11-05.png)
+
+Designed and built for personal text journaling and activity tracking on (link: https://elementary.io/ text: elementary OS).
+
+1. **Write a diary**, log your activities, **keep track of your metrics**.
+2. Search, filter and **evaluate your journal—your life**.
+
+## Features & Screenshots
+
+(image: welcome.png)
+
+- Backup and restore your journal to and from a JSON file
+
+(image: journal.png)
+
+- Write expressive journal entries with emoijs, organized with hashtags, i.e. `"#linux rocks 😎️"`
+- Search your journal
+- Filter your journal by hashtag
+
+(image: logchart.png)
+
+- Render timeline charts when filtering for "metric tags", i.e. a hashtag followed by a number with optional unit (e.g. `"#Trailrun 5km"`)
+
+## Installation
+
+- System requirements: [Elementary OS](https://elementary.io) 6 (Odin)
+- For developers: source code (GPL-3.0 License), building and installation:  https://github.com/matthiasjg/trimirjournal
+
+![Get it on AppCenter](https://appcenter.elementary.io/badge.svg) (unfort. no direct link quite yet)
+
+----
+
+Published: 2021-11-05
+
+----
+
+Feedurl: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os

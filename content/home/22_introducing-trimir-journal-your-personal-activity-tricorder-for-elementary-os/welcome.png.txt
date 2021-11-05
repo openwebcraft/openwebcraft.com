@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot Trimir Journal Welcome
+
+----
+
+Title: Screenshot Trimir Journal Welcome
+
+----
+
+Thewidth: 1000
+
+----
+
+Theheight: 800
+
+----
+
+Thepadding: 80
