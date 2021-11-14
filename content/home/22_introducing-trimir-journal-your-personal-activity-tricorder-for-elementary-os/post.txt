@@ -36,7 +36,7 @@ The JSON shape is intended to be compatible to the backup/ restore shape from (l
 - System requirements: [Elementary OS](https://elementary.io) 6 (Odin)
 - For developers: source code (GPL-3.0 License), building and installation:  https://github.com/matthiasjg/trimirjournal
 
-![Get it on AppCenter](https://appcenter.elementary.io/badge.svg) (unfort. no direct link quite yet)
+![Get it on AppCenter](https://appcenter.elementary.io/badge.svg) (unfort. no direct link, b/c  (link: https://appcenter.elementary.io/com.github.matthiasjg.trimirjournal/ text: AppCenter page not ready yet))
 
 ----
 
