@@ -17,6 +17,10 @@ Designed and built for personal text journaling and activity tracking on (link: 
 
 - Backup and restore your journal to and from a JSON file
 
+The JSON shape is intended to be compatible to the backup/ restore shape from (link: https://openwebcraft.com/zenjournal-simple-and-efficient-journaling/ text: ZenJournal). HOWEVER in the more recent version(s?) of *ZenJournal* the JSON shape changed and also got wrapped into a gzip archive (`assets/log.json` along w/ any embedded image assets)—I'm currently working on supporting both shapes, the legacy JSON and gzipped JSON. So stay tuned for an udpate.
+
+**Trimir Journal not created by, affiliated with, or supported by *ZenJournal*.** I just happen to be a VERY satisfied *ZenJournal* user 😀️.
+
 (image: journal.png)
 
 - Write expressive journal entries with emoijs, organized with hashtags, i.e. `"#linux rocks 😎️"`
