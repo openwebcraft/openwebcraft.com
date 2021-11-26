@@ -60,8 +60,26 @@ sudo pam-auth-update --enable fprintd
 
 E.g. Gala Plugins, etc
 
-- Aral's uber awesome (link: https://github.com/small-tech/catts text: Catts (Calmer Alt-Tab Task Switcher)).
-- Install (link:https://fishshell.com/ text: fish shell) by simply followin—again—(link:https://ar.al/2021/07/25/fish-shell/ text:one of Aral's write-ups). (For enabling the font used by (link:https://github.com/IlanCosman/tide text:tide)  use this command: `gsettings set io.elementary.terminal.settings font 'MesloLGS NF'`; for VS Code/ Codium adjust setting `"terminal.integrated.fontFamily": "MesloLGS NF"`.)
+Aral's uber awesome (link: https://github.com/small-tech/catts text: Catts (Calmer Alt-Tab Task Switcher)).
+
+Install (link:https://fishshell.com/ text: fish shell) by simply followin—again—(link:https://ar.al/2021/07/25/fish-shell/ text:one of Aral's write-ups).
+
+For then enabling the font used by (link:https://github.com/IlanCosman/tide text:tide) do the following:
+ 
+For *elementary Terminal* use this command: `gsettings set io.elementary.terminal.settings font 'MesloLGS NF'`
+  
+For *Visual Studio Code* and *Codium* to enable fish shell and font adjust `~/.config/Code/User/settings.json` as follows:
+```
+{
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.profiles.linux": {
+        "fish (login)": {
+            "path": "fish"
+        }
+    }
+}
+```
 
 ----
 
