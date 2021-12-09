@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Modding of ZT 0235 w/ RGT Scale Sets, RGT Stonewash Clips & Vero Fulcrum
+
+----
+
+Title: Modding of ZT 0235 w/ RGT Scale Sets, RGT Stonewash Clips & Vero Fulcrum
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 800
+
+----
+
+Thepadding: 100

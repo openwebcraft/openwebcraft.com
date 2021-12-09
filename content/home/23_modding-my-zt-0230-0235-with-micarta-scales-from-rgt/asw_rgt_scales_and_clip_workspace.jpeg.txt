@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Modding Workpace w/ RGT Scale Sets, RGT Stonewash Clips, ZT 0230 & ZT 0235, ASW Matches & Stickers
+
+----
+
+Title: Modding Workpace w/ RGT Scale Sets, RGT Stonewash Clips, ZT 0230 & ZT 0235, ASW Matches & Stickers
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 640
+
+----
+
+Thepadding: 80

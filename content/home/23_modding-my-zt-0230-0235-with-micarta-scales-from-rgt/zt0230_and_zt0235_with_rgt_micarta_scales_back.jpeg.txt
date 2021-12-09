@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Final modded ZT0230 & ZT0235 w/ RGT Micarta Scales & RGT Stonewash Clip
+
+----
+
+Title: Final modded ZT0230 & ZT0235 w/ RGT Micarta Scales & RGT Stonewash Clip
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 800
+
+----
+
+Thepadding: 100

@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Final modded ZT0230 & ZT0235 w/ RGT Micarta Scales
+
+----
+
+Title: Final modded ZT0230 & ZT0235 w/ RGT Micarta Scales
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 800
+
+----
+
+Thepadding: 100
