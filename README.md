@@ -28,7 +28,7 @@ pkg_add php
 cat /usr/local/share/doc/pkg-readmes/php-7.4
 
 pkg_add php-curl
-ln -sf ../php-7.4.sample/curl.ini /etc/php-7.4/
+ln -sf /etc/php-7.4.sample/curl.ini /etc/php-7.4/
 
 pkg_add php-gd
 ln -s /etc/php-7.4.sample/gd.ini /etc/php-7.4/
@@ -80,19 +80,24 @@ composer install
 composer update
 ```
 
-## Debian 10 (Buster) Dev Environment
+## PHP-7.4 Linux Dev Env for Debian-based distros (incl. elementary OS 6 Odin)
+
+Prerequisite: [Composer](https://getcomposer.org/) installed.
 
 ### Setup
 
-Install PHP-7.4 along w/ required modules from sury.org:
-
 ```sh
+# common package dependencies
 sudo apt install -y curl wget gnupg2 ca-certificates lsb-release apt-transport-https
+
+# pre-setup on Debian 10 (Buster)
 cd ~/Downloads
 wget https://packages.sury.org/php/apt.gpg
 sudo apt-key add apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.list
 sudo apt update
+
+# install PHP-7.4 along w/ required modules
 sudo apt install -y php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-ctype php7.4-dom
 php --version
 ```
@@ -100,6 +105,6 @@ php --version
 ### Usage
 
 ```sh
-php ~/bin/composer.phar update
+php composer composer update getkirby/cms
 php -S localhost:8000 public/index.php
 ```
