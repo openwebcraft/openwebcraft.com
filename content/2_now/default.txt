@@ -15,7 +15,7 @@ How I spend my day (in order of time spent):
 - remote technology consulting (limited hours, fixed commitments)
 - 🏃️ running & crossfit
 - family…
-- side projects (#webdev, Linux on Mobile, OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, Raspberry Pi
+- side projects (#webdev, Linux on Mobile, (link: https://elementary.io/ text: elementary OS), OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, Raspberry Pi
 - family…
 
 Those are my priorities.
