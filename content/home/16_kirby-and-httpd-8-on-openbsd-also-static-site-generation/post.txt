@@ -86,7 +86,7 @@ The directory and file structure for the website is as follows:
 Let's get the commodity stuff out of the way: properly redirecting `http(s)://(www.)openwebcraft.com` to `https://openwebcraft.com`.
 
 ```
-# /etc/rc.conf.local
+# /etc/httpd.conf
 
 types {
   include "/usr/share/misc/mime.types"
