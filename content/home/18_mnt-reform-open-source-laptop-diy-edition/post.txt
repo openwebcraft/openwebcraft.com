@@ -89,6 +89,7 @@ To be continued…
 - (link: https://wiki.gentoo.org/wiki/MNT_Reform text: Gentoo Wiki)
 - (link: https://genodians.org/skalk/2021-06-03-mnt-reform text: Sculpt OS on MNT Reform 2)
 - MNT Reform sleeves (Piñatex): (link: https://cdn.shopify.com/s/files/1/0017/0396/8870/files/ANANAS_ANAM_ImpactReport.pdf?v=1623425235 text: impact report of supplier for the material)
+- MNT Reform (link: https://www.ifixit.com/Device/MNT_Reform text:  iFixit Guides)
 
 ----
 
