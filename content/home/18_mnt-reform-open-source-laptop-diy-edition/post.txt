@@ -90,6 +90,7 @@ To be continued…
 - (link: https://genodians.org/skalk/2021-06-03-mnt-reform text: Sculpt OS on MNT Reform 2)
 - MNT Reform sleeves (Piñatex): (link: https://cdn.shopify.com/s/files/1/0017/0396/8870/files/ANANAS_ANAM_ImpactReport.pdf?v=1623425235 text: impact report of supplier for the material)
 - MNT Reform (link: https://www.ifixit.com/Device/MNT_Reform text:  iFixit Guides)
+- (link: https://source.mnt.re/reform/reform/-/tree/master/symbol-for-derived-works text: official CC0 (public domain) symbol) one should use on MNT OSHW derived or compatible works while avoiding MNT registered trademark (including editable SVG and a .kicad_mod example)
 
 ----
 
