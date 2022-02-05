@@ -1,0 +1,70 @@
+Title: SidePi—My portable & versatile Raspberry Pi 4 development server setup
+
+----
+
+Text:
+
+The general idea for an (link: https://www.raspberrypi.com/ text: Raspberry Pi) based portable development setup is not new.
+
+As an example: I stumbled upon—and was intrigued right away by—a video on the YouTube channel *Tech Craft* ((link: https://twitter.com/tech_crafted text: @tech_crafted) on the bird site) titled (link: https://www.youtube.com/watch?v=IR6sDcKo3V8 text: My Favourite iPad Pro Accessory: The Raspberry Pi 4) .
+
+Though, as I'm clearly (still) not a iPad/ Table person, my particular setup is centered around my main driver, a Linux-based laptop—in particular my ultra-portable (link: https://openwebcraft.com/elementary-os-6-odin-on-12-macbook8-1/ text: MacBook 12").
+
+Disclaimer: this write up is still a WORK IN PROGRESS as I'm documenting along the how-to and setup of it's evolving experience…
+
+So, without furher ado, here are the incredients of my particular setup—so far:
+
+1. Hardware
+
+- (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B), the **8GB RAM model**
+- (link: https://www.coolermaster.com/catalog/legacy-products/cases/pi-case-40/ text: Cooler Master's Pi Case 40) (I backed the intial (link: https://www.kickstarter.com/projects/coolermaster/pi-case-40/ text: Kickstarter Campaign))
+- SanDisk Ultra microSDXC UHS-I Speicherkarte ~~32GB~~ 512 GB
+
+2. Software
+
+- First things first: install Raspberry Pi OS Lite, 64-bit, these days simply by using the great (link: https://www.raspberrypi.com/software/ text: Imager software); also levereaging the **Advanced Options**  for setting hostname (`sidepi`), enabling SSH only allowing public-key authentication (of course!), configuring Wifi, applying locale settings.
+
+- Install PIXEL Desktop:
+
+```
+sudo apt install raspberrypi-ui-mods
+```
+
+- Install VNC Server
+
+Doc Ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#virtual-network-computing-vnc text: Raspberry Pi Documentation: Remote Access, VNC)
+
+```
+sudo apt install realvnc-vnc-server
+sudo raspi-config
+```
+
+- Install  **Pi Tool**, the all-in-one Software Utility for Cooler Master's Pi Case 40
+
+> The utility allows users **access to a basic set of overclocking profiles**, tested and validated based on the thermal performance of Cooler Master's Pi Case 40 enclosure, **monitoring of system metrics**, and **assignment of multiple functions to the built-in button**.
+> —Src:  (link: https://www.coolermaster.com/catalog/legacy-products/cases/pi-case-40/ text: coolermaster.com)
+
+```
+# Install currently missing dependencies of Raspberry Pi OS (Lite) 64-bit image:
+sudo apt install -y libdbusmenu-glib4 libdbusmenu-gtk4 libfontconfig1
+
+wget http.us.debian.org/debian/pool/main/libi/libindicator/libindicator7_0.5.0-4_arm64.deb
+sudo dpkg -i libindicator7_0.5.0-4_arm64.deb
+
+# Install Pi Tool
+curl https://raw.githubusercontent.com/CoolerMasterTechnology/pi-tool/master/install.sh -o pi-tool-install.sh
+chmod +x pi-tool-install.sh
+./pi-tool-install.sh
+```
+
+- Configure the Raspberry Pi as a USB-C Gadget following the simple steps in this well done guide (link: https://www.hardill.me.uk/wordpress/2019/11/02/pi4-usb-c-gadget/ text: guide).
+
+To be continued…
+
+----
+
+Published: 2022-02-05
+
+----
+
+Feedurl: https://openwebcraft.com/sidepi-my-portable-versatile-raspberry-pi-4-development-server-setup
