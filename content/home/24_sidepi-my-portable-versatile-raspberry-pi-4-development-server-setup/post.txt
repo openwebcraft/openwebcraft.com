@@ -12,6 +12,8 @@ Though, as I'm clearly (still) not a iPad/ Table person, my particular setup is 
 
 Disclaimer: this write up is still a WORK IN PROGRESS as I'm documenting along the how-to and setup of it's evolving experience…
 
+(image: sidepi_coolmaster_picase40_raspberrypi_4_model_b_8gb_macbook81.jpg)
+
 So, without furher ado, here are the incredients of my particular setup—so far:
 
 1. Hardware
@@ -57,7 +59,23 @@ chmod +x pi-tool-install.sh
 ./pi-tool-install.sh
 ```
 
-- Configure the Raspberry Pi as a USB-C Gadget following the simple steps in this well done guide (link: https://www.hardill.me.uk/wordpress/2019/11/02/pi4-usb-c-gadget/ text: guide).
+- Configure the Raspberry Pi as a USB-C Gadget following the simple steps in this well done (link: https://www.hardill.me.uk/wordpress/2019/11/02/pi4-usb-c-gadget/ text: guide).
+
+- Install Samba (SMB/CIFS), Server and Client
+
+Doc Ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#samba-smbcifs text: Raspberry Pi Documentation: Remote Access, Samba (SMB/CIFS))
+
+```
+sudo apt install samba samba-common-bin smbclient cifs-utils
+sudo smbpasswd -a matthias
+
+# sudo vi /etc/samba/smb.conf
+[code]
+   path = /home/matthias/Code
+    read only = no
+    public = no
+    writable = yes
+```
 
 To be continued…
 
