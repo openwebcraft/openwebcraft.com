@@ -75,7 +75,31 @@ Turns out, following the (link: https://github.com/patjak/facetimehd/wiki/Get-St
 
 ```
 
-4. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update).
+4. Create a signing key to sign the module, as described (link: https://github.com/patjak/facetimehd/issues/174#issuecomment-813438702 text: here):
+
+```
+cd /lib/modules/$(uname -r)/build/certs
+
+sudo tee x509.genkey > /dev/null << 'EOF'
+[ req ]
+default_bits = 4096
+distinguished_name = req_distinguished_name
+prompt = no
+string_mask = utf8only
+x509_extensions = myexts
+[ req_distinguished_name ]
+CN = Modules
+[ myexts ]
+basicConstraints=critical,CA:FALSE
+keyUsage=digitalSignature
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+EOF
+
+sudo openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem
+```
+
+5. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update).
 
 ---
 
