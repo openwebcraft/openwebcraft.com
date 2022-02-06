@@ -119,7 +119,7 @@ To be continued…
 
 ## Todos
 
-- Upgrade 32GB SD-Card to SanDisk Ultra microSDXC UHS-I SD-Card **512 GB** and use Raspberry Pi OS **Full** instead of Lite
+- Upgrade 32GB SD-Card to SanDisk Ultra microSDXC UHS-I SD-Card **512 GB** and use Raspberry Pi OS **Full** (instead of Lite)—also, while at it, let's go full disk encryption an re-base on (link: https://www.kali.org/ text: Kali Linux) (Doc refs: (link: https://www.kali.org/docs/arm/raspberry-pi-4/ text: kali.org Kali on ARM, Raspberry Pi 4), (link: https://www.kali.org/docs/arm/raspberry-pi-with-luks-full-disk-encryption/ text: kali.org: Rpi Disk Encryption))  🤔️
 - Setup internet/ network sharing from host, via USB
 - Create Ansible playbook for setup
 - Eval (link: https://github.com/gitpod-io/openvscode-server text: OpenVSCode Server)
