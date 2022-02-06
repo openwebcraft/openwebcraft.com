@@ -20,7 +20,7 @@ So, without furher ado, here are the incredients of my particular setup—so far
 
 - (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B), the **8GB RAM model**
 - (link: https://www.coolermaster.com/catalog/legacy-products/cases/pi-case-40/ text: Cooler Master's Pi Case 40) (I backed the intial (link: https://www.kickstarter.com/projects/coolermaster/pi-case-40/ text: Kickstarter Campaign))
-- SanDisk Ultra microSDXC UHS-I Speicherkarte ~~32GB~~ 512 GB
+- SanDisk Ultra microSDXC UHS-I SD-Card 512 GB
 
 2. Software
 
@@ -34,7 +34,7 @@ sudo apt install raspberrypi-ui-mods
 
 - Install VNC Server
 
-Doc Ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#virtual-network-computing-vnc text: Raspberry Pi Documentation: Remote Access, VNC)
+Doc ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#virtual-network-computing-vnc text: raspberrypi.com, Documentation: Remote Access, VNC)
 
 ```
 sudo apt install realvnc-vnc-server
@@ -63,21 +63,50 @@ chmod +x pi-tool-install.sh
 
 - Install Samba (SMB/CIFS), Server and Client
 
-Doc Ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#samba-smbcifs text: Raspberry Pi Documentation: Remote Access, Samba (SMB/CIFS))
+Doc ref: (link: https://www.raspberrypi.com/documentation/computers/remote-access.html#samba-smbcifs text: raspberrypi.com, Documentation: Remote Access, Samba (SMB/CIFS))
 
 ```
 sudo apt install samba samba-common-bin smbclient cifs-utils
 sudo smbpasswd -a matthias
 
 # sudo vi /etc/samba/smb.conf
-[code]
+
+[Shared]
+    path = /home/matthias/Shared
+    read only = no
+    public = yes
+    writable = yes
+
+[Code]
    path = /home/matthias/Code
     read only = no
     public = no
     writable = yes
+    
+sudo systemctl restart smbd
 ```
 
+- Install (link: https://webmin.com/ text: Webmin)
+
+Doc ref: (link: https://webmin.com/deb.html text: webmin.com, Installing on Debian)
+
+```
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
+sudo dpkg -i webmin_1.984_all.deb; sudo apt install -f
+# https://sidepi:10000/
+```
+
+- Install Docker, `docker-compose`
+
+Follow along  (link: https://docs.docker.com/engine/install/debian/ text: docs.docker.com, Install Docker Engine on Debian) and (link: https://docs.docker.com/engine/install/linux-postinstall/ text: docs.docker.com, Post-installation steps for Linux).
+
 To be continued…
+
+## Todos
+
+- Upgrade 32GB SD-Card to SanDisk Ultra microSDXC UHS-I SD-Card **512 GB** and use Raspberry Pi OS **Full** instead of Lite
+- Setup internet/ network sharing from host, via USB
+- Create Ansible playbook for setup
 
 ----
 
