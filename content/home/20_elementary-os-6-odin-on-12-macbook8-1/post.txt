@@ -34,6 +34,58 @@ Welcome elementary OS 6 on my MacBook.
 
 I guess, I now prepreated for the official release... this coming Tuesday 😎
 
+---
+
+## Webcam
+
+After quite ~~some~~ A LOT of tinkering and research I was finally able to get the FacetimeHD webcam working 💪️.
+
+Disclaimer: video quality is NOT good, but ok'ish for the occasional video call while on the go. 
+
+Turns out, following the (link: https://github.com/patjak/facetimehd/wiki/Get-Started text: Getting Started) and applying one additional patch was all that's needed 🙃️.
+
+1. As a prerequisite one need to extract the sensor calibration files as outlined (link: https://github.com/patjak/facetimehd/wiki/Extracting-the-sensor-calibration-files text: here)
+
+2. Clone the repo (link: https://github.com/patjak/facetimehd text: patjak/facetimehd)
+
+3. Since the camera is only 480p, one should modify the size/height/width values in two files, as outlined (link: https://github.com/patjak/facetimehd/issues/196#issuecomment-569858722 text: here)
+
+```
+# fthd_isp.c
+
+        if (dev_priv->fmt.fmt.width < 640 ||
+            dev_priv->fmt.fmt.height < 480) {
+                x1 = 80;
+                x2 = 480;
+        } else {
+                x1 = 0;
+                x2 = 640;
+        }
+    
+    ret = fthd_isp_cmd_channel_crop_set(dev_priv, 0, x1, 0, x2, 480);
+```
+
+```
+# fthd_v4l2.c
+
+        dev_priv->fmt.fmt.sizeimage = 640 * 480 * 2;
+        dev_priv->fmt.fmt.pixelformat = V4L2_PIX_FMT_YUYV;
+        dev_priv->fmt.fmt.width = 640;
+        dev_priv->fmt.fmt.height = 480;
+
+```
+
+4. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update).
+
+---
+
+I'm meanwhile rocking **elementary OS 6.1 Jólnir** and I'm quite happy w/ the setup. 😀️
+
+There are actually only two minor weak points left:
+
+- **Suspend** is not working—b/c keyboard and touchpad are available after resuming from suspend.
+- **Audio** is only available via headphone jack—b/c speakers and microphone are not working.
+
 ----
 
 Published: 2021-08-07
