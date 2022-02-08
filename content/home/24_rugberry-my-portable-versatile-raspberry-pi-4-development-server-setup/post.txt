@@ -1,4 +1,4 @@
-Title: SidePi—My portable & versatile Raspberry Pi 4 development server setup
+Title: RugBerry—My portable & versatile Raspberry Pi 4 development server setup
 
 ----
 
@@ -12,7 +12,7 @@ Though, as I'm clearly (still) not a iPad/ Table person, my particular setup is 
 
 Disclaimer: this write up is still a WORK IN PROGRESS as I'm documenting along the how-to and setup of it's evolving experience…
 
-(image: sidepi_coolmaster_picase40_raspberrypi_4_model_b_8gb_macbook81.jpg)
+(image: rugberry_coolmaster_picase40_raspberrypi_4_model_b_8gb_macbook81.jpg)
 
 So, without furher ado, here are the incredients of my particular setup—so far:
 
@@ -24,7 +24,7 @@ So, without furher ado, here are the incredients of my particular setup—so far
 
 2. Software
 
-- First things first: install Raspberry Pi OS Lite, 64-bit, these days simply by using the great (link: https://www.raspberrypi.com/software/ text: Imager software); also levereaging the **Advanced Options**  for setting hostname (`sidepi`), enabling SSH only allowing public-key authentication (of course!), configuring Wifi, applying locale settings.
+- First things first: install Raspberry Pi OS Lite, 64-bit, these days simply by using the great (link: https://www.raspberrypi.com/software/ text: Imager software); also levereaging the **Advanced Options**  for setting hostname (`rugberry`), enabling SSH only allowing public-key authentication (of course!), configuring Wifi, applying locale settings.
 
 - Install PIXEL Desktop:
 
@@ -93,7 +93,7 @@ Doc ref: (link: https://webmin.com/deb.html text: webmin.com, Installing on Debi
 ```
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 sudo dpkg -i webmin_1.984_all.deb; sudo apt install -f
-# https://sidepi:10000/
+# https://rugberry:10000/
 ```
 
 - Install Docker, Docker Compose
@@ -130,4 +130,4 @@ Published: 2022-02-05
 
 ----
 
-Feedurl: https://openwebcraft.com/sidepi-my-portable-versatile-raspberry-pi-4-development-server-setup
+Feedurl: https://openwebcraft.com/rugberry-my-portable-versatile-raspberry-pi-4-development-server-setup

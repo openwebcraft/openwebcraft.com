@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: RugBerry sitting on top of MacBook 12" (Raspberry Pi 4 Model B 8GB in CoolerMaster Pi Case 40)
+
+----
+
+Title: RugBerry sitting on top of MacBook 12" (Raspberry Pi 4 Model B 8GB in CoolerMaster Pi Case 40)
+
+----
+
+Thewidth: 800
+
+----
+
+Theheight: 666
+
+----
+
+Thepadding: 83.25
