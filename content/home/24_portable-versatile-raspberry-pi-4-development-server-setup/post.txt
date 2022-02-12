@@ -1,4 +1,4 @@
-Title: RugBerry—My portable & versatile Raspberry Pi 4 development server setup
+Title: Portable & versatile Raspberry Pi 4 development server setup
 
 ----
 
@@ -130,4 +130,4 @@ Published: 2022-02-05
 
 ----
 
-Feedurl: https://openwebcraft.com/rugberry-my-portable-versatile-raspberry-pi-4-development-server-setup
+Feedurl: https://openwebcraft.com/portable-versatile-raspberry-pi-4-development-server-setup

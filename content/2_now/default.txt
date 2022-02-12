@@ -15,7 +15,7 @@ How I spend my day (in order of time spent):
 - remote technology consulting (limited hours, fixed commitments)
 - 🏃️ running & crossfit
 - family…
-- side projects (#webdev, Linux on Mobile, (link: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os/ text: elementary OS), OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, (link: https://openwebcraft.com/rugberry-my-portable-versatile-raspberry-pi-4-development-server-setup/ text: Raspberry Pi)
+- side projects (#webdev, Linux on Mobile, (link: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os/ text: elementary OS), OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, (link: https://openwebcraft.com/portable-versatile-raspberry-pi-4-development-server-setup/ text: Raspberry Pi)
 - family…
 
 Those are my priorities.
