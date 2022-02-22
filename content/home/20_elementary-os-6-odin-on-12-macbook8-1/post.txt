@@ -99,8 +99,7 @@ EOF
 sudo openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem
 ```
 
-5. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update).
-
+5. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update). **Note to self**: remeber to manually install linux kernel headers after updating the kernel, e.g. `sudo apt install linux-headers-5.13.0-30-generic` 
 ---
 
 I'm meanwhile rocking **elementary OS 6.1 Jólnir** and I'm quite happy w/ the setup. 😀️
