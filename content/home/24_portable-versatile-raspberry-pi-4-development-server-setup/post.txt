@@ -24,7 +24,7 @@ So, without furher ado, here are the incredients of my particular setup—so far
 
 2. Software
 
-- First things first: install Raspberry Pi OS Lite, 64-bit, these days simply by using the great (link: https://www.raspberrypi.com/software/ text: Imager software); also levereaging the **Advanced Options**  for setting hostname (`rpi`), enabling SSH only allowing public-key authentication (of course!), configuring Wifi, applying locale settings.
+- First things first: install Raspberry Pi OS Lite, 64-bit, these days simply by using the great (link: https://www.raspberrypi.com/software/ text: Imager software); also levereaging the **Advanced Options**  for setting hostname (`piside`), enabling SSH only allowing public-key authentication (of course!), configuring Wifi, applying locale settings.
 
 - Install PIXEL Desktop:
 
@@ -93,7 +93,7 @@ Doc ref: (link: https://webmin.com/deb.html text: webmin.com, Installing on Debi
 ```
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.984_all.deb
 sudo dpkg -i webmin_1.984_all.deb; sudo apt install -f
-# https://rpi:10000/
+# https://piside:10000/
 ```
 
 - Install Docker, Docker Compose
@@ -123,6 +123,7 @@ To be continued…
 - Setup internet/ network sharing from host, via USB
 - Create Ansible playbook for setup
 - Eval (link: https://github.com/gitpod-io/openvscode-server text: OpenVSCode Server)
+- Eval use of (link: https://github.com/regolith-linux/voulage text: Regolith Linux/ Desktop 2.0)
 
 ----
 

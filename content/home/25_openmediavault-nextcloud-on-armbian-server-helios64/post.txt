@@ -1,0 +1,61 @@
+Title: Openmediavault & Nextcloud on Armbian Server Helios64
+
+----
+
+Text:
+
+Quick write-up of my parallel installation of  (link: https://www.openmediavault.org/ text: openmediavaut (OMV)) and (link: https://nextcloud.com/ text: Nextcloud) on (link: https://www.armbian.com/ text: Armbian).
+
+The hardware for this setup is **Helios64**, an ARM-powered NAS from (link: https://kobol.io/ text: Kobol).
+
+Unfortunately the Kobol team had to (link: https://blog.kobol.io/2021/08/25/we-are-pulling-the-plug/ text: pull the plug) and shut-down operations in 2021—which is unfortunate considering what great piece of hardware and software the *Helios64* represents.
+
+## Hardware
+
+- SOC: Rockchip RK3399 (Hexacore 2x Cortex-A72 + 4x Cortex-A53; ARMv8-A 64-bit)
+- RAM: 4GB (LPDDR4)
+- a 5-Bay 3,5" SATA 3.0—I'm rocking 5x Seagate IronWolf 4TB ST4000VN008
+- aluminum case
+- hot-plug tray system
+- 2x LAN Port (1.0Gb, 2.5Gb Ethernet)
+- 1x USB Type-C port (supporting DisplayPort Mode, DAS Mode, Host Mode, Serial Console)
+- 3x USB 3.0 ports
+- Built-in UPS
+- custom (link: https://www.armbian.com/helios64/ text: Armbian) builds —› (link: https://wiki.kobol.io/download/#helios64 text: Armbian Buster Debian 10)
+- further details on hardware featuresm, schematics, etc. to be found in (link: https://wiki.kobol.io/helios64/intro/ text: Kobol Wiki)
+
+## Software
+
+I've first installed OMV via the *System and 3rd party software install* option of `armbian-config`.
+
+In order to avoid collesion with Nextcloud, I've manually reconfigured the port for the OMV web ui from `80` to `90` (later learned that this can be also done via `omv-firstaid`). 
+
+For the installation of Nextcloud I first went with also installing from the `armbian-config` software menu—BUT ultimately settled with installing Nextcloud via the (link: https://github.com/nextcloud/nextcloudpi text: nextcloud/nextcloudpi) setup script.
+
+As the latest custom Armbian build for *Helios64* is based on Debian 10 (Buster) I had to install PHP 7.4 from (link: https://deb.sury.org/ text: Sury PHP PPA Repository):
+
+```
+sudo apt -y install lsb-release apt-transport-https ca-certificates 
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
+sudo apt -y install php7.4
+```
+
+I had to tweak the PHP memory settings for both, OMV and Nextcloud (`php_value[memory_limit] = -1` in respective php-fpm config files, i.e. for OMV in `/etc/php/7.3/fpm/pool.d/openmediavault-webgui.conf ` and for Nextcloud in `/etc/php/7.4/fpm/pool.d/www.conf`).
+
+For Nextcloud I also had to manually fix a few post-install issues that where pointed out to me by  Nextcloud's *Settings / Overview / Security & setup warnings*. Besides manually installing a few dependencies that somehow haven't been installed during setup (e.g. `imagemagick`) I also had to change the binary in `www-data` user's crontab from `php` to `php7.4` (`sudo crontab -u www-data -e`).
+
+After the itial installation/ setup I've changed the `datadirectory` in `/var/www/nextcloud/config/config.php` from the default location `/var/www/nextcloud/data` to my custom OMV share/ mount point `/export/nextcloud/data` by following (link: https://help.nextcloud.com/t/howto-change-move-data-directory-after-installation/17170 text: this how-to).
+
+In order to i) painlessly sync from my devices (Linux, iOS) to Nextcloud's calendar and contacts as well as use the native mobile and desktop (sync) applications and ii) still NOT have to expose the Nextcloud installtion to the public internet for retrieving/ using Let's Encrypt SSL certificats I opted for the (link: https://tailscale.com/ text: Tailscale) feature of (link:  https://tailscale.com/blog/tls-certs/ text: provisioning TLS certificates for your internal Tailscale services) (i.e. the Apache Web Server of OMV and Nextcloud).
+
+(link: https://tailscale.com/ text: Tailscale) initself is an UBER AWESOME service, developed by a great team with lot's of passion. (link: https://tailscale.com/kb/1153/enabling-https/ text: Enabling HTTPS) along w/ setting up (link: https://tailscale.com/kb/1081/magicdns/ text: MagicDNS) was super straight-forward and quick. This setup now gives me a custom subdomain for my Armbian server and a script to generate a SSL certificate for the server, which is then configured to be used by the Apache web server's vhosts.
+
+----
+
+Published: 2022-03-20
+
+----
+
+Feedurl: https://openwebcraft.com/openmediavault-nextcloud-on-armbian-server-helios64
