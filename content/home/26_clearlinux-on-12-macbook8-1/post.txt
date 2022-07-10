@@ -1,0 +1,37 @@
+Title: Clear Linux on 12" MacBook8,1
+
+----
+
+Text:
+
+I really, really like the form factor and overall versatility of my MacBook Retina, 12-inch, Early 2015.
+
+Therefore, it is of course also a viable target for ~~distribution hopping~~ optimizing my (mobile) work/ computing setup. 🤓
+
+The installation is smooth and uneventfull, though an external (usb) keyboard/ mouse is required due to `applespi` drivers not being (auto) loaded at boot time and therefore the buildin keyboard and touchpad are not usable.
+
+But this can be fixed rather easily by following Clear Linux's official documentation on how to (link: https://docs.01.org/clearlinux/latest/guides/kernel/kernel-modules.html#optional-configure-kernel-modules-to-load-at-boot text: configure kernel modules to load at boot):
+
+```
+sudo mkdir -p /etc/modules-load.d
+
+# /etc/modules-load.d/applespi.conf
+spi_pxa2xx_platform
+spi_pxa2xx_pci
+applespi
+```
+
+Then, one is left w/ only some minor weak points:
+
+- **Full disk encryption** using LUKS not usable—b/c of missing drivers for macbook8,1 builtin keyboard in initrd for full disk encrpytion via LUKS. I opened an issue  (link: https://github.com/clearlinux/distribution/issues/2668 text: #2668).
+- **Bluetooth** is not working—b/c no driver available.
+- **Suspend** is not working—b/c keyboard and touchpad are available after resuming from suspend.
+- **Audio** is only available via headphone jack—b/c speakers and microphone are not working.
+
+----
+
+Published: 2022-07-07
+
+----
+
+Feedurl: https://openwebcraft.com/clearlinux-on-12-macbook8-1

@@ -106,6 +106,7 @@ I'm meanwhile rocking **elementary OS 6.1 Jólnir** and I'm quite happy w/ the s
 
 There are actually only two minor weak points left:
 
+- **Bluetooth** is not working/ available.
 - **Suspend** is not working—b/c keyboard and touchpad are available after resuming from suspend.
 - **Audio** is only available via headphone jack—b/c speakers and microphone are not working.
 
