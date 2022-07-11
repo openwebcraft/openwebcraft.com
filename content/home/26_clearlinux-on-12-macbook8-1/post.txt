@@ -23,7 +23,7 @@ applespi
 
 Then, one is left w/ only some minor weak points:
 
-- **Full disk encryption** using LUKS not usable—b/c of missing drivers for macbook8,1 builtin keyboard in initrd for full disk encrpytion via LUKS. I opened an issue  (link: https://github.com/clearlinux/distribution/issues/2668 text: #2668).
+- **Full disk encryption** using LUKS not usable—b/c of missing drivers for macbook8,1 builtin keyboard in initrd for full disk encrpytion via LUKS. I opened an issue  (link: https://github.com/clearlinux/distribution/issues/2668 text: #2668), though eventually I'll have to (link: https://docs.01.org/clearlinux/latest/guides/kernel/kernel-development.html text: build my own kernel).
 - **Bluetooth** is not working—b/c no driver available.
 - **Suspend** is not working—b/c keyboard and touchpad are available after resuming from suspend.
 - **Audio** is only available via headphone jack—b/c speakers and microphone are not working.
