@@ -1,0 +1,43 @@
+Title: iPad & Debian Regolith Desktop on Shells.com
+
+----
+
+Text:
+
+Create a *Shell Plus* (2vCPU, 4 GB RAM) (link: https://www.shells.com/l/en-US/pricing text: Shell) w/ *Debian Bullseye GNOME*.
+
+Install (link: https://regolith-desktop.com/ text: Regolit Desktop 2.1) .
+
+(link: https://help.gnome.org/admin/system-admin-guide/stable/session-user.html.en text: Configure default GNOME session) (`XSession=regolith`) for your user (here `matthias`):
+
+```sh
+# /var/lib/AccountsService/users/matthias
+[User]
+Language=
+XSession=regolith
+Icon=/home/matthias/.face
+SystemAccount=false
+```
+Adjust keybinds for your user by switching `super` from the `windows` key to `alt` as per (link: https://regolith-desktop.com/docs/using-regolith/configuration/ text: usage advice) :
+
+```sh
+# ~/.config/regolith2/Xresources
+i3-wm.mod: Mod1
+i3-wm.alt: Mod4
+```
+
+Switch the look (theme) to *Dracula*:
+
+```sh
+sudo apt install regolith-look-dracula
+regolith-look set dracula
+regolith-look refresh
+```
+
+----
+
+Published: 2022-08-08
+
+----
+
+Feedurl: https://openwebcraft.com/ipad-debian-regolith-desktop-on-shells-com

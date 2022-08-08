@@ -1,0 +1,13 @@
+Title: Clear Linux custom OS on Shells.com
+
+----
+
+Text:
+
+Start w/ partially following the guide (link: https://docs.01.org/clearlinux/latest/get-started/virtual-machine-install/kvm.html text: Clear Linux* OS on KVM): download latest `clear-*-kvm.img.xz` from https://cdn.download.clearlinux.org/image/…
+
+Then follow up w/  (link: https://www.shells.com/l/en-US/tutorial/Shells-com-OS-Creation-Tutorial text: Shells.com OS Creation Tutorial)…
+
+----
+
+Published: 2022-08-06

@@ -1,0 +1,33 @@
+Title: Raspberry Pi OS internet access via iOS USB tethering
+
+----
+
+Text:
+
+1. Add `dtoverlay=dwc2` to the `/boot/config.txt`
+2. Add `modules-load=dwc2,g_ether` to the end of `/boot/cmdline.txt` (right behind `…rootwait`)
+3. Check devices: `networkctl` 
+4. Create file `/etc/systemd/network/ipad.link` :
+
+```sh
+[Match]
+Name=usb0
+
+[Network]
+DHCP=yes
+```
+
+5. Restart systemd networking: `sudo systemctl restart systemd-networkd`
+6. Check configuration `networkctl`
+
+
+
+## Resources
+
+https://www.hardill.me.uk/wordpress/2019/11/02/pi4-usb-c-gadget/
+
+https://blog.michael.franzl.name/2017/02/28/raspberry-pi-gateway-mobile-internet/
+
+----
+
+Published: 2022-07-11
