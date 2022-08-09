@@ -4,6 +4,8 @@ Title: iPad & Debian Regolith Desktop on Shells.com
 
 Text:
 
+(image: screenshot_ipadair_shells_regolithdebiandesktop.png)
+
 Create a *Shell Plus* (2vCPU, 4 GB RAM) (link: https://www.shells.com/l/en-US/pricing text: Shell) w/ *Debian Bullseye GNOME*.
 
 Install (link: https://regolith-desktop.com/ text: Regolit Desktop 2.1) .

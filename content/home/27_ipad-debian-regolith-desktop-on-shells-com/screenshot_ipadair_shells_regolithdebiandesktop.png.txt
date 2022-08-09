@@ -1,0 +1,21 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot iPad Air running Regolith Desktop on Debian Bullseye in Shells.com
+
+----
+
+Title: Screenshot iPad Air running Regolith Desktop on Debian Bullseye in Shells.com
+
+----
+
+Thewidth: 1180
+
+----
+
+Theheight: 820
+
+----
+
+Thepadding: 69.491525423729
