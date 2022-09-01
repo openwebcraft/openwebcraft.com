@@ -19,7 +19,7 @@
             "getkirby/composer-installer": true
         },
 		"platform": {
-			"php": "7.4"
+			"php": "7.4.30"
 		}
     },
     "extra": {
