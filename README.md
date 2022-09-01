@@ -86,6 +86,8 @@ Prerequisite: [Composer](https://getcomposer.org/) installed.
 
 ### Setup
 
+#### Debian
+
 ```sh
 # common package dependencies
 sudo apt install -y curl wget gnupg2 ca-certificates lsb-release apt-transport-https
@@ -96,15 +98,24 @@ wget https://packages.sury.org/php/apt.gpg
 sudo apt-key add apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.list
 sudo apt update
+```
 
+#### Ubuntu
+
+```sh
+sudo add-apt-repository ppa:ondrej/php -y
+```
+
+```sh
 # install PHP-7.4 along w/ required modules
-sudo apt install -y php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-ctype php7.4-dom
+sudo apt install -y php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-ctype php7.4-dom php7.4-mbstring
+sudo update-alternatives --set php /usr/bin/php7.4
 php --version
 ```
 
 ### Usage
 
 ```sh
-php composer composer update getkirby/cms
+composer update getkirby/cms
 php -S localhost:8000 public/index.php
 ```
