@@ -7,7 +7,7 @@
 - certbot
 - httpd(8)/ httpd.conf(5)
 - httpd-plus
-- php74 / php74_fpm
+- php80 / php80_fpm
 - composer
 - Kirby
 
@@ -22,20 +22,20 @@ pkg_add unzip
 pkg_add git
 # Let's Encrypt Certbot
 pkg_add certbot
-# php-7.4.16
+# php-8.0.23
 pkg_add php
-# /etc/php-7.4.ini
-cat /usr/local/share/doc/pkg-readmes/php-7.4
+# /etc/php-8.0.ini
+cat /usr/local/share/doc/pkg-readmes/php-8.0
 
 pkg_add php-curl
-ln -sf /etc/php-7.4.sample/curl.ini /etc/php-7.4/
+ln -sf /etc/php-8.0.sample/curl.ini /etc/php-8.0/
 
 pkg_add php-gd
-ln -s /etc/php-7.4.sample/gd.ini /etc/php-7.4/
+ln -s /etc/php-8.0.sample/gd.ini /etc/php-8.0/
 
 # /etc/php-fpm.conf
-rcctl enable php74_fpm
-rcctl start php74_fpm
+rcctl enable php80_fpm
+rcctl start php80_fpm
 
 # composer
 pkg_add composer
@@ -80,7 +80,7 @@ composer install
 composer update
 ```
 
-## PHP-7.4 Linux Dev Env for Debian-based distros (incl. elementary OS 6 Odin)
+## PHP-8.0 Linux Dev Env for Debian-based distros (incl. elementary OS 6 Odin)
 
 Prerequisite: [Composer](https://getcomposer.org/) installed.
 
@@ -96,7 +96,7 @@ sudo apt install -y curl wget gnupg2 ca-certificates lsb-release apt-transport-h
 cd ~/Downloads
 wget https://packages.sury.org/php/apt.gpg
 sudo apt-key add apt.gpg
-echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.list
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php8.list
 sudo apt update
 ```
 
@@ -104,13 +104,6 @@ sudo apt update
 
 ```sh
 sudo add-apt-repository ppa:ondrej/php -y
-```
-
-```sh
-# install PHP-7.4 along w/ required modules
-sudo apt install -y php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-gd php7.4-ctype php7.4-dom php7.4-mbstring
-sudo update-alternatives --set php /usr/bin/php7.4
-php --version
 ```
 
 ```sh
