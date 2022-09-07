@@ -9,7 +9,7 @@ return [
     'api' => [
         'slug' => 'kirby/api'
     ],
-    'debug' => true,
+    'debug' => false,
     'home'  => 'home',
     'community.markdown-field.font' => [
         'family'  => 'sans-serif',
