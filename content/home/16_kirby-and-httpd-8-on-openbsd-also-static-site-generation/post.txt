@@ -146,7 +146,7 @@ server openwebcraft.com {
   }
   
   # rewrite path segment to Kirby's PHP handler
-  location "/kpanel/*" {
+  location "/kirby/*" {
    root "/htdocs/openwebcraft.com/public"
    directory index "index.php"
    authenticate "Kirby" with \
@@ -226,7 +226,7 @@ echo $kirby->render();
 return [
   'servers' => ['httpd'],   # OpenBSD httpd
   'panel' => [
-    'slug' => 'kpanel' # kirby/* route
+    'slug' => 'kirby' # kirby/* route
   ],
   'api' => [
      'slug' => 'kapi'  # kirby/* route

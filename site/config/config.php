@@ -4,7 +4,7 @@ return [
     'servers' => ['httpd'],
     'panel' => [
         'install' => true,
-        'slug' => 'kpanel'
+        'slug' => 'kirby'
     ],
     'api' => [
         'slug' => 'kapi'
