@@ -11,11 +11,7 @@ return [
     ],
     'debug' => false,
     'home'  => 'home',
-    'community.markdown-field.font' => [
-        'family'  => 'sans-serif',
-        'scaling' => true,
-        'size'    => 'small',
-    ],
+    'community.markdown-field.font' => 'sans-serif',
     'community.markdown-field.modals'        => true,
     'community.markdown-field.blank'         => false,
     'community.markdown-field.invisibles'    => false,
