@@ -22,17 +22,17 @@ Here's a list of the desired functionality (a.k.a "dreamcode"):
 # Let's Encrypt Certbot
 pkg_add certbot
 
-# php-7.4.16
+# php-8.0.23
 pkg_add php
-# /etc/php-7.4.ini
-cat /usr/local/share/doc/pkg-readmes/php-7.4
+# /etc/php-8.0.ini
+cat /usr/local/share/doc/pkg-readmes/php-8.0
 pkg_add php-curl
-ln -sf ../php-7.4.sample/curl.ini /etc/php-7.4/
+ln -sf ../php-8.0.sample/curl.ini /etc/php-8.0/
 pkg_add php-gd
-ln -s /etc/php-7.4.sample/gd.ini /etc/php-7.4/
+ln -s /etc/php-8.0.sample/gd.ini /etc/php-8.0/
 # /etc/php-fpm.conf
-rcctl enable php74_fpm
-rcctl start php74_fpm
+rcctl enable php80_fpm
+rcctl start php80_fpm
 
 # composer
 pkg_add composer
