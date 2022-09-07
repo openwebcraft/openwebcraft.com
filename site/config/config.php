@@ -3,13 +3,13 @@
 return [
     'servers' => ['httpd'],
     'panel' => [
-        'install' => true,
+        // 'install' => true,
         'slug' => 'kirby'
     ],
     'api' => [
         'slug' => 'kapi'
     ],
-    'debug' => true,
+    'debug' => false,
     'home'  => 'home',
     'community.markdown-field.font' => 'sans-serif',
     'community.markdown-field.modals'        => true,
