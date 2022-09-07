@@ -146,7 +146,20 @@ server openwebcraft.com {
   }
   
   # rewrite path segment to Kirby's PHP handler
-  location "/kirby/*" {
+  location "/kpanel/*" {
+   root "/htdocs/openwebcraft.com/public"
+   directory index "index.php"
+   authenticate "Kirby" with \
+   	"/auth/openwebcraft.com/.htpasswd"
+   fastcgi {
+     socket "/run/php-fpm.sock"
+     param SCRIPT_FILENAME \
+     	"/htdocs/openwebcraft.com/public/index.php"
+     param SCRIPT_NAME "index.php"
+    }
+  }
+
+  location "/kapi/*" {
    root "/htdocs/openwebcraft.com/public"
    directory index "index.php"
    authenticate "Kirby" with \
@@ -213,10 +226,10 @@ echo $kirby->render();
 return [
   'servers' => ['httpd'],   # OpenBSD httpd
   'panel' => [
-    'slug' => 'kirby/panel' # kirby/* route
+    'slug' => 'kpanel' # kirby/* route
   ],
   'api' => [
-     'slug' => 'kirby/api'  # kirby/* route
+     'slug' => 'kapi'  # kirby/* route
   ],
   'debug' => false,
   'home'  => 'home',

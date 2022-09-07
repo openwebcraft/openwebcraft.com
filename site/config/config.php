@@ -4,10 +4,10 @@ return [
     'servers' => ['httpd'],
     'panel' => [
         'install' => true,
-        'slug' => 'kirby/panel'
+        'slug' => 'kpanel'
     ],
     'api' => [
-        'slug' => 'kirby/api'
+        'slug' => 'kapi'
     ],
     'debug' => true,
     'home'  => 'home',
