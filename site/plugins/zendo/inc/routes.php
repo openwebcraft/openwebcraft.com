@@ -10,7 +10,7 @@ return [
     ],
 
     # Redirect home urls
-    [
+/*     [
         'pattern' => '(:all)',
         'action'  => function($uid) {
 
@@ -22,7 +22,7 @@ return [
             $this->next();
 
         }    
-    ],
+    ], */
 
     # Redirect old RSS link
     [
