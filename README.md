@@ -113,6 +113,13 @@ sudo update-alternatives --set php /usr/bin/php7.4
 php --version
 ```
 
+```sh
+# install PHP-8.0 along w/ required modules
+sudo apt install -y php8.0 php8.0-cli php8.0-common php8.0-curl php8.0-gd php8.0-ctype php8.0-dom php8.0-mbstring
+sudo update-alternatives --set php /usr/bin/php8.0
+php --version
+```
+
 ### Usage
 
 ```sh

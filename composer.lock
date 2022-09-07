@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3399fabc1734f32efc6168b6b9305ea0",
+    "content-hash": "cac517a6ebfc1ec7bed7e37c37f78ba0",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -395,16 +395,16 @@
         },
         {
             "name": "johannschopplich/kirby-highlighter",
-            "version": "v1.4.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-highlighter.git",
-                "reference": "7bd46feba5032a9d7709a8da87104070b74117cc"
+                "reference": "5f8cd2ed9d0e28ae643b23a2a94f03f020282790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-highlighter/zipball/7bd46feba5032a9d7709a8da87104070b74117cc",
-                "reference": "7bd46feba5032a9d7709a8da87104070b74117cc",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-highlighter/zipball/5f8cd2ed9d0e28ae643b23a2a94f03f020282790",
+                "reference": "5f8cd2ed9d0e28ae643b23a2a94f03f020282790",
                 "shasum": ""
             },
             "require": {
@@ -413,12 +413,12 @@
                 "symfony/polyfill-php80": "^1.20"
             },
             "require-dev": {
-                "getkirby/cms": "^3.0",
+                "getkirby/cms": "^3.6",
                 "phpunit/phpunit": "^9.0"
             },
             "type": "kirby-plugin",
             "extra": {
-                "kirby-cms-path": false
+                "kirby-cms-path": "tests/fixtures/kirby"
             },
             "autoload": {
                 "psr-4": {
@@ -436,7 +436,8 @@
                     "homepage": "https://johannschopplich.com"
                 }
             ],
-            "description": "Server-side syntax highlighting for KirbyText",
+            "description": "Server-side syntax highlighting for the Kirby CMS",
+            "homepage": "https://github.com/johannschopplich/kirby-highlighter#readme",
             "keywords": [
                 "highlight",
                 "highlighter",
@@ -445,26 +446,28 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-highlighter/issues",
-                "source": "https://github.com/johannschopplich/kirby-highlighter/tree/v1.4.1"
+                "source": "https://github.com/johannschopplich/kirby-highlighter/tree/v2.1.0"
             },
-            "time": "2021-08-25T08:08:06+00:00"
+            "time": "2022-04-15T08:33:41+00:00"
         },
         {
             "name": "k-community/markdown-field",
-            "version": "1.0.9",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sylvainjule/kirby-markdown-field.git",
-                "reference": "7b1c13e6e45ffdb8b9e2f436378f5ba93507b1dc"
+                "url": "https://github.com/fabianmichael/kirby-markdown-field.git",
+                "reference": "38eecd85216524f78fde9ee6f47e9267d2306a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sylvainjule/kirby-markdown-field/zipball/7b1c13e6e45ffdb8b9e2f436378f5ba93507b1dc",
-                "reference": "7b1c13e6e45ffdb8b9e2f436378f5ba93507b1dc",
+                "url": "https://api.github.com/repos/fabianmichael/kirby-markdown-field/zipball/38eecd85216524f78fde9ee6f47e9267d2306a3e",
+                "reference": "38eecd85216524f78fde9ee6f47e9267d2306a3e",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.1"
+                "getkirby/cms": ">=3.6.0",
+                "getkirby/composer-installer": "^1.2",
+                "php": ">=8.0.0"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -486,10 +489,16 @@
             ],
             "description": "Enhanced markdown editor for Kirby 3",
             "support": {
-                "issues": "https://github.com/sylvainjule/kirby-markdown-field/issues",
-                "source": "https://github.com/sylvainjule/kirby-markdown-field/tree/1.0.9"
+                "issues": "https://github.com/fabianmichael/kirby-markdown-field/issues",
+                "source": "https://github.com/fabianmichael/kirby-markdown-field/tree/2.0.2"
             },
-            "time": "2021-01-06T16:19:33+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/fabianmichael",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-08-25T19:18:48+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -844,30 +853,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.4",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=8.0.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
+                    "Psr\\Log\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -888,9 +897,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.4"
+                "source": "https://github.com/php-fig/log/tree/3.0.0"
             },
-            "time": "2021-05-03T11:20:27+00:00"
+            "time": "2021-07-14T16:46:02+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -1319,7 +1328,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.4.30"
+        "php": "8.0"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

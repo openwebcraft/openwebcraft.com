@@ -9,9 +9,9 @@
     "require": {
         "getkirby/cms": "^3.0",
         "matthiasjg/kirby3-static-site-composer": "dev-main",
-        "johannschopplich/kirby-highlighter": "^1.4",
-        "k-community/markdown-field": "^1.0",
-        "oblik/kirby-git": "^1.2"
+        "johannschopplich/kirby-highlighter": "^2.1",
+        "k-community/markdown-field": "^2.0",
+        "oblik/kirby-git": "^1.4"
     },
     "config": {
         "optimize-autoloader": true,
@@ -19,7 +19,7 @@
             "getkirby/composer-installer": true
         },
 		"platform": {
-			"php": "7.4.30"
+			"php": "8.0"
 		}
     },
     "extra": {
