@@ -302,6 +302,28 @@ columns:
 # […]
 ```
 
+## Web log analysis 
+
+…using (link: https://goaccess.io/ text: GoAccess):
+
+First—for approach and basic setup—follow along (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
+
+For proper time formatting when using httpd's slightly different COMMON log style create the `.goaccessrc` file in your user's home directory (and root) and add to it:
+
+```
+time-format %T
+date-format %d/%b/%Y
+log-format %v %h %^ %^ [%d:%t %^] "%r" %s %b
+```
+
+One can test the setup w/ this command:
+
+```
+zcat /var/www/logs/access.log.*.gz | cat /var/www/logs/access.log - | grep -v syslog | goaccess --no-global-config
+```
+
+In order to setup/ automate the scheduled creation/ update of the stats report and to secure the `stats/` folder with *htpasswd* simply follow again (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
+
 ## Known Issues
 
 Because there's always room to improve…
