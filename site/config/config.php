@@ -24,7 +24,7 @@ return [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
             'output_folder' => '../static',
-            'preserve' => ['notes', 'kassets', 'kmedia', 'favicon.ico'],
+            'preserve' => ['notes', 'kassets', 'kmedia', 'favicon.ico', 'stats'],
             'base_url' => '/',
             'skip_media' => true,
             'skip_templates' => [],
