@@ -308,21 +308,26 @@ columns:
 
 First—for approach and basic setup—follow along (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
 
-For proper time formatting when using httpd's slightly different COMMON log style create the `.goaccessrc` file in your user's home directory (and root) and add to it:
+For compatibility w/ httpd(8)'s log format — either *common* or *combined* — simply uncomment the respective section in `/etc/goaccess/goaccess.conf`—if not specified, (link: https://man.openbsd.org/OpenBSD-6.9/httpd.conf#style text: the default is common)):
 
 ```
-time-format %T
+# httpd(8) common log format
 date-format %d/%b/%Y
-log-format %v %h %^ %^ [%d:%t %^] "%r" %s %b
+time-format %T %z
+log-format %v %h %^ %^ [%d:%t] "%r" %s %b
 ```
+
+Here's some background reading on (link: https://www.skreutz.com/posts/goaccess-log-format-for-openbsd-httpd/ text: httpd(8) log styles from Stefan Kreutz).
 
 One can test the setup w/ this command:
 
 ```
-zcat /var/www/logs/access.log.*.gz | cat /var/www/logs/access.log - | grep -v syslog | goaccess --no-global-config
+zcat /var/www/logs/access.log.*.gz | cat /var/www/logs/access.log - | grep -v syslog | goaccess
 ```
 
 In order to setup/ automate the scheduled creation/ update of the stats report and to secure the `stats/` folder with *htpasswd* simply follow again (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
+
+Note: in case the cron job is not properly executed (i.e. you get an error like "Error occurred at: src/goaccess.c - initializer  […] No input data was provided nor there's data to restore.") you'll find the solution in (link: https://stackoverflow.com/questions/64002655/cron-job-for-generate-go-access-report-not-working text: this stackoverflow).
 
 ---
 
