@@ -304,7 +304,7 @@ columns:
 
 ## Web log analysis 
 
-…using (link: https://goaccess.io/ text: GoAccess):
+**Option 1:** (link: https://goaccess.io/ text: GoAccess)
 
 First—for approach and basic setup—follow along (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
 
@@ -323,6 +323,18 @@ zcat /var/www/logs/access.log.*.gz | cat /var/www/logs/access.log - | grep -v sy
 ```
 
 In order to setup/ automate the scheduled creation/ update of the stats report and to secure the `stats/` folder with *htpasswd* simply follow again (link: https://chevybeef.com/post/web-log-analysis-openbsd/ text: chevybeef's blog post).
+
+---
+
+**Option 2:** (link: https://webalizer.net text: Webalizer) 
+
+Some useful hints and config sample to be found on (link: https://calomel.org/webalizer.html text: calomel.org).
+
+Adjust `/etc/webalizer.conf` to your needs and test w/ following command (also goes into crontab):
+
+```
+/usr/local/bin/webalizer >> /dev/null 2>&1
+```
 
 ## Known Issues
 
