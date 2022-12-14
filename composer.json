@@ -19,7 +19,7 @@
             "getkirby/composer-installer": true
         },
 		"platform": {
-			"php": "8.0"
+			"php": "8.1"
 		}
     },
     "extra": {
