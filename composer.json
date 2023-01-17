@@ -7,10 +7,10 @@
         "email": "matthias@openwebcraft.com"
     }],
     "require": {
-        "getkirby/cms": "^3.0",
+        "getkirby/cms": "^3.8",
         "matthiasjg/kirby3-static-site-composer": "dev-main",
         "johannschopplich/kirby-highlighter": "^2.1",
-        "fabianmichael/kirby-markdown-field": "^2.1",
+        "fabianmichael/kirby-markdown-field": "^2.0",
         "oblik/kirby-git": "^1.4"
     },
     "config": {
