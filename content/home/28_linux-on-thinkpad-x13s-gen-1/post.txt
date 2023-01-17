@@ -31,6 +31,8 @@ Notes:
 
 A loose collection of links to public web resources about various attempts of making Linux on X13s a thing:
 
+- GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
+
 ## Fedora 
 
 Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
@@ -50,10 +52,6 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 - GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
 
 - GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
-
-## Other, general
-
-- GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
 
 ----
 
