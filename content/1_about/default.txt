@@ -18,8 +18,12 @@ Curious? Here's what (link: now text: what I'm doing now)
 
 ## Wanna Get in touch?
 
-Mail me at (email: hey@openwebcraft.com text: hey@openwebcraft.com) or hit me up on the Interwebs, preferably on the Fediverse: (link: https://mastodon.social/@matthiasgeisler text: Mastodon (@matthiasgeisler@mastodon.social)); IF NEED BE on (link: https://twitter.com/matthiasgeisler text: Twitter) or (link: https://keybase.io/matthiasgeisler text: Keybase).
+Mail me at (email: hey@openwebcraft.com text: hey@openwebcraft.com) or hit me up on the Interwebs, preferably on the Fediverse: (link: https://mastodon.social/@matthiasgeisler text: Mastodon (@matthiasgeisler@mastodon.social) rel: me); IF NEED BE on (link: https://twitter.com/matthiasgeisler text: Twitter) or (link: https://keybase.io/matthiasgeisler text: Keybase).
 
 ----
 
 Menu: About
+
+----
+
+Uuid: lEovzqU0nEgssWaK

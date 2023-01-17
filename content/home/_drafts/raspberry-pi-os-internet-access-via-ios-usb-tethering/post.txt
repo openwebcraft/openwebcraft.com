@@ -31,3 +31,7 @@ https://blog.michael.franzl.name/2017/02/28/raspberry-pi-gateway-mobile-internet
 ----
 
 Published: 2022-07-11
+
+----
+
+Uuid: IQrc3JtIs1PCKf8D

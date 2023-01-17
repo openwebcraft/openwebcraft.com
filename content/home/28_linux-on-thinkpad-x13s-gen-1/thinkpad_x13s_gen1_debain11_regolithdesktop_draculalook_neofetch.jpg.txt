@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: ThinkPad X13s Gen 1 running Debian 11, Regolith-Desktop w/ Dracula look and neofetch
+
+----
+
+Title: ThinkPad X13s Gen 1 running Debian 11, Regolith-Desktop w/ Dracula look and neofetch
+
+----
+
+Uuid: QEzZ9qeqbKCkl8Bd
+
+----
+
+Thewidth: 1180
+
+----
+
+Theheight: 1573
+
+----
+
+Thepadding: 133.30508474576

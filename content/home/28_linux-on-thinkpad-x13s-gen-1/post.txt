@@ -1,0 +1,68 @@
+Title: Linux on ThinkPad X13s Gen 1
+
+----
+
+Text:
+
+(image: thinkpad_x13s_gen1_debain11_regolithdesktop_draculalook_neofetch.jpg)
+
+This is to document my ~~ordeal~~  *#EmbraceTheSuck* journey and **work-in-progress** of daily driving a (link: https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad-x13s-(13-inch-snapdragon)/21bxcto1wwus1 text: Lenovo ThinkPad X13s Gen 1).
+
+## Windows 11
+
+- Install BIOS Updates (via Windows App *Lenovo Commercial Vantage*)
+- Install Windows 11 Updates, incl. *Windows 11, version 22H2*
+- Activated Windows Feature *Hyper-V*, installed WSL2 and distros Debian and Ubuntu.
+- Installed Visual Studio Code along w/ some other native-arm Windows Apps, just to see… 
+
+## Debian
+
+I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
+
+Notes:
+
+- I created the bootable USB driver on Linux via the awesome [balenaEtcher](https://www.balena.io/etcher/) application.
+- I shrinked the Windows drive on my 1TB disk by `768000` MB, resulting in 750 GB of "Unallocated" space.
+- I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day.
+    - Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
+- How can I install Debian with full-disk encryption and a custom sized swapfile? Well, task for another day… 🤷‍♂️
+
+---
+
+A loose collection of links to public web resources about various attempts of making Linux on X13s a thing:
+
+## Fedora 
+
+Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
+
+> Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.
+> 
+> src ref: [Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s)
+
+[Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
+
+## Arch
+
+- GitHub repo on [Arch Linux ARM packages for ThinkPad X13s](https://github.com/szclsya/x13s-alarm)
+
+## Ubuntu
+
+- GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
+
+- GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
+
+## Other, general
+
+- GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
+
+----
+
+Published: 2023-01-17
+
+----
+
+Uuid: aj5HvftesulsJJDc
+
+----
+
+Feedurl: https://openwebcraft.com/linux-on-thinkpad-x13s-gen-1

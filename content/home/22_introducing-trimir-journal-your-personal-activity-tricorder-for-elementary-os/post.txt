@@ -47,3 +47,7 @@ Published: 2021-11-05
 ----
 
 Feedurl: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os
+
+----
+
+Uuid: VCPKdnfMQm3S497x

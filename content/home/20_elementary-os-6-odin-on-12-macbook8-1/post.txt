@@ -117,3 +117,7 @@ Published: 2021-08-07
 ----
 
 Feedurl: https://openwebcraft.com/elementary-os-6-odin-on-12-macbook8-1
+
+----
+
+Uuid: HodbNAH5WjKSdrJ7

@@ -35,3 +35,7 @@ Published: 2022-07-07
 ----
 
 Feedurl: https://openwebcraft.com/clearlinux-on-12-macbook8-1
+
+----
+
+Uuid: RzLiCMFyYV6v0BgW
