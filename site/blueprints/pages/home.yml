@@ -12,6 +12,7 @@ options:
     preview: true
     read: true
     update: true
+    preview: "/kirby/preview/{{ page.parent.url }}/{{ page.slug }}"
 
 # Available Statuses for the page
 status:
