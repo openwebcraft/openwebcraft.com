@@ -15,6 +15,12 @@ This is to document my ~~ordeal~~  *#EmbraceTheSuck* journey and **work-in-progr
 - Activated Windows Feature *Hyper-V*, installed WSL2 and distros Debian and Ubuntu.
 - Installed Visual Studio Code along w/ some other native-arm Windows Apps, just to see… 
 
+## Linux
+
+The state of Linux on the X13s is still pretty much WIP (work-in-progress), but (link: https://www.reddit.com/r/linuxhardware/comments/10a63o6/did_efforts_for_linux_on_x13s_stop_a_few_months/ text: NO it has not stopped a few month ago).
+
+The community is eagerly awaiting the latest kernel works to arrive in distros. 
+
 ## Debian
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
@@ -39,9 +45,11 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 
 > Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.
 > 
-> src ref: [Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s)
+> src refs: [Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://www.spinics.net/linux/fedora/fedora-arm/msg14363.html)
 
 [Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
+
+You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
 
 ## Arch
 
@@ -52,6 +60,10 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 - GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
 
 - GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
+
+## BSDs
+
+- [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
 
 ----
 
