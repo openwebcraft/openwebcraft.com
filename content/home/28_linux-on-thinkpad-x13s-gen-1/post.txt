@@ -21,7 +21,7 @@ The state of Linux on the X13s is still pretty much WIP (work-in-progress), but 
 
 The community is eagerly awaiting the latest kernel works to arrive in distros. 
 
-## Debian
+## Debian—WIP
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
 
@@ -29,15 +29,17 @@ Notes:
 
 - I created the bootable USB driver on Linux via the awesome [balenaEtcher](https://www.balena.io/etcher/) application.
 - I shrinked the Windows drive on my 1TB disk by `768000` MB, resulting in 750 GB of "Unallocated" space.
-- I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day.
-    - Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
-- How can I install Debian with full-disk encryption and a custom sized swapfile? Well, task for another day… 🤷‍♂️
+- I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day 🤷‍♂️
+- Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
+- After "updating" to Debian `testing` I had to re-enable `os-prober` to create a custom GRUB menu entry for Windows as documented (link: https://wiki.debian.org/DualBoot/Windows10 text: here)
+- Uninstalled `regolith-desktop` ((link: https://github.com/regolith-linux/regolith-desktop/issues/635#issuecomment-1402333826 text: until  `arm64` repositories for Regolith are available)) and re-installed GNOME via `tasksel`.
 
 ---
 
 A loose collection of links to public web resources about various attempts of making Linux on X13s a thing:
 
 - GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
+- Bluetooth in the works: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html)
 
 ## Fedora 
 
@@ -45,7 +47,7 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 
 > Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.
 > 
-> src refs: [Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://www.spinics.net/linux/fedora/fedora-arm/msg14363.html)
+> src refs: [fedoraproject.org/wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/UFI7PHWCMVGFE7RD6LN7YDP77KCHBHZE/)
 
 [Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
 
@@ -53,13 +55,17 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 
 ## Arch
 
-- GitHub repo on [Arch Linux ARM packages for ThinkPad X13s](https://github.com/szclsya/x13s-alarm)
+- (link: https://www.reddit.com/r/thinkpad/comments/w22mvg/arch_linux_arm_iso_on_x13s_wip/ text: reddit: Arch Linux ARM ISO on X13s (WIP))
 
 ## Ubuntu
 
 - GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
 
 - GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
+
+> Installer for Lenovo X13s
+>   - work started
+> (src ref [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
 
 ## BSDs
 
