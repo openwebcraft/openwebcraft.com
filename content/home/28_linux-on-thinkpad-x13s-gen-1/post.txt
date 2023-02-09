@@ -75,6 +75,15 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 
 - [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
 
+---
+
+## usermode x86 and x86-64 emulation for arm64 
+
+[FEX](https://github.com/FEX-Emu/FEX) allows you to run x86 and x86-64 binaries on an AArch64 host, similar to qemu-user and box86.
+
+> The GPU has finally come alive on the Lenovo X13s! 
+> (src ref: [Tweet](https://twitter.com/FEX_Emu/status/1623373552576786432)
+
 ----
 
 Published: 2023-01-17
