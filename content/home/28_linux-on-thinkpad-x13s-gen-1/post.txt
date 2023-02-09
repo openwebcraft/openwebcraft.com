@@ -67,6 +67,10 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 >   - work started
 > (src ref [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
 
+## NixOS
+
+- [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html), src:  [Tweet](https://twitter.com/dump_stack/status/1623096008069550085)
+
 ## BSDs
 
 - [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
