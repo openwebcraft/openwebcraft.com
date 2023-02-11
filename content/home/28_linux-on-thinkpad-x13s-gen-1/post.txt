@@ -40,6 +40,7 @@ A loose collection of links to public web resources about various attempts of ma
 
 - GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
 - Bluetooth in the works: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html)
+- GPU in the works: [TEMP: Add GPU support @lenovo-x13s-gpu](https://git.linaro.org/people/manivannan.sadhasivam/linux.git/commit/?h=lenovo-x13s-gpu&id=40594e9daec72f1233fe54589f21396fe9025e5f)
 
 ## Fedora 
 
