@@ -67,6 +67,8 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 > Installer for Lenovo X13s
 > work started (src ref: [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
 
+- [Phoronix: Ubuntu Making Progress On The Lenovo ThinkPad X13s Arm Laptop Support](https://www.phoronix.com/news/Ubuntu-ThinkPad-X13s-Progress)
+
 ## NixOS
 
 - [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
