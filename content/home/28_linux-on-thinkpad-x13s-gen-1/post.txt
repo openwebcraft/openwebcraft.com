@@ -33,6 +33,7 @@ Notes:
 - Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
 - After "updating" to Debian `testing` I had to re-enable `os-prober` to create a custom GRUB menu entry for Windows as documented (link: https://wiki.debian.org/DualBoot/Windows10 text: here)
 - Uninstalled `regolith-desktop` ((link: https://github.com/regolith-linux/regolith-desktop/issues/635#issuecomment-1402333826 text: until  `arm64` repositories for Regolith are available)) and re-installed GNOME via `tasksel`.
+- [debian.org RescueLive steps to `chroot` into locally installed system from live cd](https://wiki.debian.org/RescueLive)
 
 ---
 
