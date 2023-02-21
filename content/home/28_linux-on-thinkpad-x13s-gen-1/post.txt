@@ -41,6 +41,7 @@ A loose collection of links to public web resources about various attempts of ma
 - GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
 - Bluetooth in the works: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html)
 - GPU in the works: [TEMP: Add GPU support @lenovo-x13s-gpu](https://git.linaro.org/people/manivannan.sadhasivam/linux.git/commit/?h=lenovo-x13s-gpu&id=40594e9daec72f1233fe54589f21396fe9025e5f)
+- [linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts](https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts) 
 
 ## Fedora 
 
@@ -53,6 +54,8 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 [Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
 
 You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
+
+- [Installation validation testing test results for the Fedora 38 20230219.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230219.n.0_Installation)
 
 ## Arch
 
@@ -68,6 +71,12 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 > work started (src ref: [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
 
 - [Phoronix: Ubuntu Making Progress On The Lenovo ThinkPad X13s Arm Laptop Support](https://www.phoronix.com/news/Ubuntu-ThinkPad-X13s-Progress)
+
+As of late February I guess I totally share the assessment of user *ravenpi* in the *Manjaro* forum:
+
+>"I’m gonna guess the X13s is a viable platform come Ubuntu 23.10 – since they’ve already chosen kernel 6.2 for 23.04, and the bulk of the important changes are in 6.3, I just don’t see it happening by April release. However, if the installer works, perhaps an update to 6.3 would be feasible before 23.10."
+>(src ref:  [forum.manjaro.org](https://forum.manjaro.org/t/arm-laptops-and-dev-support/134229/3))
+
 
 ## NixOS
 
