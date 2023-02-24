@@ -66,3 +66,7 @@ Published: 2021-05-20
 ----
 
 Feedurl: https://openwebcraft.com/patching-httpd-8-working-with-openbsd-src
+
+----
+
+Uuid: I0nsWoBB11n6yP9f
