@@ -43,6 +43,10 @@ A loose collection of links to public web resources about various attempts of ma
 - Bluetooth in the works: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html)
 - GPU in the works: [TEMP: Add GPU support @lenovo-x13s-gpu](https://git.linaro.org/people/manivannan.sadhasivam/linux.git/commit/?h=lenovo-x13s-gpu&id=40594e9daec72f1233fe54589f21396fe9025e5f)
 - [linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts](https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts) 
+- [phoronix.com Articles, Reviews and Linux & Open-Source News on **ThinkPad X13s**](https://www.phoronix.com/search/ThinkPad%20X13)
+  
+>"NVMe, SDX55 (5G) and WiFi enabled on the Lenovo Thinkpad X13s and Compute Reference Device. ADCs and thermal zones are introduced for the same. Lenovo Thinkpad X13s gains LID switch support."
+>(src ref: [cnx-software.com: Linux 6.2 release – Main changes, Arm, RISC-V, and MIPS architectures](https://www.cnx-software.com/2023/02/20/linux-6-2-release-main-changes-arm-risc-v-and-mips-architectures/))
 
 ## Fedora 
 
@@ -78,6 +82,7 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 >"I’m gonna guess the X13s is a viable platform come Ubuntu 23.10 – since they’ve already chosen kernel 6.2 for 23.04, and the bulk of the important changes are in 6.3, I just don’t see it happening by April release. However, if the installer works, perhaps an update to 6.3 would be feasible before 23.10."
 >(src ref:  [forum.manjaro.org](https://forum.manjaro.org/t/arm-laptops-and-dev-support/134229/3))
 
+- [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
 ## NixOS
 
