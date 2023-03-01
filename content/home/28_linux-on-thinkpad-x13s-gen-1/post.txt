@@ -101,6 +101,8 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 > The GPU has finally come alive on the Lenovo X13s! 
 > (src ref: [Tweet](https://twitter.com/FEX_Emu/status/1623373552576786432))
 
+[FEX: Lenovo X13s Linux (Ubuntu) installation](https://github.com/FEX-Emu/FEX/wiki/Lenovo-X13s-Linux-installation)—AWESOME write-down of install process 🤩
+
 ----
 
 Published: 2023-01-17
