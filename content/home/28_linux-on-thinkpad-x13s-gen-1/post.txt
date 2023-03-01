@@ -8,6 +8,8 @@ Text:
 
 This is to document my ~~ordeal~~  *#EmbraceTheSuck* journey and **work-in-progress** of daily driving a (link: https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad-x13s-(13-inch-snapdragon)/21bxcto1wwus1 text: Lenovo ThinkPad X13s Gen 1).
 
+**Actually, it's more a loose, semi-structured link collection w/ pointers to all the various efforts that I'm aware of or stumbled upon to make Linux a thing on the ThinkPad X13s.**
+
 ## Windows 11
 
 - Install BIOS Updates (via Windows App *Lenovo Commercial Vantage*)
@@ -21,7 +23,7 @@ The state of Linux on the X13s is still pretty much WIP (work-in-progress), but 
 
 The community is eagerly awaiting the latest kernel works to arrive in distros. 
 
-## Debian—WIP
+### Debian—WIP
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
 
@@ -48,7 +50,7 @@ A loose collection of links to public web resources about various attempts of ma
 >"NVMe, SDX55 (5G) and WiFi enabled on the Lenovo Thinkpad X13s and Compute Reference Device. ADCs and thermal zones are introduced for the same. Lenovo Thinkpad X13s gains LID switch support."
 >(src ref: [cnx-software.com: Linux 6.2 release – Main changes, Arm, RISC-V, and MIPS architectures](https://www.cnx-software.com/2023/02/20/linux-6-2-release-main-changes-arm-risc-v-and-mips-architectures/))
 
-## Fedora 
+### Fedora—WIP
 
 Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
 
@@ -62,11 +64,11 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 
 - [Installation validation testing test results for the Fedora 38 20230219.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230219.n.0_Installation)
 
-## Arch
+### Arch—WIP
 
 - (link: https://www.reddit.com/r/thinkpad/comments/w22mvg/arch_linux_arm_iso_on_x13s_wip/ text: reddit: Arch Linux ARM ISO on X13s (WIP))
 
-## Ubuntu
+### Ubuntu—WIP
 
 - GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
 
@@ -84,17 +86,15 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 - [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
-## NixOS
+### NixOS—WIP
 
 - [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
 
-## BSDs
-
-- [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
-
 ---
 
-## usermode x86 and x86-64 emulation for arm64 
+## usermode x86 and x86-64 emulation for arm64/ aarch64
+
+### FEX—WIP
 
 [FEX](https://github.com/FEX-Emu/FEX) allows you to run x86 and x86-64 binaries on an AArch64 host, similar to qemu-user and box86.
 
@@ -102,6 +102,14 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 > (src ref: [Tweet](https://twitter.com/FEX_Emu/status/1623373552576786432))
 
 [FEX: Lenovo X13s Linux (Ubuntu) installation](https://github.com/FEX-Emu/FEX/wiki/Lenovo-X13s-Linux-installation)—AWESOME write-down of install process 🤩
+
+---
+
+## BSDs
+
+### OpenBSD
+
+- [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
 
 ----
 
