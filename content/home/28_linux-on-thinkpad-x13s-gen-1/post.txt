@@ -50,6 +50,8 @@ A loose collection of links to public web resources about various attempts of ma
 >"NVMe, SDX55 (5G) and WiFi enabled on the Lenovo Thinkpad X13s and Compute Reference Device. ADCs and thermal zones are introduced for the same. Lenovo Thinkpad X13s gains LID switch support."
 >(src ref: [cnx-software.com: Linux 6.2 release – Main changes, Arm, RISC-V, and MIPS architectures](https://www.cnx-software.com/2023/02/20/linux-6-2-release-main-changes-arm-risc-v-and-mips-architectures/))
 
+-[9to5linux.com: Linus Torvalds Announces First Linux Kernel 6.3 Release Candidate](https://9to5linux.com/linus-torvalds-announces-first-linux-kernel-6-3-release-candidate) —› [Linus' Linux 6.3-rc1 announcement post](https://lkml.org/lkml/2023/3/5/308)
+
 ### Fedora—WIP
 
 Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
@@ -62,7 +64,7 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 
 You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
 
-- [Installation validation testing test results for the Fedora 38 20230219.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230219.n.0_Installation)
+- [Installation validation testing test results for the Fedora 38 20230222.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230222.n.0_Installation)
 
 ### Arch—WIP
 
