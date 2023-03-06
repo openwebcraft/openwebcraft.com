@@ -6,11 +6,25 @@ Text:
 
 In the process of evaluating case options for the upgrade of a "Poor Man's Raspberry Pi NAS"  from a (link: https://www.raspberrypi.com/products/raspberry-pi-3-model-b/ text: Raspberry Pi 3 Model B Rev 1.2) to a (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B Rev 1.5) I stresstested the  (link: https://argon40.myshopify.com/products/draft-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan text: Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan).
 
-~~Out of sheer stupidity~~ Accidentally I had to conduct two test runs, so that you don't have to.
-Your are welcome! 🙈
+I appliyed the following PWM setting, which will start the Mini Fan at CPU Temp 55 degrees Celcius:
+
+```bash
+# /boot/config.txt
+dtoverlay=gpio-fan,gpio-pin=18,temp=55000
+```
+
+Then, ~~out of sheer stupidity~~ accidentally, I had to conduct two test runs—so that you don't have to. Your are welcome! 🙈
 
 1. *My Test*:  without thermal pad installed
 2. *My Test 2*: **with** thermal pad installed
+
+Yes, also the naming ("*My Test*") is 👌
+
+>There are only two hard things in Computer Science:
+>cache invalidation and **naming things**.
+>-- Phil Karlton
+
+The stressberry setup and run configuration:  
 
 ```bash
 # setup
@@ -35,21 +49,7 @@ Here are the results:
 
 Not really surprising, right?  🙃
 
-Yes, also the naming ("*My Test*") is 👌
-
->There are only two hard things in Computer Science: cache invalidation and **naming things**.
->-- Phil Karlton
-
-Bottom line: I really like the case 👍‍
-
-Also b/c the fan is really silent.
-
-The following PWM setting will start the Mini Fan at CPU Temp 55 degrees Celcius:
-
-```bash
-# /boot/config.txt
-dtoverlay=gpio-fan,gpio-pin=18,temp=55000
-```
+Though, bottom line: I really like the case—also b/c the fan is really silent. 🤫
 
 ----
 
@@ -61,4 +61,4 @@ Uuid: vfO4r9Y84yp0Ck4k
 
 ----
 
-Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad
+Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan
