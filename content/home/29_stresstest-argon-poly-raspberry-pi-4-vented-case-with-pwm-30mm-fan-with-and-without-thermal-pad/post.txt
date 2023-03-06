@@ -61,4 +61,4 @@ Uuid: vfO4r9Y84yp0Ck4k
 
 ----
 
-Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan
+Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad
