@@ -1,4 +1,4 @@
-Title: Stresstest Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan with and without thermal pad
+Title: Stressberry the Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan with and without thermal pad
 
 ----
 
@@ -63,4 +63,4 @@ Uuid: vfO4r9Y84yp0Ck4k
 
 ----
 
-Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad
+Feedurl: https://openwebcraft.com/stressberry-the-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad
