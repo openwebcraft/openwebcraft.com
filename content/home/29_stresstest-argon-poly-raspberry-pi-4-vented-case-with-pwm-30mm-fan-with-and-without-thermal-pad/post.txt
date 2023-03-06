@@ -1,0 +1,64 @@
+Title: Stresstest Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan with and without thermal pad
+
+----
+
+Text:
+
+In the process of evaluating case options for the upgrade of a "Poor Man's Raspberry Pi NAS"  from a (link: https://www.raspberrypi.com/products/raspberry-pi-3-model-b/ text: Raspberry Pi 3 Model B Rev 1.2) to a (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B Rev 1.5) I stresstested the  (link: https://argon40.myshopify.com/products/draft-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan text: Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan).
+
+~~Out of sheer stupidity~~ Accidentally I had to conduct two test runs, so that you don't have to.
+Your are welcome! 🙈
+
+1. *My Test*:  without thermal pad installed
+2. *My Test 2*: **with** thermal pad installed
+
+```bash
+# setup
+sudo apt install stress
+pip3 install stressberry --user
+pip3 install --upgrade numpy
+
+# stresstest run
+~/.local/bin/stressberry-run -n "My Test" -d 1800 -i 300 -c 4 mytest.out
+#~/.local/bin/stressberry-run -n "My Test 2" -d 1800 -i 300 -c 4 mytest2.out
+
+# stressberry plot PNG image 
+MPLBACKEND=Agg ~/.local/bin/stressberry-plot mytest.out -f -d 300 -f -l 400 1600 -t 30 90 -o mytest.png --not-transparent
+# MPLBACKEND=Agg ~/.local/bin/stressberry-plot mytest2.out -f -d 300 -f -l 400 1600 -t 30 90 -o mytest2.png --not-transparent
+```
+
+Here are the results:
+
+(image: stressberry-run-d_1800-i_300-c_4_mytest_without_thermalpad.png caption: without thermal pad installed)
+
+(image: stressberry-run-d_1800-i_300-c_4_mytest_with_thermalpad.png caption: **with** thermal pad installed)
+
+Not really surprising, right?  🙃
+
+Yes, also the naming ("*My Test*") is 👌
+
+>There are only two hard things in Computer Science: cache invalidation and **naming things**.
+>-- Phil Karlton
+
+Bottom line: I really like the case 👍‍
+
+Also b/c the fan is really silent.
+
+The following PWM setting will start the Mini Fan at CPU Temp 55 degrees Celcius:
+
+```bash
+# /boot/config.txt
+dtoverlay=gpio-fan,gpio-pin=18,temp=55000
+```
+
+----
+
+Published: 2023-03-06
+
+----
+
+Uuid: vfO4r9Y84yp0Ck4k
+
+----
+
+Feedurl: https://openwebcraft.com/stresstest-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad

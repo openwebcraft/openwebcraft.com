@@ -1,0 +1,29 @@
+Withtemplate: true
+
+----
+
+Alt: Stressberry run on Raspberry Pi 4 in  Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan no thermal pad
+
+----
+
+Title: Stressberry run on Raspberry Pi 4 in  Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan no thermal pad
+
+----
+
+Sort: NaN
+
+----
+
+Uuid: R5OSOrdLtEhKabWm
+
+----
+
+Thewidth: 2093
+
+----
+
+Theheight: 1409
+
+----
+
+Thepadding: 67.319636884854
