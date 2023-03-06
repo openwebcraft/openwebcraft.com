@@ -4,9 +4,11 @@ Title: Stresstest Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan with 
 
 Text:
 
-In the process of evaluating case options for the upgrade of a "Poor Man's Raspberry Pi NAS"  from a (link: https://www.raspberrypi.com/products/raspberry-pi-3-model-b/ text: Raspberry Pi 3 Model B Rev 1.2) to a (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B Rev 1.5) I stresstested the  (link: https://argon40.myshopify.com/products/draft-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan text: Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan).
+(image: argon_poly-raspberrypi_4_vented_case_with_pwm_30mm_fan.jpg)
 
-I appliyed the following PWM setting, which will start the Mini Fan at CPU Temp 55 degrees Celcius:
+In the process of evaluating case options for the upgrade of a "Poor Man's Raspberry Pi NAS"  from a (link: https://www.raspberrypi.com/products/raspberry-pi-3-model-b/ text: Raspberry Pi 3 Model B Rev 1.2) to a (link: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/ text: Raspberry Pi 4 Model B Rev 1.5) I stressberry-tested the (link: https://argon40.myshopify.com/products/draft-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan text: Argon POLY+ Raspberry Pi 4 Vented Case with PWM 30mm Fan).
+
+I applyed the following PWM setting, which will start the Mini Fan at CPU Temp 55 degrees Celcius:
 
 ```bash
 # /boot/config.txt
