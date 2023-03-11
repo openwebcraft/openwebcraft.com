@@ -113,6 +113,12 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 - [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
 
+---
+
+## General Resources on Lenovo, ThinkPad & ARM
+
+- [blog post disambiguating Arm, Arm ARM, Armv9, ARM9, ARM64, Aarch64, A64, A78, ...](https://nickdesaulniers.github.io/blog/2023/03/10/disambiguating-arm/) —AWESOME read 🤩
+
 ----
 
 Published: 2023-01-17
