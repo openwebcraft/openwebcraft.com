@@ -29,7 +29,11 @@ There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: ht
 
 > Turn this switch on to boot Linux. Turn this switch off to boot Windows.
 
-In my testing—though for now only w/ Fedora 38 Beta ARM64 ISO—I couldn't see a difference, yet. But promising as hell!! 🤩
+Likely linux friendly ACPI tables 🤔
+
+In my testing—though for now only w/ Fedora 38 Beta ARM64 ISO—I couldn't see a difference, yet.
+
+But promising as hell!! 🤩
 
 ### Debian—WIP
 
