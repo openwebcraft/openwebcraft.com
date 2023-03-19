@@ -25,6 +25,8 @@ The community is eagerly awaiting the latest kernel works to arrive in distros.
 
 ### Lenovo BIOS/ Firmware
 
+[BIOS Update Utility for Windows 11 ARM - ThinkPad X13s Gen 1 (Type 21BX, 21BY)](https://support.lenovo.com/us/en/downloads/ds556845-bios-update-utility-bootable-cd-for-windows-11-thinkpad-x13s-gen-1-type-21bx-21by)
+
 There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
 
 > Turn this switch on to boot Linux. Turn this switch off to boot Windows.
