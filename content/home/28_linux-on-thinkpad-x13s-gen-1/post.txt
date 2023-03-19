@@ -23,9 +23,9 @@ The state of Linux on the X13s is still pretty much WIP (work-in-progress), but 
 
 The community is eagerly awaiting the latest kernel works to arrive in distros. 
 
-### Lenovo Firmware
+### Lenovo BIOS/ Firmware
 
-There is a new BETA *Linux* option in the ThinkPad X13s firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
+There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
 
 > Turn this switch on to boot Linux. Turn this switch off to boot Windows.
 
