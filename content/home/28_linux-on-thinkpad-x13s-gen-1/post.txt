@@ -23,6 +23,14 @@ The state of Linux on the X13s is still pretty much WIP (work-in-progress), but 
 
 The community is eagerly awaiting the latest kernel works to arrive in distros. 
 
+### Lenovo Firmware
+
+There is a new BETA *Linux* option in the ThinkPad X13s firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
+
+> Turn this switch on to boot Linux. Turn this switch off to boot Windows.
+
+In my testing—though for now only w/ Fedora 38 Beta ARM64 ISO—I couldn't see a difference, yet. But promising as hell!! 🤩
+
 ### Debian—WIP
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
@@ -42,7 +50,7 @@ Notes:
 A loose collection of links to public web resources about various attempts of making Linux on X13s a thing:
 
 - GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
-- Bluetooth in the works: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html)
+- Bluetooth ~~in the works~~: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html) —› [[PATCH v5 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4714866.html)
 - GPU in the works: [TEMP: Add GPU support @lenovo-x13s-gpu](https://git.linaro.org/people/manivannan.sadhasivam/linux.git/commit/?h=lenovo-x13s-gpu&id=40594e9daec72f1233fe54589f21396fe9025e5f)
 - [linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts](https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts) 
 - [phoronix.com Articles, Reviews and Linux & Open-Source News on **ThinkPad X13s**](https://www.phoronix.com/search/ThinkPad%20X13)
