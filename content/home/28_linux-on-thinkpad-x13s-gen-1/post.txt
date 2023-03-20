@@ -33,7 +33,7 @@ There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: ht
 
 Likely linux friendly ACPI tables 🤔
 
-In my testing—though for now only w/ Fedora 38 Beta ARM64 ISO—I couldn't see a difference, yet.
+In my testing—though for now only w/ i) Ubuntu 23.04 (Lunar Lobster) Daily Build and ii) Fedora 38 Beta `arm64` ISOs—I didn't manage to boot, as of yet…
 
 But promising as hell!! 🤩
 
