@@ -102,6 +102,8 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 - [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
+- [Ubuntu 23.04 (Lunar Lobster) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
+
 ### NixOS—WIP
 
 - [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
