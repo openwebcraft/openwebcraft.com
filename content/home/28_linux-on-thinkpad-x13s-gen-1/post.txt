@@ -41,6 +41,8 @@ But promising as hell!! 🤩
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
 
+Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops)
+
 Notes:
 
 - I created the bootable USB driver on Linux via the awesome [balenaEtcher](https://www.balena.io/etcher/) application.
@@ -66,6 +68,8 @@ A loose collection of links to public web resources about various attempts of ma
 
 - [9to5linux.com: Linus Torvalds Announces First Linux Kernel 6.3 Release Candidate](https://9to5linux.com/linus-torvalds-announces-first-linux-kernel-6-3-release-candidate) —› [Linus' Linux 6.3-rc1 announcement post](https://lkml.org/lkml/2023/3/5/308)
 
+- [Contents of Debian *bookworm (testing)* package `firmware-qcom-soc` **Lenovo X13s battery, audio, …**](https://packages.debian.org/bookworm/firmware-qcom-soc)
+
 ### Fedora—WIP
 
 Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
@@ -79,6 +83,8 @@ Results of Matthew Miller's poll [What do you think about Fedora Workstation on 
 You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
 
 - [Installation validation testing test results for the Fedora 38 20230222.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230222.n.0_Installation)
+
+- [discussion.fedoraproject.org: Search **X13s**](https://discussion.fedoraproject.org/search?q=x13s)
 
 ### Arch—WIP
 
