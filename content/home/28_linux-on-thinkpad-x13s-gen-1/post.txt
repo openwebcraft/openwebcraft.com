@@ -41,7 +41,7 @@ But promising as hell!! 🤩
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
 
-Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops)
+Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops), e.g. [aarch64-laptops/linux/tree/lenovo-x13s](https://github.com/aarch64-laptops/linux/tree/lenovo-x13s).
 
 Notes:
 
@@ -109,6 +109,8 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 - [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
 - [Ubuntu 23.04 (Lunar Lobster) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
+
+- [Ubuntu Concept - x13s](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
 
 ### NixOS—WIP
 
