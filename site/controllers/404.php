@@ -4,7 +4,7 @@
 return function ($page, $pages, $site, $kirby) {
 
     # Grab the default SEO controller
-    $seo = $kirby->controller('seo' , compact('page', 'pages', 'site', 'kirby'));
+    $seo = $kirby->controller('seo', compact('page', 'pages', 'site', 'kirby'));
 
     # Fetch the page content
     $post  = $page;
@@ -13,9 +13,8 @@ return function ($page, $pages, $site, $kirby) {
     $text  = $post->text()->kt();
 
     # Return some data and pass it to the template
-    $data = compact('title' , 'url' , 'text' , 'post');
+    $data = compact('title', 'url', 'text', 'post');
 
     # Return the compact array to the template
-    return a::merge($data , $seo);
-
+    return a::merge($seo, $data);
 };
