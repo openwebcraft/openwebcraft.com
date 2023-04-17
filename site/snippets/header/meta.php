@@ -11,8 +11,8 @@
     <link rel="alternate" type="application/json"     href="<?= site()->url() ?>/feed.json" title="<?= $site->title()->html() ?> JSON Feed">
 
     <!-- Descriptions -->
-    <meta name="description" content="<?= $page['desc'] ?>">
+    <meta name="description" content="<?= $seo_description ?>">
 
     <!-- Page Title -->
-    <title><?= $page['title'] ?></title>
+    <title><?= $seo_title ?></title>
 
