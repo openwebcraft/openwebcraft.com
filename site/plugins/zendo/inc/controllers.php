@@ -11,6 +11,6 @@ return [
         $seo['desc']  = r($page->isHomePage() , $site->description() , $page->text()->excerpt(150));
 
         # Return the content
-        return compact($seo);
+        return compact('seo');
     }
 ];
