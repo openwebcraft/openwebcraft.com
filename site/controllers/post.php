@@ -17,6 +17,6 @@ return function ($page, $pages, $site, $kirby) {
     $data = compact('title' , 'url' , 'text' , 'posts' , 'post');
 
     # Return the compact array to the template
-    return a::merge($seo, $data);
+    return a::merge($data , $seo);
 
 };
