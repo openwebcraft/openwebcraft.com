@@ -8,6 +8,8 @@ Text:
 
 This is to document my ~~ordeal~~  *#EmbraceTheSuck* journey and **work-in-progress** of daily driving a (link: https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx/thinkpad-x13s-(13-inch-snapdragon)/21bxcto1wwus1 text: Lenovo ThinkPad X13s Gen 1).
 
+**Actually, it's more a loose, semi-structured link collection w/ pointers to all the various efforts that I'm aware of or stumbled upon to make Linux a thing on the ThinkPad X13s.**
+
 ## Windows 11
 
 - Install BIOS Updates (via Windows App *Lenovo Commercial Vantage*)
@@ -15,43 +17,132 @@ This is to document my ~~ordeal~~  *#EmbraceTheSuck* journey and **work-in-progr
 - Activated Windows Feature *Hyper-V*, installed WSL2 and distros Debian and Ubuntu.
 - Installed Visual Studio Code along w/ some other native-arm Windows Apps, just to see… 
 
-## Debian
+## Linux
+
+The state of Linux on the X13s is still pretty much WIP (work-in-progress), but (link: https://www.reddit.com/r/linuxhardware/comments/10a63o6/did_efforts_for_linux_on_x13s_stop_a_few_months/ text: NO it has not stopped a few month ago).
+
+The community is eagerly awaiting the latest kernel works to arrive in distros. 
+
+### Lenovo BIOS/ Firmware
+
+[BIOS Update Utility for Windows 11 ARM - ThinkPad X13s Gen 1 (Type 21BX, 21BY)](https://support.lenovo.com/us/en/downloads/ds556845-bios-update-utility-bootable-cd-for-windows-11-thinkpad-x13s-gen-1-type-21bx-21by)
+
+There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
+
+> Turn this switch on to boot Linux. Turn this switch off to boot Windows.
+
+Likely linux friendly ACPI tables 🤔
+
+In my testing—though for now only w/ i) Ubuntu 23.04 (Lunar Lobster) Daily Build and ii) Fedora 38 Beta `arm64` ISOs—I didn't manage to boot, as of yet…
+
+But promising as hell!! 🤩
+
+### Debian—WIP
 
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
+
+Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops), e.g. [aarch64-laptops/linux/tree/lenovo-x13s](https://github.com/aarch64-laptops/linux/tree/lenovo-x13s).
 
 Notes:
 
 - I created the bootable USB driver on Linux via the awesome [balenaEtcher](https://www.balena.io/etcher/) application.
 - I shrinked the Windows drive on my 1TB disk by `768000` MB, resulting in 750 GB of "Unallocated" space.
-- I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day.
-    - Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
-- How can I install Debian with full-disk encryption and a custom sized swapfile? Well, task for another day… 🤷‍♂️
+- I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day 🤷‍♂️
+- Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
+- After "updating" to Debian `testing` I had to re-enable `os-prober` to create a custom GRUB menu entry for Windows as documented (link: https://wiki.debian.org/DualBoot/Windows10 text: here)
+- Uninstalled `regolith-desktop` ((link: https://github.com/regolith-linux/regolith-desktop/issues/635#issuecomment-1402333826 text: until  `arm64` repositories for Regolith are available)) and re-installed GNOME via `tasksel`.
+- [debian.org RescueLive steps to `chroot` into locally installed system from live cd](https://wiki.debian.org/RescueLive)
 
 ---
 
 A loose collection of links to public web resources about various attempts of making Linux on X13s a thing:
 
 - GitHub repo about [Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)](https://github.com/merckhung/linux_on_arm64_laptop)
+- Bluetooth ~~in the works~~: [[PATCH v2 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4671378.html) —› [[PATCH v5 4/4] arm64: dts: qcom: thinkpad-x13s: Add bluetooth](https://www.spinics.net/lists/kernel/msg4714866.html)
+- GPU in the works: [TEMP: Add GPU support @lenovo-x13s-gpu](https://git.linaro.org/people/manivannan.sadhasivam/linux.git/commit/?h=lenovo-x13s-gpu&id=40594e9daec72f1233fe54589f21396fe9025e5f)
+- [linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts](https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts) 
+- [phoronix.com Articles, Reviews and Linux & Open-Source News on **ThinkPad X13s**](https://www.phoronix.com/search/ThinkPad%20X13)
+  
+>"NVMe, SDX55 (5G) and WiFi enabled on the Lenovo Thinkpad X13s and Compute Reference Device. ADCs and thermal zones are introduced for the same. Lenovo Thinkpad X13s gains LID switch support."
+>(src ref: [cnx-software.com: Linux 6.2 release – Main changes, Arm, RISC-V, and MIPS architectures](https://www.cnx-software.com/2023/02/20/linux-6-2-release-main-changes-arm-risc-v-and-mips-architectures/))
 
-## Fedora 
+- [9to5linux.com: Linus Torvalds Announces First Linux Kernel 6.3 Release Candidate](https://9to5linux.com/linus-torvalds-announces-first-linux-kernel-6-3-release-candidate) —› [Linus' Linux 6.3-rc1 announcement post](https://lkml.org/lkml/2023/3/5/308)
+
+- [Contents of Debian *bookworm (testing)* package `firmware-qcom-soc` **Lenovo X13s battery, audio, …**](https://packages.debian.org/bookworm/firmware-qcom-soc)
+
+### Fedora—WIP
 
 Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
 
 > Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.
 > 
-> src ref: [Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s)
+> src refs: [fedoraproject.org/wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/UFI7PHWCMVGFE7RD6LN7YDP77KCHBHZE/)
 
 [Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
 
-## Arch
+You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
 
-- GitHub repo on [Arch Linux ARM packages for ThinkPad X13s](https://github.com/szclsya/x13s-alarm)
+- [Installation validation testing test results for the Fedora 38 20230222.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230222.n.0_Installation)
 
-## Ubuntu
+- [discussion.fedoraproject.org: Search **X13s**](https://discussion.fedoraproject.org/search?q=x13s)
+
+### Arch—WIP
+
+- (link: https://www.reddit.com/r/thinkpad/comments/w22mvg/arch_linux_arm_iso_on_x13s_wip/ text: reddit: Arch Linux ARM ISO on X13s (WIP))
+
+### Ubuntu—WIP
 
 - GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
 
 - GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
+
+> Installer for Lenovo X13s
+> work started (src ref: [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
+
+- [Phoronix: Ubuntu Making Progress On The Lenovo ThinkPad X13s Arm Laptop Support](https://www.phoronix.com/news/Ubuntu-ThinkPad-X13s-Progress)
+
+As of late February I guess I totally share the assessment of user *ravenpi* in the *Manjaro* forum:
+
+>"I’m gonna guess the X13s is a viable platform come Ubuntu 23.10 – since they’ve already chosen kernel 6.2 for 23.04, and the bulk of the important changes are in 6.3, I just don’t see it happening by April release. However, if the installer works, perhaps an update to 6.3 would be feasible before 23.10."
+>(src ref:  [forum.manjaro.org](https://forum.manjaro.org/t/arm-laptops-and-dev-support/134229/3))
+
+- [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
+
+- [Ubuntu 23.04 (Lunar Lobster) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
+
+- [Ubuntu Concept - x13s](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
+
+### NixOS—WIP
+
+- [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
+
+---
+
+## usermode x86 and x86-64 emulation for arm64/ aarch64
+
+### FEX—WIP
+
+[FEX](https://github.com/FEX-Emu/FEX) allows you to run x86 and x86-64 binaries on an AArch64 host, similar to qemu-user and box86.
+
+> The GPU has finally come alive on the Lenovo X13s! 
+> (src ref: [Tweet](https://twitter.com/FEX_Emu/status/1623373552576786432))
+
+[FEX: Lenovo X13s Linux (Ubuntu) installation](https://github.com/FEX-Emu/FEX/wiki/Lenovo-X13s-Linux-installation)—AWESOME write-down of install process 🤩
+
+---
+
+## BSDs
+
+### OpenBSD
+
+- [OpenBSD](https://www.openbsd.org/arm64.html) (since [7.2](https://www.openbsd.org/72.html))
+
+---
+
+## General Resources on Lenovo, ThinkPad, Microsoft Dev Kit 2023, … & ARM
+
+- [blog post disambiguating Arm, Arm ARM, Armv9, ARM9, ARM64, Aarch64, A64, A78, ...](https://nickdesaulniers.github.io/blog/2023/03/10/disambiguating-arm/) —AWESOME read 🤩
+- [merckhung/linux_on_arm64_laptop](https://github.com/merckhung/linux_on_arm64_laptop) — "Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)", also Microsoft Dev Kit 2023 and Samsung Galaxy Go
 
 ----
 

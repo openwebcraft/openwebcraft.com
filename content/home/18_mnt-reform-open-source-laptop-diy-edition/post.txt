@@ -18,7 +18,7 @@ The actuall assembly of the kit was pretty straight forward—not b/c I'm partic
 
 ## Alternative OS Support and Booting
 
-The OOTB experience of the default Debian GNU/Linux system image for Reform ((link: https://source.mnt.re/reform/reform-system-image text: src)) is really great: there are two desktop environments (Sway and GNOME) and additional scripts nicely pre-configured. Though, I'm actually even more curious about putting an alternative OS onto my Reform, be it another Linux Distro or maybe even OpenBSD? Also what's (link: https://twitter.com/mntmn/status/1397692293835018241?s=20 text: RISC OS)  🤔…
+The OOTB experience of the default Debian GNU/Linux system image for Reform ((link: https://source.mnt.re/reform/reform-system-image text: src)) is really great: there are two desktop environments (Sway and GNOME) and additional scripts nicely pre-configured. Though, I'm actually even more curious about putting an alternative OS onto my Reform, be it another Linux Distro ~~or maybe~~ and even OpenBSD? Also what's (link: https://twitter.com/mntmn/status/1397692293835018241?s=20 text: RISC OS)  🤔…
 
 > You should be able to use any distro if you use the supplied kernel and DTS (Image and `.dtb`files in the root (`/`) directory of the SD card).
 > Plus, copy `/sbin/reform-init` to the new system as well.
@@ -92,6 +92,8 @@ To be continued…
 - MNT Reform sleeves (Piñatex): (link: https://cdn.shopify.com/s/files/1/0017/0396/8870/files/ANANAS_ANAM_ImpactReport.pdf?v=1623425235 text: impact report of supplier for the material)
 - MNT Reform (link: https://www.ifixit.com/Device/MNT_Reform text:  iFixit Guides)
 - (link: https://source.mnt.re/reform/reform/-/tree/master/symbol-for-derived-works text: official CC0 (public domain) symbol) one should use on MNT OSHW derived or compatible works while avoiding MNT registered trademark (including editable SVG and a .kicad_mod example)
+- (link: https://community.mnt.re/t/any-news-on-openbsd-update-it-works-now/646/7 text: OpenBSD on Reform)
+- (link: https://dumpstack.io/1650956090_nixos_on_mnt_reform.html text: NixOS on MNT Reform: with encrypted root and boot from eMMC (without SD card))
 
 ----
 

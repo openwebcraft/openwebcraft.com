@@ -110,6 +110,12 @@ There are actually only two minor weak points left:
 - **Suspend** is not working—b/c keyboard and touchpad are available after resuming from suspend.
 - **Audio** is only available via headphone jack—b/c speakers and microphone are not working.
 
+---
+
+Loose collection of links, mostly related to open issues:
+
+- [roadrunner2/macbook12-spi-driver](https://github.com/roadrunner2/macbook12-spi-driver), forked from [cb22/macbook12-spi-driver](https://github.com/cb22/macbook12-spi-driver)—Input driver for the SPI touchpad / keyboard found in the 12" MacBook (MacBook8,1 + MacBook9,1) and 2016 through 2018 Macbook Pro's (MacBookPro13,* and 14,*); a Touch Bar driver is also available.
+
 ----
 
 Published: 2021-08-07

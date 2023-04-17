@@ -341,6 +341,140 @@ Adjust `/etc/webalizer.conf` to your needs and test w/ following command (also g
 /usr/local/bin/webalizer >> /dev/null 2>&1
 ```
 
+**Option 3:** (link: https://dev.to/mnlwldr/how-to-analyze-openbsds-httpd-accesslog-with-a-shell-script-1jd2 text: How to analyze OpenBSD's httpd access.log with a shell script)
+
+A `#SimpleElegant`  shell script to analyze the access logs from `httpd`. Love this ❤️!
+
+```
+#!/bin/sh
+
+LOGFILE="/var/www/logs/access.log"
+RESPONSE_CODE="200"
+
+filters() {
+grep $RESPONSE_CODE \
+| grep -v "<UNKNOWN>" \
+| grep -v "favicon.ico" \
+| grep -v "/kapi/" \
+| grep -v "/kassets/" \
+| grep -v "/kmedia/" \
+| grep -v "logfile turned over"
+}
+
+filter_response_codes()
+{
+grep -v "<UNKNOWN>" \
+| grep -v "logfile turned over" \
+| awk '{print $10}'
+}
+
+filter_404_response() {
+grep "404"
+}
+
+ips() {
+awk '{print $2}'
+}
+
+pages() {
+awk '{print $8}'
+}
+
+domain() {
+awk '{print $1}'
+}
+
+methods() {
+awk '{print $7}' | cut -d'"' -f2
+}
+
+sort_count() {
+sort | uniq -c
+}
+
+sort_desc() {
+sort -rn
+}
+
+top_ten() {
+head -10
+}
+
+sep() {
+echo "=================================================="
+}
+
+##
+# Actions
+##
+action_request_ips() {
+    echo ""
+    echo "Top requests from IPs"
+    sep
+    cat $LOGFILE \
+        | filters \
+        | ips \
+        | sort_count \
+        | sort_desc \
+        | top_ten
+    echo ""
+}
+
+action_request_methods() {
+    echo ""
+    echo "Count requests methods"
+    sep
+    cat $LOGFILE \
+        | filters \
+        | methods \
+        | sort_count
+    echo ""
+}
+
+action_pages() {
+    echo ""
+    echo "Top requested pages"
+    sep
+    cat $LOGFILE \
+        | filters \
+        | pages \
+        | sort_count \
+        | sort_desc \
+        | top_ten
+    echo ""
+}
+
+action_404() {
+    echo ""
+    echo "Top requests 404"
+    sep
+    cat $LOGFILE \
+        | filter_404_response \
+        | pages \
+        | sort_count \
+        | sort_desc \
+        | top_ten
+    echo ""
+}
+
+action_response_codes() {
+    echo ""
+    echo "Response code"
+    sep
+    cat $LOGFILE \
+        | filter_response_codes \
+        | sort_count \
+        | sort_desc
+    echo ""
+}
+
+action_request_ips
+action_request_methods
+action_response_codes
+action_pages
+action_404
+```
+
 ## Known Issues
 
 Because there's always room to improve…
@@ -355,3 +489,7 @@ Published: 2021-05-17
 ----
 
 Feedurl: https://openwebcraft.com/kirby-and-httpd-8-on-openbsd-also-static-site-generation
+
+----
+
+Uuid: P4JFNWUJJhXsRALk
