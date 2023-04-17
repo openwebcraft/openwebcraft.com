@@ -7,7 +7,7 @@
 - certbot
 - httpd(8)/ httpd.conf(5)
 - httpd-plus
-- php80 / php80_fpm
+- php81 / php81_fpm
 - composer
 - Kirby
 
@@ -22,20 +22,20 @@ pkg_add unzip
 pkg_add git
 # Let's Encrypt Certbot
 pkg_add certbot
-# php-8.0.23
+# php-8.1.18
 pkg_add php
-# /etc/php-8.0.ini
-cat /usr/local/share/doc/pkg-readmes/php-8.0
+# /etc/php-8.1.ini
+cat /usr/local/share/doc/pkg-readmes/php-8.1
 
 pkg_add php-curl
-ln -sf /etc/php-8.0.sample/curl.ini /etc/php-8.0/
+ln -sf /etc/php-8.1.sample/curl.ini /etc/php-8.1/
 
 pkg_add php-gd
-ln -s /etc/php-8.0.sample/gd.ini /etc/php-8.0/
+ln -s /etc/php-8.1.sample/gd.ini /etc/php-8.1/
 
 # /etc/php-fpm.conf
-rcctl enable php80_fpm
-rcctl start php80_fpm
+rcctl enable php81_fpm
+rcctl start php81_fpm
 
 # composer
 pkg_add composer
@@ -51,7 +51,7 @@ doas mkdir openwebcraft.com
 cd openwebcraft.com
 doas chown -R www:www .
 doas chmod -R g+w .
-git clone --branch kirby git@github.com:openwebcraft/openwebcraft.com.git .
+git clone --branch kirbyobsd git@github.com:openwebcraft/openwebcraft.com.git .
 composer install
 ```
 
@@ -80,7 +80,7 @@ composer install
 composer update
 ```
 
-## PHP-8.0 Linux Dev Env for Debian-based distros (incl. elementary OS 6 Odin)
+## PHP-8.1 Linux Dev Env for Debian-based distros (incl. elementary OS 6 Odin)
 
 Prerequisite: [Composer](https://getcomposer.org/) installed.
 
@@ -107,9 +107,9 @@ sudo add-apt-repository ppa:ondrej/php -y
 ```
 
 ```sh
-# install PHP-8.0 along w/ required modules
-sudo apt install -y php8.0 php8.0-cli php8.0-common php8.0-curl php8.0-gd php8.0-ctype php8.0-dom php8.0-mbstring
-sudo update-alternatives --set php /usr/bin/php8.0
+# install PHP-8.1 along w/ required modules
+sudo apt install -y php8.1 php8.1-cli php8.1-common php8.1-curl php8.1-gd php8.1-ctype php8.1-dom php8.1-mbstring
+sudo update-alternatives --set php /usr/bin/php8.1
 php --version
 ```
 
