@@ -89,6 +89,7 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 ### Arch—WIP
 
 - (link: https://www.reddit.com/r/thinkpad/comments/w22mvg/arch_linux_arm_iso_on_x13s_wip/ text: reddit: Arch Linux ARM ISO on X13s (WIP))
+- [Arch Linux ARM on Thinkpad X13S](https://blog.rymcg.tech/blog/linux/thinkpad-x13s/) (Tutorial)
 
 ### Ubuntu—WIP
 
