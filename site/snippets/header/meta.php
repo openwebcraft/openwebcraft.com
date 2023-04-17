@@ -11,8 +11,8 @@
     <link rel="alternate" type="application/json"     href="<?= site()->url() ?>/feed.json" title="<?= $site->title()->html() ?> JSON Feed">
 
     <!-- Descriptions -->
-    <meta name="description" content="<?= $seo_description ?>">
+    <meta name="description" content="<?= r($page->isHomePage(), $site->description(), $page->text()->excerpt(150)) ?>">
 
     <!-- Page Title -->
-    <title><?= $seo_title ?></title>
+    <title><?= r($page->isHomePage(), $site->title()->html() . ' – ' . $site->subtitle()->html(), $page->title()->html() . ' – ' . $site->title()->html()) ?></title>
 
