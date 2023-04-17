@@ -10,6 +10,9 @@ return [
         $seo_description  = r($page->isHomePage(), $site->description(), $page->text()->excerpt(150));
 
         # Return the content
-        return compact('seo_title', 'seo_description');
+        return [
+            'seo_title' => $seo_title,
+            'seo_description' => $seo_description
+        ];
     }
 ];
