@@ -13,7 +13,7 @@ Here are the steps I took:
 cd /usr
 doas cvs \
  -qd anoncvs@ftp.hostserver.de:/cvs \
- checkout -rOPENBSD_7_1 -P src
+ checkout -rOPENBSD_7_3 -P src
 ```
 
 ## 2. Fetch httpd-plus src
@@ -21,7 +21,7 @@ doas cvs \
 ```shell
 cd ~
 ftp -Vo - \
- https://codeload.github.com/mpfr/httpd-plus/tar.gz/refs/heads/7.1-stable \
+ https://codeload.github.com/mpfr/httpd-plus/tar.gz/refs/heads/7.3-stable \
  | tar xzvf -
 ```
 
@@ -30,8 +30,8 @@ ftp -Vo - \
 …by applying patches and building `httpd` binary.
 
 ```shell
-doas ksh httpd-plus-7.1-stable/install 2>&1 \
- | tee httpd-plus-7.1-install.log
+doas ksh httpd-plus-7.3-stable/install 2>&1 \
+ | tee httpd-plus-7.3-install.log
 ```
 
 ## 4. Adapt `httpd.conf`
