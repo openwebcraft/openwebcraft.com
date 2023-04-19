@@ -20,6 +20,7 @@ Here's a list of the desired functionality (a.k.a "dreamcode"):
 
 ```
 # Let's Encrypt Certbot
+pkg_add py3-setuptools
 pkg_add certbot
 
 # php-8.1.13
@@ -36,6 +37,16 @@ rcctl start php81_fpm
 
 # composer
 pkg_add composer
+
+# Let's Encrypt Certbot
+certbot certonly \
+  --agree-tos \
+  --webroot \
+  -w /var/www/htdocs/openwebcraft.com/static \
+  -m <email> \
+  -d openwebcraft.com,www.openwebcraft.com
+
+#certbot renew --force-renewal
 ```
 
 ## httpd(8)
@@ -96,9 +107,9 @@ server www.openwebcraft.com {
   listen on $ext_addr tls port 443
   tls {
     certificate	"/etc/letsencrypt/live/ \
-        	www.openwebcraft.com/fullchain.pem"
+        	openwebcraft.com/fullchain.pem"
     key			"/etc/letsencrypt/live/\
-        	www.openwebcraft.com/privkey.pem"
+        	openwebcraft.com/privkey.pem"
   }
   block return 301 "https://openwebcraft.com\
   	$REQUEST_URI"
@@ -124,9 +135,9 @@ server openwebcraft.com {
   directory index "index.html"
   tls {
     certificate	"/etc/letsencrypt/live/\
-        	www.openwebcraft.com/fullchain.pem"
+        	openwebcraft.com/fullchain.pem"
     key			"/etc/letsencrypt/live/\
-        	www.openwebcraft.com/privkey.pem"
+        	openwebcraft.com/privkey.pem"
   }
   
   # have httpd serve existing media files

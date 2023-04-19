@@ -21,6 +21,7 @@ pkg_add curl
 pkg_add unzip
 pkg_add git
 # Let's Encrypt Certbot
+pkg_add py3-setuptools
 pkg_add certbot
 # php-8.1.18
 pkg_add php
@@ -51,6 +52,8 @@ doas mkdir openwebcraft.com
 cd openwebcraft.com
 doas chown -R www:www .
 doas chmod -R g+w .
+doas -G www matthias
+# logout/ login
 git clone --branch kirbyobsd git@github.com:openwebcraft/openwebcraft.com.git .
 composer install
 ```
@@ -69,7 +72,34 @@ doas rcctl restart httpd
 ### Certbot (Let's Encrypt)
 
 ```sh
-doas certbot renew --force-renewal
+doas certbot certonly \
+  --agree-tos \
+  --webroot \
+  -w /var/www/htdocs/openwebcraft.com/static \
+  -m <email> \
+  -d openwebcraft.com,www.openwebcraft.com
+
+# doas certbot renew --force-renewal
+```
+
+### HTTP Basic Authentication
+
+```sh
+doas mkdir -p /var/www/auth/openwebcraft.com
+doas htpasswd /var/www/auth/openwebcraft.com/.htpasswd <username>
+doas chown www: /var/www/auth/openwebcraft.com/.htpasswd
+doas chmod u-w /var/www/auth/openwebcraft.com/.htpasswd
+```
+
+### Chroot
+
+```sh
+doas mkdir -p /var/www/etc
+doas cp /etc/hosts /etc/resolv.conf /var/www/etc
+ln -s /usr/share/zoneinfo/Europe/Berlin /var/www/etc/localtime
+
+doas mkdir -p /var/www/bin
+doas cp /bin/sh /var/www/bin
 ```
 
 ### Composer
@@ -116,6 +146,15 @@ php --version
 ### Usage
 
 ```sh
-composer update getkirby/cms
-php -S localhost:8000 public/index.php
+php -S localhost:8000 kirby/router.php
 ```
+
+
+```sh
+cd static/
+python3 -m http.server 8000
+```
+
+## Resources
+
+- [Installing Wordpress on OpenBSD](https://openbsd.amsterdam/blog/wordpress.html)
