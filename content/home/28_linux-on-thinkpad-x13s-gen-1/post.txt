@@ -28,7 +28,6 @@ The community is eagerly awaiting the latest kernel works to arrive in distros.
 [BIOS Update Utility for Windows 11 ARM - ThinkPad X13s Gen 1 (Type 21BX, 21BY)](https://support.lenovo.com/us/en/downloads/ds556845-bios-update-utility-bootable-cd-for-windows-11-thinkpad-x13s-gen-1-type-21bx-21by)
 
 There is a new BETA *Linux* option in the ThinkPad X13s BIOS/ firmware (link: https://download.lenovo.com/pccbbs/mobiles/n3huj12w.txt text: version 1.49), which says:
-
 > Turn this switch on to boot Linux. Turn this switch off to boot Windows.
 
 Likely linux friendly ACPI tables 🤔
@@ -42,6 +41,12 @@ But promising as hell!! 🤩
 I installed *Debian* by following along the [instructions for flashing and installing Debian (Installer for Snapdragon 8cx Gen 3 laptops)](https://docs.google.com/document/d/1WuxE-42ZeOkKAft5FuUk6C2fonkQ8sqNZ56ZmZ49hGI/edit#heading=h.d1689esafsky) compiled by Linaro (link posted by Lenovo's Mark Pearson on [Lenovo Community Forum Post "Re:Does anybody know if there is work being done to integrate X13s (ARM-processor) with linux?"](https://forums.lenovo.com/topic/findpost/27/5175315/5770592)).
 
 Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops), e.g. [aarch64-laptops/linux/tree/lenovo-x13s](https://github.com/aarch64-laptops/linux/tree/lenovo-x13s).
+
+**Debian *Testing* (a.k.a. Bookworm)** 
+
+- [Debian Developers' Corner / Debian-Installer](https://www.debian.org/devel/debian-installer/index.en.html)
+- [April 28th, 2023: Debian Installer Bookworm RC 2 release](https://www.debian.org/devel/debian-installer/News/2023/20230428):
+> flash-kernel: […] Add Lenovo ThinkPad X13s.
 
 Notes:
 
@@ -116,6 +121,16 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 ### NixOS—WIP
 
 - [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
+
+### Gentoo
+
+- [Installing Gentoo on the ThinkPad X13s ](https://wiki.gentoo.org/wiki/ThinkPad_X13s)
+
+---
+
+## BIOS/ Firmware Update
+
+[Collection of information meant to help updating the BIOS firmware of aarch64 ThinkPad X13s Gen 1](https://gitlab.com/TheOneWithTheBraid/x13s-firmware-update)
 
 ---
 
