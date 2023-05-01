@@ -131,6 +131,7 @@ The following `server` configuration holds rules for specific locations.
 ```
 server openwebcraft.com {
   listen on $ext_addr tls port 443
+  connection { max request body 8388608 }
   root "/htdocs/openwebcraft.com/static"
   directory index "index.html"
   tls {
