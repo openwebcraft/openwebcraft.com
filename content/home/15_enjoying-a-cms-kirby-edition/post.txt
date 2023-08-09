@@ -27,3 +27,7 @@ Published: 2021-05-11
 ----
 
 Feedurl: https://openwebcraft.com/enjoying-a-cms-kirby-edition
+
+----
+
+Uuid: GU6sDAjnnvrGObs6

@@ -10,12 +10,16 @@ If my activities or priorities change, I’ll update this page.
 ## What I’m doing now
 
 I’m home in Donauwoerth, Germany.
+
 How I spend my day (in order of time spent):
-- family (ie. parenting my two children, ~~homeschooling~~, house & gardening duties)
+
+- family (i.e. parenting our two children and our dog 🐾, ~~homeschooling~~, house & gardening duties, …)
 - remote technology consulting (limited hours, fixed commitments)
-- 🏃️ running & crossfit
+- 🏃️ running—currently more going for a walk 🦮, some crossfit
 - family…
-- side projects (#webdev, Linux on Mobile, (link: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os/ text: elementary OS), OpenBSD, Docker, Node.js, Go, #perfmatters, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, (link: https://openwebcraft.com/portable-versatile-raspberry-pi-4-development-server-setup/ text: Raspberry Pi)
+- nerdy side projects (Linux ~~on Mobile~~ (link: https://openwebcraft.com/linux-on-thinkpad-x13s-gen-1/ text: ARM64), (link: https://openwebcraft.com/introducing-trimir-journal-your-personal-activity-tricorder-for-elementary-os/ text: elementary OS), (link: https://openwebcraft.com/kirby-and-httpd-8-on-openbsd-also-static-site-generation/ text: OpenBSD), #webdev, #perfmatters, #devops, #offlinefirst, #p2p, #smallweb, #smalltech, IoT, (link: https://openwebcraft.com/stressberry-the-argon-poly-raspberry-pi-4-vented-case-with-pwm-30mm-fan-with-and-without-thermal-pad/ text: Raspberry Pi), …)
+- family…
+- optimizing my everyday carry (#edc), actually rather collecting 🤣 
 - family…
 
 Those are my priorities.

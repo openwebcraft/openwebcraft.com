@@ -18,3 +18,7 @@ Published: 2021-01-11
 ----
 
 Feedurl: https://openwebcraft.com/datacake-lorawan-integration
+
+----
+
+Uuid: EoTDJEBVgDDQyZHY

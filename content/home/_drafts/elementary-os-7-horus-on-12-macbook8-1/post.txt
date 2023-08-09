@@ -1,0 +1,69 @@
+Title: elementary OS 7 "Horus" on 12" MacBook8,1
+
+----
+
+Text:
+
+This weekend I finally found some time for the long overdue upgrade of (link: https://openwebcraft.com/elementary-os-6-odin-on-12-macbook8-1/ text: elementary OS 6 "Odin") to elementary OS 7 "Horus" on my 12" MacBook8,1.
+
+After several attempts, mainly related to [installer shows incorrect partition sizes, cannot install due to perceived ESP partition size](https://github.com/elementary/installer/issues/620), the following is the outline of the ultimately successfull approach for the installation:
+
+1. Downloaded latest eos7 ISO from (link: https://builds.elementary.io/ text: builds.elementary.io) (yes, I‘m a sponsor—so should you!)
+2. Created bootable USB media w/ latest ISO—via (link: https://etcher.balena.io/ text: Etcher)
+3. Boot from USB media into „Try Demo“ and connect to network—wireless in my case
+5. Disabled `deb cdrom…` in `/etc/apt/sources.list` and did a full update of the Horus install, i.e. `apt update && apt upgrade && apt dist-upgrade`
+6. Disabled *Suspend* (in oder to keep the laptop running during the next step) 
+7. Install dependencies, build patched versions of `installer` and `distinst` and ultimately start the patched installer like documented in this (link:https://github.com/elementary/installer/issues/620#issuecomment-939357929 text: issue comment):
+
+```
+sudo update
+sudo apt install git elementary-sdk libgnomekbd-dev libpwquality-dev libdistinst-dev
+sudo apt build-dep distinst
+# to avoid running out of disc space
+cd /var/log
+git clone https://github.com/vjr/installer.git
+git clone https://github.com/vjr/distinst.git
+cd distinst
+git checkout sector-size-fix
+make
+sudo make install prefix=/usr
+cd ../installer
+git checkout sector-size-fix
+meson build --prefix=/usr
+cd build
+ninja
+sudo ninja install
+sudo killall io.elementary.installer-daemon
+sudo io.elementary.installer-daemon
+# run installer via it‘s app icon
+```
+
+---
+
+## Snippets
+
+```
+# chroot
+sudo su
+lsblk
+cryptsetup open /dev/nvme0n1p3 data
+vgscan
+vgchange -ay
+lvscan
+mkdir /mnt/system
+mount /dev/mapper/data-root /mnt/system/
+mount /dev/nvme0n1p1 /mnt/system/boot/                        
+mount -o bind /dev/ /mnt/system/dev/
+mount -o bind /proc/ /mnt/system/proc/
+mount -o bind /sys/ /mnt/system/sys/
+chroot /mnt/system
+
+```
+
+----
+
+Published: 2023-06-11
+
+----
+
+Uuid: mi8KVaY7SwvCzPsT

@@ -71,3 +71,7 @@ Published: 2021-01-24
 ----
 
 Feedurl: https://openwebcraft.com/openbsd-on-dell-latitude-x1
+
+----
+
+Uuid: 0Uh1p6iXXLfKm2mI

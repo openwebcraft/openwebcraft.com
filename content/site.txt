@@ -26,7 +26,9 @@ Archivetext:
 
 Keep scrolling then…
 
-Otherwise some ~~outdated~~ (link: https://openwebcraft.com/notes/ text: archived tech notes).
+… or go visit (link: https://blog.openwebcraft.com text: blog.openwebcraft.com).
+
+Otherwise some ~~outdated~~ (link: https://openwebcraft.com/notes/ text: archived tech notes). 
 
 I also wrote (link: semantic-web-schnell-kompakt text: a small book about the mechanics of the Semantic Web)—feels ~~dated~~ like decades ago.
 

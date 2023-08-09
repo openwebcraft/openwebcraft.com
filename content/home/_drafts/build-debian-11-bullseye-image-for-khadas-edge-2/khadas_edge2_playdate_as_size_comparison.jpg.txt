@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: Khadas Edge2 in case, Playdate as a size comparison
+
+----
+
+Title: Khadas Edge2 in case, Playdate as a size comparison
+
+----
+
+Uuid: gZVeymh7d355FUaR
+
+----
+
+Thewidth: 2764
+
+----
+
+Theheight: 3685
+
+----
+
+Thepadding: 133.32127351664

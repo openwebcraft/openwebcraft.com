@@ -100,8 +100,6 @@ sudo openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509
 ```
 5. Follow the Ubuntu installation steps (link: https://github.com/patjak/facetimehd/wiki/Installation#get-started-on-ubuntu text: here). In addition I also set up DKMS (auto-compile on kernal update). **Note to self**: remeber to manually install linux kernel headers after updating the kernel, e.g. `sudo apt install linux-headers-5.13.0-30-generic`.
 
----
-
 I'm meanwhile rocking **elementary OS 6.1 Jólnir** and I'm quite happy w/ the setup. 😀️
 
 There are actually only two minor weak points left:
@@ -115,6 +113,7 @@ There are actually only two minor weak points left:
 Loose collection of links, mostly related to open issues:
 
 - [roadrunner2/macbook12-spi-driver](https://github.com/roadrunner2/macbook12-spi-driver), forked from [cb22/macbook12-spi-driver](https://github.com/cb22/macbook12-spi-driver)—Input driver for the SPI touchpad / keyboard found in the 12" MacBook (MacBook8,1 + MacBook9,1) and 2016 through 2018 Macbook Pro's (MacBookPro13,* and 14,*); a Touch Bar driver is also available.
+- [Installer shows incorrect partition sizes, cannot install due to perceived ESP partition size](https://github.com/elementary/installer/issues/620)
 
 ----
 

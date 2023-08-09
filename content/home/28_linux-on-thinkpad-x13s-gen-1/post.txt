@@ -23,6 +23,12 @@ The state of Linux on the X13s is still pretty much WIP (work-in-progress), but 
 
 The community is eagerly awaiting the latest kernel works to arrive in distros. 
 
+### Camera
+
+Maybe, just maybe we'll get the camera working, to some degree? 🤯
+
+["Switch on CONFIG_SC_CAMCC_8280XP"](https://git.codelinaro.org/bryan.odonoghue/kernel/-/commit/b9175fd447ac30b1fb074ec85017aa21287f5c69) — on custom 6.5 kernel
+
 ### Lenovo BIOS/ Firmware
 
 [BIOS Update Utility for Windows 11 ARM - ThinkPad X13s Gen 1 (Type 21BX, 21BY)](https://support.lenovo.com/us/en/downloads/ds556845-bios-update-utility-bootable-cd-for-windows-11-thinkpad-x13s-gen-1-type-21bx-21by)
@@ -53,7 +59,7 @@ Notes:
 - I created the bootable USB driver on Linux via the awesome [balenaEtcher](https://www.balena.io/etcher/) application.
 - I shrinked the Windows drive on my 1TB disk by `768000` MB, resulting in 750 GB of "Unallocated" space.
 - I would have preferred to install Debian with full-disk encryption and a custom sized swapfile, but this has to wait for another day 🤷‍♂️
-- Modifying the boot order: `FS15:\> bcfg boot add  modf 0 EFI/debian/DtbLoader.efi "Debian"`
+- Modifying the boot order: `FS15:\> bcfg boot add 0 EFI/debian/DtbLoader.efi "Debian"
 - After "updating" to Debian `testing` I had to re-enable `os-prober` to create a custom GRUB menu entry for Windows as documented (link: https://wiki.debian.org/DualBoot/Windows10 text: here)
 - Uninstalled `regolith-desktop` ((link: https://github.com/regolith-linux/regolith-desktop/issues/635#issuecomment-1402333826 text: until  `arm64` repositories for Regolith are available)) and re-installed GNOME via `tasksel`.
 - [debian.org RescueLive steps to `chroot` into locally installed system from live cd](https://wiki.debian.org/RescueLive)
@@ -95,6 +101,9 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 
 - (link: https://www.reddit.com/r/thinkpad/comments/w22mvg/arch_linux_arm_iso_on_x13s_wip/ text: reddit: Arch Linux ARM ISO on X13s (WIP))
 - [Arch Linux ARM on Thinkpad X13S](https://blog.rymcg.tech/blog/linux/thinkpad-x13s/) (Tutorial)
+- Alex's [Arch Linux ARM X13s ISO - 2023/05/10](https://github.com/ironrobin/archiso-x13s/releases) 🎉
+- (link: https://github.com/endeavouros-arm/install-script text: Install EndeavourOS on an ARM SBC) (seems to work on x13s)
+- (link: https://github.com/ironrobin/archiso-x13s/wiki/EndeavourOS-Tutorial-(WIP) text: EndeavourOS Tutorial (WIP))
 
 ### Ubuntu—WIP
 
@@ -114,13 +123,23 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 - [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
-- [Ubuntu 23.04 (Lunar Lobster) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
+- [Ubuntu ~~23.04~~ 23.10 (~~Lunar Lobster~~ Mantic Minotaur) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
 
 - [Ubuntu Concept - x13s](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
+
+### Armbian—WIP
+
+- [Suitable for testing (WIP)](https://www.armbian.com/lenovo-x13s/)
+
+### openSUSE—WIP
+
+- [currently only the community raw images are available, which still have some limitations](https://en.opensuse.org/HCL:ThinkpadX13s)
 
 ### NixOS—WIP
 
 - [NixOS on ThinkPad X13s: minimal configuration](https://dumpstack.io/1675806876_thinkpad_x13s_nixos.html) (src ref: [Tweet](https://twitter.com/dump_stack/status/1623096008069550085))
+- [LunNova/nixos-configs —› hosts/amayadori/x13s.nix](https://github.com/LunNova/nixos-configs)
+- [Gist by cenunix "X13s nixos configuration"](https://gist.github.com/cenunix/5eb7a9d7a821acc90a731c6d7f51c76b)
 
 ### Gentoo
 
@@ -145,6 +164,13 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 [FEX: Lenovo X13s Linux (Ubuntu) installation](https://github.com/FEX-Emu/FEX/wiki/Lenovo-X13s-Linux-installation)—AWESOME write-down of install process 🤩
 
+
+---
+
+## Asahi
+
+- [Builds a minimal Fedora image to run on Apple M1/M2 systems](https://github.com/leifliddy/asahi-fedora-builder)
+
 ---
 
 ## BSDs
@@ -157,8 +183,10 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 ## General Resources on Lenovo, ThinkPad, Microsoft Dev Kit 2023, … & ARM
 
+- [Lenovo ThinkPad X13s Gen 1 PSREF (Product Specifications Reference)](https://psref.lenovo.com/Product/ThinkPad_X13s_Gen_1)
 - [blog post disambiguating Arm, Arm ARM, Armv9, ARM9, ARM64, Aarch64, A64, A78, ...](https://nickdesaulniers.github.io/blog/2023/03/10/disambiguating-arm/) —AWESOME read 🤩
 - [merckhung/linux_on_arm64_laptop](https://github.com/merckhung/linux_on_arm64_laptop) — "Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)", also Microsoft Dev Kit 2023 and Samsung Galaxy Go
+- [linaro.org: Search **x13s**](https://www.linaro.org/search/?q=x13s&fields.label=Linaro)
 
 ----
 

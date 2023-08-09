@@ -1,0 +1,82 @@
+Title: Build Debian 11 Bullseye Image for Khadas Edge 2
+
+----
+
+Text:
+
+(image: khadas_edge2_playdate_as_size_comparison.jpg)
+
+I recently received my Edge 2 case (limited-time sale option, as announced in [March 2023 update](https://www.khadas.com/post/march-2023-update)) to convert my bare-board [Edge2](https://www.khadas.com/edge2) into a beautiful *Edge 2* ARM64 PC. 😎
+
+So far I was ~~rocking~~ playing w/ the stock Ubuntu 22.04 Linux, basically leveraging the available option from oowow-wizard.
+
+But the Debian guy that I am 🤷‍♂️, I was actually looking forward to building and installing a custom Debian 11 Bullseye image.
+
+Thanks to the quite excellent documentation provided by *Khadas*, the process is pretty simple and straight forward.
+
+One simply starts from the GitHub repo [khadas/fenix](https://github.com/khadas/fenix), which provides a one-stop script to build Ubuntu/Debian images for *Khadas* ARM SBC:
+
+```bash
+# install debs
+sudo apt-get install git make lsb-release qemu-user-static
+
+# create project dir and clone fenix script
+mkdir -p ~/Code/khadas-edge2
+cd ~/Code/khadas-edge2
+git clone --depth 1 https://github.com/khadas/fenix
+cd fenix
+
+# adjust environment variables in file config-template.conf
+KHADAS_BOARD=Edge2
+LINUX=5.10
+UBOOT=2017.09
+DISTRIBUTION=Debian
+DISTRIB_RELEASE=bullseye
+DISTRIB_TYPE=gnome
+DISTRIB_ARCH=arm64
+INSTALL_TYPE=EMMC
+
+# load environment configuration from file
+source env/setenv.sh config config-template.conf
+
+# build image
+make
+```
+
+… then: ☕ ⏲️
+
+```bash
+[…]
+Generating new image, please wait...
+[…]
+New image generated successfully!
+[…]
+
+Info: IMAGE: /home/matthias/Code/khadas-edge2/fenix/build/images/edge2-debian--gnome-linux-5.10-fenix-1.5-230501-emmc-develop.img  is ready!
+Cleanup...
+
+Done.
+
+Mo 1. Mai 12:10:47 CEST 2023
+Time elapsed: 98 min 46 sec
+```
+
+Create `*.xz` archive: `xz /home/matthias/Code/khadas-edge2/fenix/build/images/edge2-debian--gnome-linux-5.10-fenix-1.5-230501-emmc-develop.img`.
+
+Put the `edge2-debian--gnome-linux-5.10-fenix-1.5-230501-emmc-develop.img.xz` file onto a USB stick, start  the Edge2 into*oowow* (on start hold `FUN`, press and release `RST` key), and write the image onto EMMC.
+
+## Links
+
+- [Armbian for Khadas Edge 2](https://www.armbian.com/khadas-edge-2/)
+
+----
+
+Published: 2023-05-01
+
+----
+
+Uuid: k0WEXUgbcbDWErbS
+
+----
+
+Feedurl: https://openwebcraft.com/build-debian-11-bullseye-image-for-khadas-edge2
