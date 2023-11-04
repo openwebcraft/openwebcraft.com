@@ -48,7 +48,7 @@ I installed *Debian* by following along the [instructions for flashing and insta
 
 Linaro's team also contributes here: [aarch64-laptops](https://github.com/aarch64-laptops), e.g. [aarch64-laptops/linux/tree/lenovo-x13s](https://github.com/aarch64-laptops/linux/tree/lenovo-x13s).
 
-**Debian *Testing* (a.k.a. Bookworm)** 
+**Debian *Testing* (a.k.a. Trixie ~~Bookworm~~)** 
 
 - [Debian Developers' Corner / Debian-Installer](https://www.debian.org/devel/debian-installer/index.en.html)
 - [April 28th, 2023: Debian Installer Bookworm RC 2 release](https://www.debian.org/devel/debian-installer/News/2023/20230428):
@@ -63,6 +63,8 @@ Notes:
 - After "updating" to Debian `testing` I had to re-enable `os-prober` to create a custom GRUB menu entry for Windows as documented (link: https://wiki.debian.org/DualBoot/Windows10 text: here)
 - Uninstalled `regolith-desktop` ((link: https://github.com/regolith-linux/regolith-desktop/issues/635#issuecomment-1402333826 text: until  `arm64` repositories for Regolith are available)) and re-installed GNOME via `tasksel`.
 - [debian.org RescueLive steps to `chroot` into locally installed system from live cd](https://wiki.debian.org/RescueLive)
+
+- !!! [As of October 11 2023, **Debian Trixie can be installed on the Thinkpad X13s** using the daily netinst image."](https://wiki.debian.org/InstallingDebianOn/Thinkpad/X13s) 🎉 🥳 
 
 ---
 
@@ -123,9 +125,48 @@ As of late February I guess I totally share the assessment of user *ravenpi* in 
 
 - [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
 
-- [Ubuntu ~~23.04~~ 23.10 (~~Lunar Lobster~~ Mantic Minotaur) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
+- [Ubuntu ~~23.04~~ ~~23.10~~ 24.04 (~~Lunar Lobster~~ ~~Mantic Minotaur~~ Noble Numbat) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
 
 - [Ubuntu Concept - x13s](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
+
+```
+# https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s
+=== Quick Start Guide ===
+
+* Shrink the Windows partition using Windows Disk Management
+* On boot hit Enter, enter BIOS settings to disable SecureBoot
+* Boot Windows again, and do BitLocker recovery
+* Power off
+* Insert Ubuntu Concept X13s USB stick
+* Hit Enter, then F12 and select USB stick to boot from
+* Complete the side-by-side installation (if you want to keep Windows)
+
+* To recover windows EFI variable & Bitlocker:
+
+boot into windows entry in grub, if bitlocker present it will trigger bitlocker recovery. This also restores Windows EFI boot entry. After this step use Enter then F12 to select OS to boot (windows or ubuntu)
+
+* Install all updates to activate all the latest hardware improvements:
+
+$ sudo apt update
+$ sudo apt full-upgrade
+$ sudo apt full-upgrade
+
+(Due to preference files shipped, duplicate full-upgrade is required, and a reboot)
+```
+
+- !!! [**Ubuntu 23.10 (Mantic Minotaur) Daily Build**](https://cdimage.ubuntu.com/daily-live/current/) w/ dedicated `mantic-desktop-arm64+x13s.iso`
+
+- [New Image - Ubuntu Desktop ARM64 for subarch X13s](https://lists.ubuntu.com/archives/ubuntu-release/2023-September/005801.html)
+
+- [ [FFe] Build and release ubuntu desktop arm64 x13s image on cdimage.ubuntu.com ](https://bugs.launchpad.net/ubuntu/+source/livecd-rootfs/+bug/2037099)
+
+- !!! [**Ubuntu 23.10 (Mantic Minotaur) Release Lenovo X13s Gen 1 desktop image**](https://cdimage.ubuntu.com/releases/mantic/release/)
+
+```
+New installer requires to have BitLocker turned for side by side installation: https://help.ubuntu.com/wip/bitlocker/
+```
+
+- !!! [X13s bugs tracked on `bugs.launchpad.net/ubuntu-concept/`](https://bugs.launchpad.net/ubuntu-concept/+bugs?field.searchtext=x13s)
 
 ### Armbian—WIP
 
