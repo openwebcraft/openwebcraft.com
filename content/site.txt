@@ -18,7 +18,7 @@ Archivebuttontext: Show More
 
 ----
 
-Description: 
+Description: This is the professional and personal website of Matthias Geisler, an Open Web Craftsman, hence openwebcraft.
 
 ----
 
