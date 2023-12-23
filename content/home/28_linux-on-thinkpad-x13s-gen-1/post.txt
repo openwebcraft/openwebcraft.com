@@ -85,19 +85,20 @@ A loose collection of links to public web resources about various attempts of ma
 
 ### Fedora—WIP
 
-Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)
+~~Results of Matthew Miller's poll [What do you think about Fedora Workstation on an ARM-based Lenovo laptop?](https://discussion.fedoraproject.org/t/what-do-you-think-about-fedora-workstation-on-an-arm-based-lenovo-laptop/37322)~~
 
-> Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.
-> 
-> src refs: [fedoraproject.org/wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/UFI7PHWCMVGFE7RD6LN7YDP77KCHBHZE/)
+> ~~Fedora developers are aiming for it being supportable/usable in time for Fedora 38, at some point before that, some consumable images will be released for testing.~~
+> ~~src refs: [fedoraproject.org/wiki](https://fedoraproject.org/wiki/Thinkpad_X13s). [Fedora Linux ARM mailing list](https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/UFI7PHWCMVGFE7RD6LN7YDP77KCHBHZE/)~~
 
-[Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)
+~~[Kernel and other necessary bits for Fedora on the Lenovo x13s.](https://copr.fedorainfracloud.org/coprs/jforbes/fedora-x13s/)~~
 
-You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).
+~~You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38—from (link: https://arm.fedoraproject.org/prerelease text: here). Alternatively the ongoing development builds from (link: https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/ text: here).~~
 
-- [Installation validation testing test results for the Fedora 38 20230222.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230222.n.0_Installation)
+- ~~[Installation validation testing test results for the Fedora 38 20230222.n.0 nightly compose](https://fedoraproject.org/wiki/Test_Results:Fedora_38_Branched_20230222.n.0_Installation)~~
 
-- [discussion.fedoraproject.org: Search **X13s**](https://discussion.fedoraproject.org/search?q=x13s)
+- ~~[discussion.fedoraproject.org: Search **X13s**](https://discussion.fedoraproject.org/search?q=x13s)~~
+
+- [Thinkpad X13s - Fedora Project Wiki](https://fedoraproject.org/wiki/Thinkpad_X13s)
 
 ### Arch—WIP
 
@@ -109,25 +110,25 @@ You can download Fedora for ARM *prerelease builds*—as of writing of Fedora 38
 
 ### Ubuntu—WIP
 
-- GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)
+- ~~GitHub repo to [Quickly pack iso for Ubuntu Jammy for Lenovo x13s](https://github.com/Mr0btain/x13s_iso_make)~~
 
-- GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)
+- ~~GitHub repo w/ [Fix up the bootloader on Lenovo x13s for Ubuntu](https://github.com/Mr0btain/grub-x13s)~~
 
-> Installer for Lenovo X13s
-> work started (src ref: [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))
+> ~~Installer for Lenovo X13s~~
+> ~~work started (src ref: [discourse.ubuntu.com](https://discourse.ubuntu.com/t/foundations-team-updates-thursday-12-january-2023/33162/3))~~
 
-- [Phoronix: Ubuntu Making Progress On The Lenovo ThinkPad X13s Arm Laptop Support](https://www.phoronix.com/news/Ubuntu-ThinkPad-X13s-Progress)
+- ~~[Phoronix: Ubuntu Making Progress On The Lenovo ThinkPad X13s Arm Laptop Support](https://www.phoronix.com/news/Ubuntu-ThinkPad-X13s-Progress)~~
 
-As of late February I guess I totally share the assessment of user *ravenpi* in the *Manjaro* forum:
+~~As of late February I guess I totally share the assessment of user *ravenpi* in the *Manjaro* forum:~~
 
->"I’m gonna guess the X13s is a viable platform come Ubuntu 23.10 – since they’ve already chosen kernel 6.2 for 23.04, and the bulk of the important changes are in 6.3, I just don’t see it happening by April release. However, if the installer works, perhaps an update to 6.3 would be feasible before 23.10."
->(src ref:  [forum.manjaro.org](https://forum.manjaro.org/t/arm-laptops-and-dev-support/134229/3))
+>~~"I’m gonna guess the X13s is a viable platform come Ubuntu 23.10 – since they’ve already chosen kernel 6.2 for 23.04, and the bulk of the important changes are in 6.3, I just don’t see it happening by April release. However, if the installer works, perhaps an update to 6.3 would be feasible before 23.10."~~
+>~~(src ref:  [forum.manjaro.org](https://forum.manjaro.org/t/arm-laptops-and-dev-support/134229/3))~~
 
-- [discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)
+- ~~[discourse.ubuntu.com: Search **X13s**](https://discourse.ubuntu.com/search?q=x13s%20order%3Alatest)~~
 
 - [Ubuntu ~~23.04~~ ~~23.10~~ 24.04 (~~Lunar Lobster~~ ~~Mantic Minotaur~~ Noble Numbat) Daily Build](https://cdimage.ubuntu.com/daily-live/current/)
 
-- [Ubuntu Concept - x13s](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
+- [~~Ubuntu Concept - x13s~~](https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s)
 
 ```
 # https://launchpad.net/~ubuntu-concept/+archive/ubuntu/x13s
@@ -154,11 +155,11 @@ $ sudo apt full-upgrade
 (Due to preference files shipped, duplicate full-upgrade is required, and a reboot)
 ```
 
-- !!! [**Ubuntu 23.10 (Mantic Minotaur) Daily Build**](https://cdimage.ubuntu.com/daily-live/current/) w/ dedicated `mantic-desktop-arm64+x13s.iso`
+- !!! [**Ubuntu ~~23.10~~ 24.04 (~~Mantic Minotaur~~ Noble Numbat) Daily Build**](https://cdimage.ubuntu.com/daily-live/current/) w/ dedicated ~~`mantic-desktop-arm64+x13s.iso`~~ `noble-desktop-arm64+x13s.iso`.
 
-- [New Image - Ubuntu Desktop ARM64 for subarch X13s](https://lists.ubuntu.com/archives/ubuntu-release/2023-September/005801.html)
+- ~~[New Image - Ubuntu Desktop ARM64 for subarch X13s](https://lists.ubuntu.com/archives/ubuntu-release/2023-September/005801.html)~~
 
-- [ [FFe] Build and release ubuntu desktop arm64 x13s image on cdimage.ubuntu.com ](https://bugs.launchpad.net/ubuntu/+source/livecd-rootfs/+bug/2037099)
+- ~~[[FFe] Build and release ubuntu desktop arm64 x13s image on cdimage.ubuntu.com ](https://bugs.launchpad.net/ubuntu/+source/livecd-rootfs/+bug/2037099)~~
 
 - !!! [**Ubuntu 23.10 (Mantic Minotaur) Release Lenovo X13s Gen 1 desktop image**](https://cdimage.ubuntu.com/releases/mantic/release/)
 
@@ -168,9 +169,11 @@ New installer requires to have BitLocker turned for side by side installation: h
 
 - !!! [X13s bugs tracked on `bugs.launchpad.net/ubuntu-concept/`](https://bugs.launchpad.net/ubuntu-concept/+bugs?field.searchtext=x13s)
 
+- [Ubuntu Summit 2023: Running Ubuntu Desktop on Arm-based laptops](https://events.canonical.com/event/31/contributions/271/)
+
 ### Armbian—WIP
 
-- [Suitable for testing (WIP)](https://www.armbian.com/lenovo-x13s/)
+- [~~Suitable for testing (WIP)~~ Staging - Work in progress](https://www.armbian.com/lenovo-x13s/)
 
 ### openSUSE—WIP
 
@@ -185,6 +188,10 @@ New installer requires to have BitLocker turned for side by side installation: h
 ### Gentoo
 
 - [Installing Gentoo on the ThinkPad X13s ](https://wiki.gentoo.org/wiki/ThinkPad_X13s)
+
+### postmarketOS
+
+- [Lenovo ThinkPad X13s (`lenovo-21bx`)](https://wiki.postmarketos.org/wiki/Lenovo_ThinkPad_X13s_(lenovo-21bx)) —w/ FDE claimed to be working!
 
 ---
 
