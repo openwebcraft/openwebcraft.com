@@ -1,0 +1,81 @@
+Title: Linux on Khadas Mind
+
+----
+
+Text:
+
+I backed the (link: https://www.kickstarter.com/projects/khadasmind/khadas-mind-your-next-gen-portable-workstation text: Kickstarter for Khadas Mind: Your Next-Gen Modular Workstation) and today (2023-11-11) recieved the (link: https://www.khadas.com/mind text: Khadas Mind Premium).
+
+Needless to say, that I didn't plan on using Windoof 11 on this beauty. 🤓
+
+So this page is all about me figuring out how to—best 🤞—use Linux on this device—as a daily driver.
+
+I'm planing on leaving Windoof 11 on the SSD—a.k.a. going dual boot—to ease up my life with firmware updates.
+That's actually something that I recently learned from my ~~struggle~~ experience running Linux on the (link: https://openwebcraft.com/linux-on-thinkpad-x13s-gen-1/ text: Lenovo ThinkPad X13s Gen 1)—where I ended up NOT having a dual boot setup in favour of Debian/ Ubuntu Full Disk Encryption (FDE).
+
+I'm planing on evaluating these Linux distributions/ flavours, in no particular order:
+
+- ✅ Intel's (link: https://www.clearlinux.org/ text: Clear Linux)
+- ✅ (link: https://elementary.io/ text: elementary OS)
+- ✅ Stock (link: https://www.debian.org/ text: Debian)
+- ✅ (link: https://pop.system76.com/ text: Pop!_OS)
+- ✅ (link: https://projectbluefin.io/ text: Bluefin)
+- Stock (link: https://ubuntu.com/ text: Ubuntu)
+- (link: https://vanillaos.org/ text: Vanilla OS)
+- (link: https://www.openbsd.org/ text: OpenBSD) (did I say "Linux-only" 🙃)
+
+## Clear Linux
+
+I've opted NOT for (link: https://www.clearlinux.org/clear-linux-documentation/tutorials/multi-boot/dual-boot-win.html#method-1-shrink-windows-partition-and-install-cl text: dual-booting Clear Linux* OS and Windows* ~~10~~ 11 OS) on the same disk, but rather installed a 2nd SSD for installing Clear Linux.
+
+The installation worked w/ out an issue—though the installer did not recognize the Wifi card, thus I had to fall back on Ethernet via external USB-C hub.
+
+Also, after the installation Gnome seems not able to activate Bluetooth. I didn't drill into this issue, so I can't say whether it's an issue w/ the Bluetooth stack in general or (just/ likely) a driver issue, or…
+
+BTW *Suspend* is working.
+
+## elementary OS
+
+Only tested w/ live medium. Worked flawlessly. Though I didn't want to install right now. I'm rather waiting for the already in the works/ upcoming 8.0 release, which will be based on Ubuntu 24.4, thus expected for 2024.
+
+## Debian 12 (bookworm)
+
+Installation and FDE went pretty straight forward—from `debian-12.4.0-amd64-netinst.iso` (not so much from `debian-live-12.4.0-amd64-gnome.iso`, b/c of issues w/ encryption on boot, likely installer issue?).
+
+Went w/ minimal tiling DE leveraging Wayland and Sway via my beloved Regolith Desktop.
+
+## Pop!_OS
+
+Only tested w/ live medium. Worked flawlessly. Of course 🤷‍♂️
+
+## Bluefin
+
+REALLY curious about Bluefin. Even more though, after reading about (link: https://brian.dev/how-i-bluefin/ text: how Brian is Bluefin)…
+
+Installed the latest iso (`bluefin-38-2023-10-27-x86_64-rc.iso`), even though still beta ("*This is an Beta and will remain a Beta until Fedora 40 is released.*"). 
+
+Install worked w/ out any issues, even though I opted for full disk encryption.
+
+Now need to figure out all this Silverblue/ Bluefin "magic":
+
+(link: https://universal-blue.discourse.group/docs?topic=39 text: Bluefin Developer Experience (`bluefin-dx`))
+
+> **Bluefin Developer Experience** (`bluefin-dx`) is a dedicated developer image with bundled tools. Unlike traditional Linux systems, the operating system and developer environment are explicitly and purposely decoupled.
+
+TO BE CONTINUED…
+
+## Links
+
+- (link: https://dl.khadas.com/products/mind/ text: Khadas Downloads for Mind)
+
+----
+
+Published: 2023-11-12
+
+----
+
+Uuid: frIHOKRX4FkXIW7Z
+
+----
+
+Feedurl: https://openwebcraft.com/linux-on-khadas-mind
