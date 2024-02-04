@@ -25,7 +25,7 @@
 
     foreach ($posts as $p) : ?>
         
-        <?php // if ($p->published()->toDate('n') == $posts->first()->published()->toDate('n')) continue; ?>
+        <?php if ($p->published()->toDate('n') == $posts->first()->published()->toDate('n')) continue; ?>
 
         <?php
 
