@@ -1,0 +1,80 @@
+Title: OpenBSD on Lenovo ThinkPad X270
+
+----
+
+Text:
+
+(image: lenovo_thinkpad_x270_openbsd_74_neofetch_screenshot.jpg)
+
+Again, not a tutorial but rather some personal notes for future self consumption.
+
+## Post Installation Configuration
+
+```
+x270# syspatch
+x270# sysmerge -d
+
+x270# echo 'permit username' > /etc/doas.conf
+x270# echo 'permit nopass keepenv root as root' >> /etc/doas.conf
+
+x270# echo 'record.adc-0:1_source=mic' > /etc/mixerctl.conf
+x270# pkg_add cmixer
+
+x270# pkg_add obsdfreqd
+x270# rcctl enable apmd
+x270# rcctl set apmd flags -L
+x270# rcctl start apmd
+x270# rcctl enable obsdfreqd
+x270# rcctl set obsdfreqd flags -T 75,55 
+x270# rcctl start obsdfreqd
+
+
+x270# usermod -G _shutdown matthias
+x270# usermod -L staff matthias
+
+# /etc/login.conf
+staff:\
+        :datasize-cur=6144M:\
+        :datasize-max=infinity:\
+        :maxproc-max=512:\
+        :maxproc-cur=256:\
+        :ignorenologin:\
+        :requirehome@:\
+        :tc=default:
+
+# /etc/hostname.iwm0
+join "SSID" wpakey "PASSWORD"
+inet autoconf
+
+# /etc/sysctl.conf
+kern.audio.record=1
+kern.video.record=1
+```
+
+## TODO
+
+- cwm
+
+## Resources
+
+- (link: https://www.coreystephan.com/openbsd-thinkpad/ text: Stephan's notes on installing OpenBSD 7.4 on a ThinkPad X270)
+- (link: https://paedubucher.ch/articles/2020-09-05-openbsd-on-the-desktop-part-i.html text: Patrick's "OpenBSD on the Desktop (Part I), Basic Setup with Xorg and dwm")
+- (link: https://openbsd.amsterdam/onboard.html text: OpenBSD Amsterdam's "Finishing Touches" for onboarding)
+- (link: https://github.com/krzysztofengineer/openbsd/tree/master text: Krzysztof's practical guide to setup a productive [OpenBSD] working environment on Thinkpad)
+- (link: https://romanzolotarev.com/ text: Roman's guides on OpenBSD as a desktop)
+- (link: https://ianlecorbeau.github.io/blog/openbsd-cwm.html text: OpenBSD’s CWM: An Underrated Window Manager (Plus a Comfy Config))
+- (link: https://www.c0ffee.net/blog/openbsd-on-a-laptop text: OpenBSD on a Laptop)
+
+TO BE CONTINUED…
+
+----
+
+Published: 2024-01-07
+
+----
+
+Uuid: 1uWFvwsKYcEG99zx
+
+----
+
+Feedurl: https://openwebcraft.com/openbsd-on-lenovo-thinkpad-x270

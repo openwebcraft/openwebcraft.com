@@ -1,0 +1,105 @@
+Title: OpenBSD on Protonet Maya
+
+----
+
+Text:
+
+(image: protonet-maya.jpg)
+
+> Photo src ref: (link: https://protonet.com/company/news/ text: Protonet Press Materials. Free for editorial use.)
+
+I always planed on using my (link: https://protonet.com/ text: Protonet Maya) server as a fanless *nix desktop system. So, after a short test w/ stock (link: https://www.debian.org/ text: Debian) on to (link: https://www.openbsd.org/ text: OpenBSD)…
+
+## TL;DR 
+
+Almost boring. Just works! 🐡👍
+
+## Installation
+
+Basically, one just follows the excellent (link: https://www.openbsd.org/faq/faq4.html text: OpenBSD Installation Guide), starting w/ download and verify—of course! 🤓
+
+```bash
+# Ubuntu Distrobox on Fedora Silverblue/ Bluefin
+cd ~/Downloads
+
+# download
+curl -o https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.img
+
+# verify checksum (transit)
+sudo apt install hashalot
+
+curl -o https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/SHA256
+
+sha256sum install74.img
+
+# verfiy cryptographically (contents)
+sudo apt install signify-openbsd signify-openbsd-keys
+
+curl -o https://ftp.openbsd.org/pub/OpenBSD/7.4/openbsd-74-base.pub
+curl -o https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/SHA256.sig
+
+signify-openbsd -Cp ./openbsd-74-base.pub -x SHA256.sig install74.img 
+```
+
+Then, …
+
+1. burn to USB stick (e.g. via Balena Etcher),
+2. boot from USB (get access to Maya's BIOS by pressing `Del` key),
+3. and choose `(I)nstall` and follow the instructions,
+4. finally `(R)eboot`.
+
+Next up: profit! 💪‍
+
+## Setup
+
+I usually start by following (link: https://openbsd.amsterdam/onboard.html text: OpenBSD Amsterdam's Finishing touches), followed by (link: https://romanzolotarev.com/ text: Roman's guides on OpenBSD as a server):
+
+```
+su -
+
+# Update fstab(5) to add noatime:
+maya# cp /etc/fstab /etc/fstab.bak
+maya# sed -i 's/rw/rw,noatime/' /etc/fstab
+
+# Add username to groups staff and _shutdown: 
+maya# usermod -L staff matthias
+maya# usermod -G _shutdown matthias
+
+# Update login.conf(5) to increase memory limits:
+maya# cp /etc/login.conf /etc/login.conf.bak
+maya# sed -i 's/datasize-cur=1536M/datasize-cur=8192M/' /etc/login.conf
+
+# Add username to /etc/doas.conf:
+maya# echo 'permit matthias' > /etc/doas.conf
+maya# echo 'permit nopass keepenv root as root' >> /etc/doas.conf
+
+# Install additional packages:
+maya$ pkg_add curl git neofetch
+
+# Install tailscale
+doas pkg_add tailscale
+doas rcctl enable tailscaled
+doas rcctl start tailscaled
+doas tailscale up --ssh
+```
+
+(image: screenshot_gnome_terminal_bluefin_ssh_maya_neofetch.png)
+
+## TODO
+
+- Maybe Docker (via (link: https://www.tumfatig.net/2022/running-docker-host-openbsd-vmd/ text: vmd)) 🤔
+- …
+
+TO BE CONTINUED…
+
+----
+
+Published: 2023-12-30
+
+----
+
+Uuid: bhohC2suYzMIJ26S
+
+----
+
+Feedurl: https://openwebcraft.com/openbsd-on-protonet-maya

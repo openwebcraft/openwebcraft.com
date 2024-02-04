@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: Screenshot GNOME Terminal on Fedora Silverblue/ Bluefin running neofetch via ssh on maya
+
+----
+
+Title: Screenshot GNOME Terminal on Fedora Silverblue/ Bluefin running neofetch via ssh on maya
+
+----
+
+Uuid: 2ESj6HzBkqbuvRaN
+
+----
+
+Thewidth: 1106
+
+----
+
+Theheight: 773
+
+----
+
+Thepadding: 69.891500904159

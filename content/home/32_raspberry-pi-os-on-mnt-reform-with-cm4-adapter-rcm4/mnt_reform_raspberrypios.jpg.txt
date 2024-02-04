@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: MNT Reform running Raspberry Pi OS on CM4
+
+----
+
+Title: MNT Reform running Raspberry Pi OS on CM4
+
+----
+
+Uuid: jcCsUNIV5lCXzd6p
+
+----
+
+Thewidth: 1536
+
+----
+
+Theheight: 2048
+
+----
+
+Thepadding: 133.33333333333

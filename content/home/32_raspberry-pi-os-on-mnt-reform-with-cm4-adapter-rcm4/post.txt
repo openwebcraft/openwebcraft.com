@@ -1,0 +1,56 @@
+Title: Raspberry Pi OS on MNT Reform with CM4 Adapter (RCM4)
+
+----
+
+Text:
+
+(image: mnt_reform_raspberrypios.jpg)
+
+Rather immediately when made available via (link: https://shop.mntre.com/ text: MNT Shop) I ordered the (link: https://shop.mntre.com/products/mnt-reform-cm4-processor-module-adapter text: MNT Reform CM4 Processor Module Adapter).
+
+I've received the adapter already a while ago, but until recently couldn't get hold of a reasonably priced (link: https://www.raspberrypi.com/products/compute-module-4/ text: Raspberry PI Compute Module 4), along w/ the (link: https://www.raspberrypi.com/products/compute-module-4-antenna-kit/ text: Compute Module 4 Antenna Kit), certified by for use with Raspberry Pi Compute Module 4.
+
+With all three parts at my disposable it was finally time, to assemble the hardware and install Raspberry Pi OS.
+
+For the hardware assembly I followed the accurately compiled and also very lovely and visually appealing made (link: https://mntre.com/reform_md/reform-rcm4-manual.pdf text: RCM4 for Raspberry Pi CM4 Processor Module Manual, PDF).
+
+Unfortunately, neither when ordering the CM4 nor before assembly the hardware, I was aware of the following fact:
+
+>eMMC and SD card pins are shared on the Raspberry Pi CM4. **That means you can only boot from SD card on a CM4 with no eMMC.**
+>If you want to use an eMMC-based CM4, you have to provision it first in another baseboard over USB (for example, the CM4IO or Piunora). Consult the official Raspberry Pi CM4 documentation for more details.
+> src ref: (link: https://source.mnt.re/reform/mnt-reform-raspberry-pi-cm4-som text: source.mnt.re/reform/mnt-reform-raspberry-pi-cm4-som)
+
+Sure, I've bought a CM4 **with 16GB of eMMC**, of course 🙄.
+
+Unfortunately, I also do neither own a (link: https://www.raspberrypi.com/products/compute-module-4-io-board/ text: Compute Module 4 IO Board (CM4IO)) nor a (link: https://www.diodes-delight.com/products/piunora/ text: Piunora)—yet 😉.
+
+So, the rather straight fwd. and simple OS installation approach via SD card wasn't feasible for me. 🤷
+
+Instead, I came up w/ the following (spoiler: successful) approach:
+
+- ✅ to flash the Raspberry Pi OS onto a USB stick (via the (link: https://www.raspberrypi.com/software/ text: Raspberry Pi Imager))
+- ✅ apply additional customization to the installation as outlined here: (link: https://source.mnt.re/reform/mnt-reform-raspberry-pi-cm4-som text: source.mnt.re/reform/mnt-reform-raspberry-pi-cm4-som)
+- ✅ boot from said USB
+- ✅ assure we have wifi working and internal display working at full brightness (also see (link: https://community.mnt.re/t/display-backlight-control/350/2 text: this community post))
+- ✅ work around a chicken and egg kind of problem, where the GPIO toggles of (de)asserting USB hub reset (required for the input devices and lower 2 USB ports to work) would lead to `EXTfs errors` for the mounted USB stick. Solution: comment out the GPIO toggles in `/etc/rc.local` and use ext. USB hub on the first USB port w/ both, USB stick and ext. keyboard and mouse attached.
+- ✅ use the build in *SD Card Copier* application to copy the installation from the USB stick (`/dev/sda`) to eMMC (`/dev/mmcblk0`)
+- ✅ reboot from the eMMC (i.e. w/ out the USB stick attached)—but still w/ ext. keyboard and mouse attached
+- ✅ make internal keyboard and trackpad working. by commenting-in GPIO toggles in `/etc/rc.local`
+- ✅ reboot from the eMMC, this time w/ out the ext. keyboard and mouse attached
+- ✅ install pending Raspberry Pi OS updates (if any)
+- ✅ have sound working
+- ❓ …
+
+TO BE CONTINUED…
+
+----
+
+Published: 2024-01-03
+
+----
+
+Uuid: kTlARFtlMKuJEeV9
+
+----
+
+Feedurl: https://openwebcraft.com/raspberry-pi-os-on-mnt-reform-with-cm4-adapter-rcm4
