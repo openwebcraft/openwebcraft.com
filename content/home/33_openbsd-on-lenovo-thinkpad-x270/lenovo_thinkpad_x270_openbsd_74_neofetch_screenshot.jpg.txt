@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: Lenovo ThinkPad X270 w/ neofetch screenshot on OpenBSD 7.4
+
+----
+
+Title: Lenovo ThinkPad X270 w/ neofetch screenshot on OpenBSD 7.4
+
+----
+
+Uuid: m9S1XKY2UcCc2fqC
+
+----
+
+Thewidth: 2048
+
+----
+
+Theheight: 1536
+
+----
+
+Thepadding: 75

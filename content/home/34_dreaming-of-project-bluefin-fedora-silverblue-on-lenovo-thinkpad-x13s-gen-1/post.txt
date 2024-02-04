@@ -1,0 +1,47 @@
+Title: Dreaming of Project Bluefin (Fedora Silverblue) on Lenovo ThinkPad X13s Gen 1
+
+----
+
+Text:
+
+Honestly, immediately from the first day of installing and using (link: https://projectbluefin.io/ text: Project Bluefin) on my (link: https://openwebcraft.com/linux-on-khadas-mind/ text: Khadas Mind) —**my daily driver**— I'm dreaming of having the same Linux experience as well as Developer Experience (DX) on my *Lenovo ThinkPad X13s Gen 1* ARM64 laptop.
+
+What's Bluefin? Great you asked!
+
+> **Bluefin is a custom image of Fedora Silverblue.** The best of both worlds: the reliability and ease of use of a Chromebook, with the power of a *GNOME* desktop.
+>
+> *Bluefin* is built with (link: https://universal-blue.org/ text: Universal Blue), a community toolkit **designed to reboot the Linux desktop**. Built for the love of the game. **Welcome to indie Cloud Native.**
+> 
+> src: (link: https://projectbluefin.io/ text: projectbluefin.io)
+
+>**Bluefin Developer Experience (bluefin-dx)** is a dedicated developer image with bundled tools. Unlike traditional Linux systems, the operating system and developer environment are explicitly and purposely separated.
+>src: (link: https://universal-blue.discourse.group/docs?topic=39 text: universal-blue.discourse.group)
+
+Today my hopes where massively fueled, when listening and watching (link: https://www.youtube.com/watch?v=ece_9Gp_AsM text: Jorge Castro taking about Project Bluefin, and the benefits that come from running containerized Linux on desktops) —**incl. Arm**— on the (link: https://www.youtube.com/@ArmSoftwareDevelopers text: Arm Developers Program's YouTube channel).
+
+Good times ahead 🤘
+
+TO BE CONTINUED…
+
+## Resources
+
+- (link: https://projectbluefin.io/ text: Project Bluefin website)
+- (link: https://universal-blue.discourse.group/docs?category=6 text: Project Bluefin documentation)
+- (link: https://universal-blue.discourse.group/docs?topic=39 text: Bluefin-dx) - **The Bluefin Developer Experience**
+- (link: https://fedoraproject.org/wiki/Thinkpad_X13s text: Fedora Project Wiki page) to keep track of Linux support development for Thinkpad X13s
+- (link: https://just.systems/ text: Just) ~~a~~ the command runner used by Bluefin, wrapped by `ujust` 
+- (link: https://github.com/jhovold/linux/wiki/X13s text: Johan Hovold's GitHub Wiki page) aims to provide an overview of the current status of Linux support for the X13s laptop
+- (link: https://asahilinux.org/fedora/ text: Fedora Asahi Remix website) (Fedora Linux 39 + Apple Silicon = Fedora Asahi Remix)
+- (link: https://oftc.irclog.whitequark.org/aarch64-laptops text: #aarch64-laptops) — **Linux support for AArch64 Laptops** ([…] Lenovo ThinkPad X13s - and various other snapdragon laptops)
+
+----
+
+Published: 2024-02-04
+
+----
+
+Uuid: 0qWwhHqaN7aBwxif
+
+----
+
+Feedurl: https://openwebcraft.com/dreaming-of-project-bluefin-fedora-silverblue-on-lenovo-thinkpad-x13s-gen-1
