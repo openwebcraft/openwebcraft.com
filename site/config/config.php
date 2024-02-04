@@ -19,7 +19,8 @@ return [
     'kirby-extended.highlighter.autodetect'  => true,
     'oblik.git.repo' => '/htdocs/openwebcraft.com',
     'oblik.git.merge' => 'kirbyobsd',
-    'oblik.git.bin' => 'LD_LIBRARY_PATH=/usr/local/lib /bin/git',
+    // 'oblik.git.bin' => 'LD_LIBRARY_PATH=/usr/local/lib /bin/git',
+    'oblik.git.bin' => '(exec true)',
     'matthiasjg' => [
         'static_site_composer' => [
             'endpoint' => 'compose-static-site',
