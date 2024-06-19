@@ -4,6 +4,8 @@ Title: Dreaming of Project Bluefin (Fedora Silverblue) on Lenovo ThinkPad X13s G
 
 Text:
 
+(image: bluefin_angry_polaroid.png)
+
 Honestly, immediately from the first day of installing and using (link: https://projectbluefin.io/ text: Project Bluefin) on my (link: https://openwebcraft.com/linux-on-khadas-mind/ text: Khadas Mind) —**my daily driver**— I'm dreaming of having the same Linux experience as well as Developer Experience (DX) on my *Lenovo ThinkPad X13s Gen 1* ARM64 laptop.
 
 What's Bluefin? Great you asked!
@@ -21,18 +23,47 @@ Today my hopes where massively fueled, when listening and watching (link: https:
 
 Good times ahead 🤘
 
-TO BE CONTINUED…
+I'm currently trying to figure out the best way to help get the armrest working for Bluefin. At least and in any case I'm ready for alpha/beta testing... 💪 
+
+## UPDATE 2024-02-10
+
+Decided to take matters in my own hands by evaluating building `ublue-os/main` and `ublue-os/bluefin` for arm64 (aarch64)—ultimately targeting the x13s for now.
+
+Hope this will lead to something worth sharing w/ the community… 🤞
+
+So far I forked the repos…
+
+- (link: https://github.com/matthiasjg/ublue-os-main/ text: matthiasjg/ublue-os-main)
+- (link: https://github.com/matthiasjg/ublue-os-bluefin/ text: matthiasjg/ublue-os-bluefin)
+- (link: https://github.com/matthiasjg/ublue-os-ucore text: matthiasjg/ublue-os-ucore)
+
+…and monkey-patched the build gh action *build-ublue* in branch `aarch64-x13s`.
+
+As a gh action runner w/ support for `arm` I'm using (link: https://buildjet.com/for-github-actions text: BuildJet). 
+
+Though, I'm currently ~~learning~~ experiencing —the.hard.way.— that the image `buildjet-4vcpu-ubuntu-2204-arm` is indeed not on par w/ the "standard" `ubuntu-22.04`, as clearly stated by *BuildJet*:
+
+>ARM Support and Package Compatibility
+> While GitHub Actions does not support ARM, BuildJet strives to include as many packages as possible. However, achieving full compatibility on the scale of the Ubuntu 22.04 is challenging. We are actively working to improve the ARM image, but for the time being, **we recommend manually installing specific dependencies as needed**.
+
+But I must say, so far I really like the streamlined —and for now still free—experience of using *BuildJet*! 👍
+
+One has to start somewhere, right? 🤘
 
 ## Resources
 
 - (link: https://projectbluefin.io/ text: Project Bluefin website)
 - (link: https://universal-blue.discourse.group/docs?category=6 text: Project Bluefin documentation)
 - (link: https://universal-blue.discourse.group/docs?topic=39 text: Bluefin-dx) - **The Bluefin Developer Experience**
+- (link: https://fedoraproject.org/wiki/Architectures/ARM text: Fedora Project Wiki page on Architectures/ARM)
+- (link: https://fedoraproject.org/wiki/Architectures/ARM/Installation text: Fedora Project Wiki page on Architectures/ARM/Installation)
 - (link: https://fedoraproject.org/wiki/Thinkpad_X13s text: Fedora Project Wiki page) to keep track of Linux support development for Thinkpad X13s
 - (link: https://just.systems/ text: Just) ~~a~~ the command runner used by Bluefin, wrapped by `ujust` 
 - (link: https://github.com/jhovold/linux/wiki/X13s text: Johan Hovold's GitHub Wiki page) aims to provide an overview of the current status of Linux support for the X13s laptop
 - (link: https://asahilinux.org/fedora/ text: Fedora Asahi Remix website) (Fedora Linux 39 + Apple Silicon = Fedora Asahi Remix)
 - (link: https://oftc.irclog.whitequark.org/aarch64-laptops text: #aarch64-laptops) — **Linux support for AArch64 Laptops** ([…] Lenovo ThinkPad X13s - and various other snapdragon laptops)
+
+TO BE CONTINUED…
 
 ----
 

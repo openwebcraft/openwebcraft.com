@@ -39,7 +39,49 @@ Instead, I came up w/ the following (spoiler: successful) approach:
 - ✅ reboot from the eMMC, this time w/ out the ext. keyboard and mouse attached
 - ✅ install pending Raspberry Pi OS updates (if any)
 - ✅ have sound working
+- have (link: https://community.mnt.re/t/nvme-not-working-with-rcm4-fix-for-m-2-adapters/1674/1 text: NVMe ssd drive working) (Raspberry Pi OS: (link: https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#enable-pcie text: Enable PCIe); maybe? (link: https://gist.github.com/geerlingguy/9d78ea34cab8e18d71ee5954417429df text: increase the BAR memory address space for PCIe devices on the Raspberry Pi Compute Module 4))
 - ❓ …
+
+**2024-04-07 UPDATE** Troubleshooting display w/ low backlight after `dist-upgrade`
+
+```
+# /boot/firmware/config.txt
+dtdebug=on
+
+sudo apt install vcdbg
+
+sudo vcdbg log msg
+```
+
+**2024-04-21 UPDATE** ~~Fixing~~ Monkey patching display w/ low backlight after `dist-upgrade`
+
+```
+# dmesg | grep backlight
+[    6.202666] OF: /backlight: #pwm-cells = 3 found 2
+[    6.202710] of_pwm_get(): can't parse "pwms" property
+[    6.202721] pwm-backlight backlight: unable to request PWM
+```
+
+[Raspberry Pi Forums: Kernel 6.6.0 - PWM seems not working/available](https://forums.raspberrypi.com/viewtopic.php?t=356484&sid=72722e77f4725b304dd132f88bab9da2)
+
+As it stands, it seems [upstream change has broken it:](https://github.com/raspberrypi/linux/commit/81b875892022181d1d8f9a04416403b307b66754)
+
+```
+# Apply monkey patch
+mkdir -p ~/Code
+git clone https://source.mnt.re/reform/mnt-reform-raspberry-pi-cm4-som
+cd mnt-reform-raspberry-pi-cm4-som
+
+vi rcm4-overlay.dts
+- pwms = <&pwm 0 10000>;
++ pwms = <&pwm 0 10000 0>;
+
+./mkoverlay.sh
+sudo cp /boot/firmware/overlays/rcm4-overlay.dtbo /boot/firmware/overlays/rcm4-overlay.dtbo.old
+sudo cp rcm4-overlay.dtbo /boot/firmware/overlays/rcm4-overlay.dtbo
+
+sudo reboot
+```
 
 TO BE CONTINUED…
 

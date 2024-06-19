@@ -1,0 +1,25 @@
+Withtemplate: true
+
+----
+
+Alt: Project Bluefin Angry Dino Polaroid
+
+----
+
+Title: Project Bluefin Angry Dino Polaroid
+
+----
+
+Uuid: p3siYFrtpDqEGH1z
+
+----
+
+Thewidth: 806
+
+----
+
+Theheight: 806
+
+----
+
+Thepadding: 100

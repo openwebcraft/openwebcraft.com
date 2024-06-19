@@ -155,13 +155,13 @@ $ sudo apt full-upgrade
 (Due to preference files shipped, duplicate full-upgrade is required, and a reboot)
 ```
 
-- !!! [**Ubuntu ~~23.10~~ 24.04 (~~Mantic Minotaur~~ Noble Numbat) Daily Build**](https://cdimage.ubuntu.com/daily-live/current/) w/ dedicated ~~`mantic-desktop-arm64+x13s.iso`~~ `noble-desktop-arm64+x13s.iso`.
+- [Ubuntu ~~23.10~~ 24.04 (~~Mantic Minotaur~~ Noble Numbat) Daily Build](https://cdimage.ubuntu.com/daily-live/current/) w/ dedicated ~~`mantic-desktop-arm64+x13s.iso`~~ `noble-desktop-arm64+x13s.iso`.
 
 - ~~[New Image - Ubuntu Desktop ARM64 for subarch X13s](https://lists.ubuntu.com/archives/ubuntu-release/2023-September/005801.html)~~
 
 - ~~[[FFe] Build and release ubuntu desktop arm64 x13s image on cdimage.ubuntu.com ](https://bugs.launchpad.net/ubuntu/+source/livecd-rootfs/+bug/2037099)~~
 
-- !!! [**Ubuntu 23.10 (Mantic Minotaur) Release Lenovo X13s Gen 1 desktop image**](https://cdimage.ubuntu.com/releases/mantic/release/)
+- [Ubuntu 23.10 (Mantic Minotaur) Release Lenovo X13s Gen 1 desktop image**](https://cdimage.ubuntu.com/releases/mantic/release/)
 
 ```
 New installer requires to have BitLocker turned for side by side installation: https://help.ubuntu.com/wip/bitlocker/
@@ -170,6 +170,13 @@ New installer requires to have BitLocker turned for side by side installation: h
 - !!! [X13s bugs tracked on `bugs.launchpad.net/ubuntu-concept/`](https://bugs.launchpad.net/ubuntu-concept/+bugs?field.searchtext=x13s)
 
 - [Ubuntu Summit 2023: Running Ubuntu Desktop on Arm-based laptops](https://events.canonical.com/event/31/contributions/271/)
+
+- !!! [**Status of Ubuntu 24.04 (Noble Numbat) support for Lenovo ThinkPad X13s**](https://discourse.ubuntu.com/t/status-of-ubuntu-support-for-
+lenovo-thinkpad-x13s/44652)
+
+### Pop!_OS
+
+- [Pop!_OS ISO hackery for the Lenovo X13s and Windows Dev Kit 2023 ](https://github.com/jglathe/pop-os-iso/tree/jg/arm64-x13s)
 
 ### Armbian—WIP
 
@@ -229,12 +236,15 @@ New installer requires to have BitLocker turned for side by side installation: h
 
 ---
 
-## General Resources on Lenovo, ThinkPad, Microsoft Dev Kit 2023, … & ARM
+## General Resources on Lenovo, ThinkPad, Microsoft Dev Kit 2023, Qualcomm, Snapdragon… & Linux on ARM
 
 - [Lenovo ThinkPad X13s Gen 1 PSREF (Product Specifications Reference)](https://psref.lenovo.com/Product/ThinkPad_X13s_Gen_1)
 - [blog post disambiguating Arm, Arm ARM, Armv9, ARM9, ARM64, Aarch64, A64, A78, ...](https://nickdesaulniers.github.io/blog/2023/03/10/disambiguating-arm/) —AWESOME read 🤩
 - [merckhung/linux_on_arm64_laptop](https://github.com/merckhung/linux_on_arm64_laptop) — "Everything about running Linux on Thinkpad X13s (powered by Qualcomm SC8280XP)", also Microsoft Dev Kit 2023 and Samsung Galaxy Go
 - [linaro.org: Search **x13s**](https://www.linaro.org/search/?q=x13s&fields.label=Linaro)
+- [YouTube "Linux on Snapdragon X Elite Laptop with Tim Benton at the Linaro booth at Embedded World 2024 #ew24"](https://www.youtube.com/watch?v=rEaGyCAS9fY)
+- [Goodbye EndeavourOS ARM](https://endeavouros.com/news/goodbye-endeavouros-arm/)
+- [Qualcomm joins Canonical’s silicon partner program.](https://canonical.com/blog/qualcomm-and-canonical-announce-strategic-collaboration) ([Tweet](https://twitter.com/canonical/status/1778018512679694604?s=58&t=7N0RIdmV-4iTQnCqJf1rxg))
 
 ----
 

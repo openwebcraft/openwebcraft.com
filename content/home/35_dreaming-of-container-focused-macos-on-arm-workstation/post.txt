@@ -1,0 +1,104 @@
+Title: Dreaming of container focused macOS on ARM workstation
+
+----
+
+Text:
+
+This post is about me ~~dreaming of~~ setting up a container focused development workstation on macOS *ARM*.
+
+Ideally, this setup will allow for me NOT(!) having to retrain my "muscle memory" for desktop shortcuts (switching "workspaces", launching and moving around apps, …)
+
+Think: like (link: https://projectbluefin.io/ text: Project Bluefin) on ((link: https://openwebcraft.com/dreaming-of-project-bluefin-fedora-silverblue-on-lenovo-thinkpad-x13s-gen-1/ text: ARM)) Linux.
+
+## Building Blocks:
+
+- https://containerd.io/
+- https://lima-vm.io/
+- https://github.com/abiosoft/colima
+- https://distrobox.it/
+- https://containers.dev/
+- https://code.visualstudio.com/
+- (link: https://code.visualstudio.com/docs/devcontainers/containers text: Visual Studio Code Dev Containers extension)
+
+## Tips
+
+Running `distrobox` in `lima`: (link: https://github.com/89luca89/distrobox/issues/36#issuecomment-1881465101 text: [Distrobox] MacOS host support #36)
+
+>`limactl start`
+>`lima sudo apt install distrobox`
+>`lima distrobox create`
+> `lima distrobox enter ...`
+
+(link: (link: https://github.com/lima-vm/lima/discussions/1890#discussioncomment-7221563 text: https://github.com/lima-vm/lima/discussions/1890) text: Using VSCode SSH Remote with Lima-VM #1890) 
+
+> There is now a ssh.config generated for each instance, so can use that file instead of show-ssh.
+>
+> `echo "Include ${LIMA_HOME:-$HOME/.lima}/default/ssh.config" >> ~/.ssh/config`
+>
+>Then you should be able to connect to "lima-default" (or any other instance), without parameters.
+>
+> `ssh lima-default`
+
+### Colima VS Code Devcontainers
+
+```
+# /Users/matthias/.lima/_config/override.yaml
+mountType: 9p
+mounts:
+  - location: "/Users/{username}"
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
+  - location: "~"
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
+  - location: /tmp/colima
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
+
+
+colima start --cpu 4 --memory 16 --mount-type 9p
+```
+
+## Resources 
+
+Semi-structured list of useful resources for further reading.
+
+Also some apps that I use, and recommend (I guess 🤔).
+
+- (link: https://blog.codeminer42.com/how-to-turn-your-macos-into-a-linux-like-desktop/ text: How to turn your macOS into a Linux-like Desktop)
+- (link: https://maccy.app/ text: Maccy), a clipboard manager for macOS which does one job - keep your copy history at hand. Period. Lightweight. Open source. No fluff.
+- (link: https://icanhazapps.d7.wtf/shortcut text: Simple OSS shortcut manager for macOS)
+- (link: https://ianyh.com/amethyst/ text: Amethyst), a tiling window manager for macOS, along the lines of xmonad.
+- AWESOME YouTube video by Tech Craft: (link: https://www.youtube.com/watch?v=7Z9-Ry4yGNc text: Boost your MacOS PRODUCTIVITY with Amethyst | Tiling Window Manager)
+- [Zap](https://usezap.sh), a spotlight-inspired macOS launcher that supercharges navigation across apps, monitors, and workspaces.
+- [How to fix chown ‘permission denied’ issue when using colima on Mac OS X?](https://medium.com/dandelion-tutorials/how-to-fix-chown-permission-denied-issue-when-using-colima-on-mac-os-x-d925e420c875)
+- [Marte, a dual-pane (think: *Norton Commander*), keyboard-friendly fast and extensible file manager for macOS](https://marta.sh/)
+- Nerd Fonts: `brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font`
+
+- VS Code (Colors/ Theme & Fonts)
+
+```
+{
+    "workbench.colorTheme": "Dracula",
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true
+}
+```
+
+----
+
+Published: 2024-03-15
+
+----
+
+Uuid: 7ZlL6C4oN1YYWRR7
+
+----
+
+Feedurl: https://openwebcraft.com/dreaming-of-container-focused-macos-on-arm-workstation

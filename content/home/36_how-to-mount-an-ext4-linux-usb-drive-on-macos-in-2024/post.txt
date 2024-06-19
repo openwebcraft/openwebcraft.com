@@ -1,0 +1,49 @@
+Title: How to mount an ext4 Linux USB drive on macOS in 2024
+
+----
+
+Text:
+
+How hard can it be, right? 🧐
+
+Well… coming from years of daily driving Linux I first had to remember: it's probably not as straight fwd. as it should be—at least IMO.
+
+I rather quickly stumbled on this great post from Jeff: 
+(link: https://www.jeffgeerling.com/blog/2024/mounting-ext4-linux-usb-drive-on-macos-2024 text: Mounting an ext4 linux USB drive on macOS in 2024) —such a great title 😉
+
+I skipped Jeff's approach (`macfuse`), and went straight for the approach outlined in the comments—to go w/ (link: https://www.fuse-t.org/ text: macos-fuse-t):
+
+```
+brew install pkg-config
+brew tap macos-fuse-t/homebrew-cask
+brew install fuse-t
+
+git clone https://github.com/macos-fuse-t/ext4fuse.git && cd "$(basename "$_" .git)"
+
+locate fuse.h
+/Library/Application Support/fuse-t/include/fuse/fuse.h
+
+# vi Makefile 
+CFLAGS  += $(shell pkg-config fuse-t --cflags) -DFUSE_USE_VERSION=26 -std=gnu99 -g3 -Wall -Wextra
+CFLAGS  += -DEXT4FUSE_VERSION=\"$(VERSION)\"
+CFLAGS  += -I"/Library/Application Support/fuse-t/include/fuse"
+
+make
+
+diskutil list
+
+mkdir ~/ext4_mount
+sudo ./ext4fuse /dev/disk6s1 ~/ext4_mount -o allow_other
+```
+
+----
+
+Published: 2024-03-21
+
+----
+
+Uuid: 612JvU8yAwZwx7Xm
+
+----
+
+Feedurl: https://openwebcraft.com/how-to-mount-an-ext4-linux-usb-drive-on-macos-in-2024
