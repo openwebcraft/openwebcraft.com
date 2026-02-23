@@ -45,7 +45,7 @@ Running `distrobox` in `lima`: (link: https://github.com/89luca89/distrobox/issu
 # /Users/matthias/.lima/_config/override.yaml
 mountType: 9p
 mounts:
-  - location: "/Users/{username}"
+  - location: "/Users/matthias"
     writable: true
     9p:
       securityModel: mapped-xattr
@@ -63,6 +63,10 @@ mounts:
 
 
 colima start --cpu 4 --memory 16 --mount-type 9p
+
+sudo brew services start colima
+
+sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
 ```
 
 ## Resources 

@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33067a0a016db497066af73db3e87024",
+    "content-hash": "f8f0903c26d9012ebf37e56cd216c976",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
-            "version": "1.5.4",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "ae2668a9e037d46e54680b142c257bf8f578b14e"
+                "reference": "1bb0078638f75395e3dbb64d010c6ae1aa252349"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/ae2668a9e037d46e54680b142c257bf8f578b14e",
-                "reference": "ae2668a9e037d46e54680b142c257bf8f578b14e",
+                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/1bb0078638f75395e3dbb64d010c6ae1aa252349",
+                "reference": "1bb0078638f75395e3dbb64d010c6ae1aa252349",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0"
+                "php": ">=8.1"
             },
             "require-dev": {
-                "getkirby/cms": "^3.5",
+                "getkirby/cms": "^4.0",
                 "php-coveralls/php-coveralls": "^2.4",
                 "phpunit/phpunit": "^9.5"
             },
@@ -58,15 +58,15 @@
                 "Sitemap",
                 "feed",
                 "json",
-                "kirby3",
-                "kirby3-cms",
-                "kirby3-plugin",
+                "kirby",
+                "kirby-cms",
+                "kirby-plugin",
                 "rss",
                 "rss-feed"
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/1.5.4"
+                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.7.0"
             },
             "funding": [
                 {
@@ -86,7 +86,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-11T10:22:26+00:00"
+            "time": "2024-08-19T08:18:07+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -220,16 +220,16 @@
         },
         {
             "name": "d4l/kirby-static-site-generator",
-            "version": "1.11.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/d4l-data4life/kirby3-static-site-generator.git",
-                "reference": "89c781a95ce0fd9e6eb3b44ef7da17557e616708"
+                "reference": "60d39c0ceff7687165085c32fd87bfd5e43bb9df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/d4l-data4life/kirby3-static-site-generator/zipball/89c781a95ce0fd9e6eb3b44ef7da17557e616708",
-                "reference": "89c781a95ce0fd9e6eb3b44ef7da17557e616708",
+                "url": "https://api.github.com/repos/d4l-data4life/kirby3-static-site-generator/zipball/60d39c0ceff7687165085c32fd87bfd5e43bb9df",
+                "reference": "60d39c0ceff7687165085c32fd87bfd5e43bb9df",
                 "shasum": ""
             },
             "require": {
@@ -250,29 +250,28 @@
                     "homepage": "https://www.data4life.care"
                 }
             ],
-            "description": "Static site generator plugin for Kirby 3",
+            "description": "Static site generator plugin for Kirby 3+",
             "support": {
                 "issues": "https://github.com/d4l-data4life/kirby3-static-site-generator/issues",
-                "source": "https://github.com/d4l-data4life/kirby3-static-site-generator/tree/1.11.0"
+                "source": "https://github.com/d4l-data4life/kirby3-static-site-generator/tree/1.13.0"
             },
-            "time": "2023-01-11T08:21:07+00:00"
+            "time": "2023-11-30T12:51:42+00:00"
         },
         {
             "name": "fabianmichael/kirby-markdown-field",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabianmichael/kirby-markdown-field.git",
-                "reference": "2cbc4885a6533c32c2f0c2adbc16b8e173ff7a79"
+                "reference": "d0b6e572ac5172ec91bac8dc9b41b4dcf2620815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabianmichael/kirby-markdown-field/zipball/2cbc4885a6533c32c2f0c2adbc16b8e173ff7a79",
-                "reference": "2cbc4885a6533c32c2f0c2adbc16b8e173ff7a79",
+                "url": "https://api.github.com/repos/fabianmichael/kirby-markdown-field/zipball/d0b6e572ac5172ec91bac8dc9b41b4dcf2620815",
+                "reference": "d0b6e572ac5172ec91bac8dc9b41b4dcf2620815",
                 "shasum": ""
             },
             "require": {
-                "getkirby/cms": ">=3.6.0",
                 "getkirby/composer-installer": "^1.2",
                 "php": ">=8.0.0"
             },
@@ -297,7 +296,7 @@
             "description": "Super-sophisticated markdown editor for Kirby 3",
             "support": {
                 "issues": "https://github.com/fabianmichael/kirby-markdown-field/issues",
-                "source": "https://github.com/fabianmichael/kirby-markdown-field/tree/2.1.1"
+                "source": "https://github.com/fabianmichael/kirby-markdown-field/tree/2.2.0"
             },
             "funding": [
                 {
@@ -305,7 +304,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-30T17:22:07+00:00"
+            "time": "2023-06-30T08:14:59+00:00"
         },
         {
             "name": "filp/whoops",
@@ -380,16 +379,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.8.4.1",
+            "version": "3.8.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "4672b846a48b4cf8f827326a0e3e42a74d7f5d9d"
+                "reference": "d3de5c2b5c0737f1b12e30d51a67f41b67c1f117"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/4672b846a48b4cf8f827326a0e3e42a74d7f5d9d",
-                "reference": "4672b846a48b4cf8f827326a0e3e42a74d7f5d9d",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/d3de5c2b5c0737f1b12e30d51a67f41b67c1f117",
+                "reference": "d3de5c2b5c0737f1b12e30d51a67f41b67c1f117",
                 "shasum": ""
             },
             "require": {
@@ -476,7 +475,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-07-26T19:30:41+00:00"
+            "time": "2024-08-24T20:22:30+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -580,6 +579,7 @@
                 "issues": "https://github.com/johannschopplich/kirby-highlighter/issues",
                 "source": "https://github.com/johannschopplich/kirby-highlighter/tree/v2.1.0"
             },
+            "abandoned": true,
             "time": "2022-04-15T08:33:41+00:00"
         },
         {
@@ -935,16 +935,16 @@
         },
         {
             "name": "psr/log",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001"
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe5ea303b0887d5caefd3d431c3e61ad47037001",
-                "reference": "fe5ea303b0887d5caefd3d431c3e61ad47037001",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
                 "shasum": ""
             },
             "require": {
@@ -979,9 +979,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/3.0.0"
+                "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
-            "time": "2021-07-14T16:46:02+00:00"
+            "time": "2024-09-11T13:17:53+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -1085,12 +1085,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                },
                 "branch-alias": {
                     "dev-main": "1.26-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1150,32 +1150,29 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.27.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6"
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/19bd1e4fcd5b91116f14d8533c57831ed00571b6",
-                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/3833d7255cc303546435cb650316bff708a1c75c",
+                "reference": "3833d7255cc303546435cb650316bff708a1c75c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "suggest": {
                 "ext-intl": "For best performance"
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.27-dev"
-                },
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1214,7 +1211,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.27.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -1230,7 +1227,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-03T14:55:06+00:00"
+            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1257,12 +1254,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                },
                 "branch-alias": {
                     "dev-main": "1.26-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1317,29 +1314,26 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.27.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936"
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
-                "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "1.27-dev"
-                },
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -1380,7 +1374,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.27.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -1396,7 +1390,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-03T14:55:06+00:00"
+            "time": "2025-01-02T08:10:11+00:00"
         }
     ],
     "packages-dev": [],
@@ -1407,10 +1401,10 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
-        "php": "8.1"
+        "php": "8.2.28"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

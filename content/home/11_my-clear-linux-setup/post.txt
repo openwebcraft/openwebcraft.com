@@ -63,7 +63,7 @@ For some application I prefer NOT to use Flatpaks:
 - Tresorit (installer script)
 - Nitrokey (w/ custom udev rules
 - Signet (w/ custom udev rules)
-- CrossFTP (requires java)
+- CrossFTP (requires java; on a a high-DPI display, e.g. 4K, etc. set `JAVA_ARGS="-Dsun.java2d.uiScale.enabled=true -Dsun.java2d.uiScale=2.0"` to the scale UI)
 - MyTourBook (requires java)
 - JVerein (requires java)
 - Thunderbird (copy user profile from backup `cp Backup/.thunderbird ~/. `  and then choose profile `/opt/thunderbird/thunderbird -ProfileManager` )
